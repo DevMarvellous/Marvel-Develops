@@ -1,0 +1,271 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Backgrounds */
+  --white: #FFFFFF;
+  --gray-white: #F4F4F6;
+  --gray-light: #E8E8EC;
+
+  /* ====================================================================
+     BRAND COLORS — replace these with your brand palette.
+     The component classes (bg-royal-blue, text-gold, bg-navy, etc.) all
+     read from these variables, so changing the values here re-skins the
+     whole site without touching any component. The token NAMES are kept
+     generic-on-purpose; defaults below are neutral placeholders.
+     ==================================================================== */
+
+  /* Primary (temporary Outends indigo — swap when brand colors are final) */
+  --royal-blue: #4F46E5;
+  --royal-blue-dark: #4338CA;
+  --royal-blue-soft: #EEF2FF;
+
+  /* Dark surfaces (currently neutral slate) */
+  --navy: #1E293B;
+  --navy-deep: #0F172A;
+
+  /* Accent (currently a neutral default amber) */
+  --gold: #F59E0B;
+  --gold-light: #FBBF24;
+  --gold-glow: rgba(245,158,11,0.20);
+
+  /* Text */
+  --text-dark: #111827;
+  --text-mid: #4B5563;
+  --text-muted: #9CA3AF;
+  --text-white: #F9FAFB;
+  --text-white-muted: rgba(249,250,251,0.65);
+
+  /* Functional */
+  --border: #E5E7EB;
+  --border-dark: rgba(255,255,255,0.10);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-hover: 0 16px 48px rgba(79,70,229,0.15);
+
+  /* Type Scale */
+  --text-hero: clamp(40px, 8vw, 80px);
+  --text-h1: clamp(32px, 5vw, 56px);
+  --text-h2: clamp(22px, 3vw, 32px);
+  --text-body-lg: 18px;
+  --text-body: 16px;
+  --text-sm: 14px;
+  --text-xs: 12px;
+
+  /* Line heights */
+  --leading-tight: 1.05;
+  --leading-body: 1.70;
+
+  /* Letter spacing */
+  --tracking-label: 0.12em;
+
+  /* Container */
+  --container-max: 1200px;
+  --container-pad-mobile: 20px;
+  --container-pad-desktop: 48px;
+
+  /* Section padding */
+  --section-py-mobile: 64px;
+  --section-py-desktop: 120px;
+
+  /* Border radius */
+  --radius-card: 16px;
+  --radius-btn: 9999px;
+  --radius-input: 12px;
+  --radius-chip: 9999px;
+
+  /* Shadcn defaults */
+  --background: var(--white);
+  --foreground: var(--text-dark);
+  --card: var(--white);
+  --card-foreground: var(--text-dark);
+  --popover: var(--white);
+  --popover-foreground: var(--text-dark);
+  --primary: var(--royal-blue);
+  --primary-foreground: var(--white);
+  --secondary: var(--gray-white);
+  --secondary-foreground: var(--text-dark);
+  --muted: var(--gray-white);
+  --muted-foreground: var(--text-muted);
+  --accent: var(--gold);
+  --accent-foreground: var(--navy);
+  --destructive: #EF4444;
+  --destructive-foreground: var(--white);
+  --border: var(--border);
+  --input: var(--border);
+  --ring: var(--royal-blue);
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  /* Brand fonts (loaded via next/font in app/layout.tsx).
+     --font-serif is repurposed as the DISPLAY family (Plus Jakarta Sans) so existing
+     `font-serif` headline classes pick up the display face automatically. */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jbmono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Custom brand color tokens (values defined in :root above) */
+  --color-royal-blue: var(--royal-blue);
+  --color-royal-blue-dark: var(--royal-blue-dark);
+  --color-royal-blue-soft: var(--royal-blue-soft);
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gray-white: var(--gray-white);
+  --color-gray-light: var(--gray-light);
+  --color-text-dark: var(--text-dark);
+  --color-text-mid: var(--text-mid);
+  --color-text-muted: var(--text-muted);
+  --color-text-white: var(--text-white);
+  --color-text-white-muted: var(--text-white-muted);
+  --color-whatsapp: #25D366;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-30px, 20px) scale(1.05); }
+  66% { transform: translate(20px, -15px) scale(0.98); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -25px) scale(1.03); }
+  66% { transform: translate(-25px, 15px) scale(0.97); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-15px, -20px) scale(1.02); }
+  66% { transform: translate(15px, 25px) scale(0.99); }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* Infinite horizontal marquee track (duplicate children for seamless loop) */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Dotted background field */
+.bg-dots {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Subtle grid background field */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.bg-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(17,24,39,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17,24,39,0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Accent gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, var(--royal-blue) 0%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Grain overlay */
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
