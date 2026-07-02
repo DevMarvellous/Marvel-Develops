@@ -3,7 +3,7 @@
 // later if traffic ever makes this inadequate.
 
 const WINDOW_MS = 10 * 60 * 1000
-const MAX_REQUESTS = 5
+const MAX_REQUESTS = 40
 
 const hits = new Map<string, number[]>()
 
