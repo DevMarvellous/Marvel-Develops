@@ -60,7 +60,7 @@ export const projects: Project[] = [
       'Manual email compose with optional image attachments, sent directly from any order card',
     ],
     stack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'Prisma ORM', 'Supabase', 'Resend', 'Vercel'],
-    image: '/work/fraogo.jpg',
+    image: '/work/fraogo.png',
     liveUrl: 'https://fraogo.com',
     featured: true,
   },
@@ -89,7 +89,7 @@ export const projects: Project[] = [
       'Google sign-in, installable PWA, and an anonymous "try the generator" demo for visitors',
     ],
     stack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Google Gemini', 'TipTap', 'Vercel'],
-    image: '/work/brandsor.jpg',
+    image: '/work/brandsor.png',
     liveUrl: 'https://brandsor.xyz',
     featured: true,
   },
@@ -113,20 +113,20 @@ export const projects: Project[] = [
       'Integrated AI assistant handling FAQs and visitor questions in real time',
     ],
     stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-    image: '/work/rael.jpg',
+    image: '/work/rael.png',
     featured: true,
     published: false,
   },
   {
     slug: 'harvester-church-website',
-    title: 'Harvester — RCCG Church Website',
+    title: 'The Harvester — RCCG Church Website',
     category: 'Website or Web App',
-    client: 'Harvester RCCG',
+    client: 'The Harvester RCCG',
     year: '2025',
     summary:
       'A clean, well-designed website for a RCCG church — built to showcase their community and give visitors everything they need in one place.',
     overview:
-      'Harvester is an RCCG church in Nigeria that needed a website as welcoming and well-presented as their community. We designed and built a clean, visually distinctive site that works as the church\'s digital home — giving visitors a clear picture of who they are and how to get involved.',
+      'The Harvester is an RCCG church in Nigeria that needed a website as welcoming and well-presented as their community. We designed and built a clean, visually distinctive site that works as the church\'s digital home — giving visitors a clear picture of who they are and how to get involved.',
     problem:
       'The church had no dedicated web presence. Visitors looking for service times, location, or information about the community had nowhere to go online — everything relied on word of mouth and social media posts that got buried.',
     solution:
@@ -137,7 +137,7 @@ export const projects: Project[] = [
       'Clear layout for service times, location, and contact information',
     ],
     stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-    image: '/work/harvester.jpg',
+    image: '/work/harvester.png',
     featured: true,
   },
 ]
