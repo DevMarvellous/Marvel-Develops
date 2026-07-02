@@ -16,10 +16,12 @@ export function ProjectPlanner() {
   const [summary, setSummary] = useState<PlannerSummary | null>(null)
   const [reviewData, setReviewData] = useState({ fullName: '', email: '', whatsapp: '', businessName: '', honeypot: '' })
   const [submitState, setSubmitState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  const messagesEndRef = useRef<HTMLDivElement>(null)
+  const chatContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight
+    }
   }, [messages, summary])
 
   const handleSend = async () => {
@@ -113,7 +115,7 @@ export function ProjectPlanner() {
   return (
     <div className="rounded-2xl border border-border bg-white">
       {/* Chat area */}
-      <div className="max-h-[50vh] overflow-y-auto p-6">
+      <div ref={chatContainerRef} className="max-h-[50vh] overflow-y-auto p-6">
         <div className="space-y-4">
           {messages.map((message, index) => (
             <div key={index} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
@@ -137,7 +139,6 @@ export function ProjectPlanner() {
               </div>
             </div>
           )}
-          <div ref={messagesEndRef} />
         </div>
       </div>
 
