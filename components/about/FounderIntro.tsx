@@ -32,7 +32,7 @@ export function FounderIntro() {
       <div className="grain-overlay" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-gray-white to-transparent" />
 
-      <div className="relative mx-auto grid max-w-[var(--container-max)] gap-12 px-[var(--container-pad-mobile)] py-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16 lg:px-[var(--container-pad-desktop)] lg:py-36">
+      <div className="relative mx-auto grid max-w-[var(--container-max)] gap-12 px-[var(--container-pad-mobile)] pb-20 pt-32 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-16 lg:px-[var(--container-pad-desktop)] lg:py-36">
         {/* Text */}
         <div>
           <motion.p

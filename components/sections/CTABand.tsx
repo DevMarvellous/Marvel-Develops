@@ -38,7 +38,7 @@ export function CTABand() {
             Tell us what you&apos;re trying to solve. We&apos;ll tell you how we&apos;d approach it —
             no pitch, just a real conversation.
           </p>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="flex flex-col items-center justify-center gap-4 lg:flex-row">
             <Link
               href="/#contact"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 font-sans text-base font-semibold text-royal-blue transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[var(--shadow-hover)] active:scale-[0.97]"

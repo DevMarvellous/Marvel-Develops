@@ -66,7 +66,7 @@ export async function sendPlannerMessage(history: Message[], userMessage: string
     const ai = getAIClient()
 
     const chat = ai.chats.create({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-2.0-flash',
       history: [
         {
           role: 'user',
@@ -98,8 +98,12 @@ export async function sendPlannerMessage(history: Message[], userMessage: string
     }
 
     return { done: false, reply: text }
-  } catch (error) {
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : String(error)
+    if (msg.includes('429') || msg.toLowerCase().includes('quota') || msg.toLowerCase().includes('rate')) {
+      throw new Error('rate_limited')
+    }
     console.error('Planner API Error:', error)
-    throw new Error('The project planner is momentarily resting. Please contact the team directly.')
+    throw new Error('api_error')
   }
 }

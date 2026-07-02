@@ -20,8 +20,18 @@ export async function POST(request: Request) {
   try {
     const result = await sendPlannerMessage(history ?? [], message)
     return NextResponse.json(result)
-  } catch (error) {
+  } catch (error: unknown) {
+    const msg = error instanceof Error ? error.message : ''
+    if (msg === 'rate_limited') {
+      return NextResponse.json(
+        { done: false, reply: "I'm getting a lot of requests right now — give me a few seconds and try again." },
+        { status: 200 }
+      )
+    }
     console.error('Planner route error:', error)
-    return NextResponse.json({ error: 'Failed to get a response' }, { status: 500 })
+    return NextResponse.json(
+      { done: false, reply: `Something went wrong on my end. You can reach the team directly at wa.me/2349030891731` },
+      { status: 200 }
+    )
   }
 }

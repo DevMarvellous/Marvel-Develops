@@ -68,7 +68,7 @@ export function WhyUs() {
                 initial={reason.animateFrom}
                 animate={isInView ? { x: 0, y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.8, ease }}
-                className="rounded-[20px] border border-border bg-white p-9 shadow-[var(--shadow-card)]"
+                className="rounded-[20px] border border-border bg-white p-6 shadow-[var(--shadow-card)] lg:p-9"
               >
                 <Icon className="mb-5 h-10 w-10 stroke-royal-blue stroke-[1.5]" />
                 <h3 className="mb-3 font-display text-xl font-bold text-text-dark">

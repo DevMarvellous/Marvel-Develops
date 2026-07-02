@@ -77,7 +77,7 @@ export async function sendMessage(history: Message[], userMessage: string): Prom
     const ai = getAIClient()
 
     const chat = ai.chats.create({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-2.0-flash',
       history: [
         {
           role: 'user',

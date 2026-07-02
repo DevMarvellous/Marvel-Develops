@@ -50,7 +50,7 @@ export function Footer() {
                 height={32}
                 className="h-8 w-8 brightness-0 invert"
               />
-              <span className="font-serif text-2xl font-black tracking-tight text-white">
+              <span className="font-display text-2xl font-black tracking-tight text-white">
                 Marvel Develops
               </span>
             </Link>
