@@ -21,7 +21,7 @@ This file gives Claude Code instant context on this project so any new session c
 
 - **Framework:** Next.js 16 (App Router), React 19, TypeScript
 - **Styling:** Tailwind CSS v4
-- **AI:** Google Gemini (`@google/genai`) — powers Otto (AI assistant chatbot) and the AI Project Planner
+- **AI:** Google Gemini (`@google/genai`) — powers the AI assistant chatbot ("Ask AI") and the AI Project Planner
 - **Email:** Nodemailer + Gmail SMTP (temporary — switching to Resend once marveldevelops.com is purchased and verified)
 - **Auth:** Cookie-based (`admin-session` cookie checked against `ADMIN_PASSWORD` env var) — no auth library, no database
 - **Database:** None. All form submissions go straight to email.
@@ -102,7 +102,7 @@ components/
   layout/Footer.tsx                 — Footer (social links, email, nav links)
   sections/Hero.tsx                 — Homepage hero
   sections/Contact.tsx              — Contact form section
-  chatbot/AssistantChat.tsx         — Otto AI chatbot
+  chatbot/AssistantChat.tsx         — "Ask AI" chatbot
   planner/ProjectPlanner.tsx        — AI Project Planner multi-step form
   about/FounderIntro.tsx            — About page founder section
 
@@ -110,7 +110,7 @@ lib/
   portfolio.ts                      — All project data (source of truth for /work pages)
   server/email.ts                   — Email sender (currently Nodemailer/Gmail SMTP)
   server/email-templates.ts         — HTML email templates + SubmissionSource type
-  server/gemini.ts                  — Gemini AI client (Otto system prompt + chat handler)
+  server/gemini.ts                  — Gemini AI client (system prompt + chat handler)
   server/planner-prompt.ts          — Gemini prompt for AI Project Planner
   server/rate-limit.ts              — Simple in-memory rate limiter for API routes
 

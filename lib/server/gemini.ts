@@ -2,11 +2,11 @@ import { GoogleGenAI } from '@google/genai'
 import type { Message } from '@/lib/types'
 
 // ============================================================================
-// Marvel Develops AI assistant (Otto) system prompt. Keep it accurate — never
+// Marvel Develops AI assistant system prompt. Keep it accurate — never
 // list services the team doesn't offer. Server-only: never import this file
 // from a Client Component, it reads a non-public env var.
 // ============================================================================
-const SYSTEM_PROMPT = `You are Otto, the AI assistant for Marvel Develops,
+const SYSTEM_PROMPT = `You are the AI assistant for Marvel Develops,
 the software brand built by Marvellous Adepoju, building custom software
 solutions for businesses.
 

@@ -5,9 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Sparkles, X, Send, Loader2 } from 'lucide-react'
 import type { Message } from '@/lib/types'
 
-// Assistant name + opening line for Marvel Develops. (Name is a working placeholder.)
-const ASSISTANT_NAME = 'Otto'
-const OPENING_MESSAGE = `Hey, I'm ${ASSISTANT_NAME} — the Marvel Develops assistant. I can walk you through what we build, how we work, or help you figure out what your project needs. What's on your mind?`
+const ASSISTANT_NAME = 'Marvel AI'
+const OPENING_MESSAGE = `Hey! I'm the Marvel Develops AI assistant. I can walk you through what we build, how we work, or help you figure out what your project needs. What's on your mind?`
 
 const CONTACT_LINK = 'https://wa.me/2349030891731'
 
@@ -119,7 +118,7 @@ export function AssistantChat() {
       {/* Tooltip (desktop only) */}
       {!isOpen && (
         <div className="absolute bottom-full right-0 mb-2 hidden whitespace-nowrap rounded-lg bg-navy px-3 py-2 font-sans text-[13px] text-white lg:block">
-          Ask {ASSISTANT_NAME}
+          Ask AI
           <div className="absolute right-5 top-full border-4 border-transparent border-t-navy" />
         </div>
       )}
@@ -142,8 +141,8 @@ export function AssistantChat() {
                 <Sparkles className="h-5 w-5 fill-navy text-navy" />
               </div>
               <div>
-                <p className="font-sans text-[15px] font-bold text-navy">{ASSISTANT_NAME}</p>
-                <p className="font-sans text-xs text-navy/70">AI Assistant</p>
+                <p className="font-sans text-[15px] font-bold text-navy">Ask AI</p>
+                <p className="font-sans text-xs text-navy/70">Marvel Develops Assistant</p>
               </div>
               <button
                 onClick={() => setIsOpen(false)}
