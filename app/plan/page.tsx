@@ -12,19 +12,18 @@ export default function PlanPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gray-white pb-24 pt-32 lg:pt-40">
+      <main className="min-h-screen bg-gray-white pb-16 pt-28 lg:pt-32">
         <div className="mx-auto max-w-2xl px-[var(--container-pad-mobile)] lg:px-[var(--container-pad-desktop)]">
-          <header className="mb-10 lg:mb-14">
-            <p className="mb-4 inline-flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-gold">
+          <header className="mb-6">
+            <p className="mb-2 inline-flex items-center gap-2 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-gold">
               <span className="h-1.5 w-1.5 rounded-full bg-gold" />
               AI Project Planner
             </p>
-            <h1 className="font-display text-[clamp(28px,4.5vw,46px)] font-bold leading-[1.1] tracking-tight text-text-dark">
+            <h1 className="font-display text-[clamp(24px,3.5vw,36px)] font-bold leading-[1.1] tracking-tight text-text-dark">
               Not sure what you need? Let&apos;s figure it out.
             </h1>
-            <p className="mt-4 max-w-lg text-lg leading-relaxed text-text-mid">
-              Answer a few quick questions and we&apos;ll put together a clear plan
-              you can send straight to our team — no jargon, no commitment.
+            <p className="mt-2 max-w-lg text-base leading-relaxed text-text-mid">
+              Answer a few quick questions and we&apos;ll put together a clear plan you can send straight to our team.
             </p>
           </header>
 
