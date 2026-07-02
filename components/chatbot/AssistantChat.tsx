@@ -21,7 +21,7 @@ export function AssistantChat() {
   const [isLoading, setIsLoading] = useState(false)
   const [messageCount, setMessageCount] = useState(0)
   const [hasAutoOpened, setHasAutoOpened] = useState(false)
-  const messagesEndRef = useRef<HTMLDivElement>(null)
+  const chatContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     setIsMounted(true)
@@ -50,9 +50,10 @@ export function AssistantChat() {
     }
   }, [isOpen, messages.length])
 
-  // Scroll to bottom when new messages arrive
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight
+    }
   }, [messages])
 
   const handleSend = async () => {
@@ -154,7 +155,7 @@ export function AssistantChat() {
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4">
+            <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-4">
               <div className="space-y-4">
                 {messages.map((message, index) => (
                   <div
@@ -198,7 +199,6 @@ export function AssistantChat() {
                   </div>
                 )}
 
-                <div ref={messagesEndRef} />
               </div>
             </div>
 
