@@ -38,13 +38,13 @@ export function WorkTeaser() {
           </Link>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2">
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.slug}
               initial={{ opacity: 0, y: 48, filter: 'blur(4px)' }}
               animate={isInView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
-              transition={{ duration: 0.8, ease, delay: index * 0.1 }}
+              transition={{ duration: 0.8, ease, delay: index * 0.12 }}
             >
               <Link
                 href={`/work/${project.slug}`}
@@ -55,7 +55,7 @@ export function WorkTeaser() {
                     src={project.image}
                     alt={project.title}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <span className="absolute left-3 top-3 rounded-full bg-navy-deep/80 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-white backdrop-blur">

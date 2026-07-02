@@ -22,14 +22,14 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Outends — Software, end to end',
-  description: 'Outends is a software agency that builds custom software — web, mobile, and SaaS — for businesses.',
+  title: 'Marvel Develops — Software, end to end',
+  description: 'Marvel Develops is a software agency that builds custom software — web, mobile, and SaaS — for businesses.',
   keywords: 'software agency, custom software development, web app development, SaaS, mobile app development',
   openGraph: {
-    title: 'Outends — Software, end to end',
-    description: 'Outends is a software agency that builds custom software — web, mobile, and SaaS — for businesses.',
-    url: 'https://outends.com',
-    siteName: 'Outends',
+    title: 'Marvel Develops — Software, end to end',
+    description: 'Marvel Develops is a software agency that builds custom software — web, mobile, and SaaS — for businesses.',
+    url: 'https://marveldevelops.com',
+    siteName: 'Marvel Develops',
     locale: 'en_US',
     type: 'website',
     // TODO: add public/og-image.png (1200×630) — referenced below.
@@ -37,20 +37,20 @@ export const metadata: Metadata = {
       url: '/og-image.png',
       width: 1200,
       height: 630,
-      alt: 'Outends',
+      alt: 'Marvel Develops',
     }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Outends — Software, end to end',
-    description: 'Outends is a software agency that builds custom software — web, mobile, and SaaS — for businesses.',
+    title: 'Marvel Develops — Software, end to end',
+    description: 'Marvel Develops is a software agency that builds custom software — web, mobile, and SaaS — for businesses.',
     images: ['/og-image.png'],
   },
   icons: {
     icon: '/brand-logo.svg',
     apple: '/brand-logo.svg',
   },
-  metadataBase: new URL('https://outends.com'),
+  metadataBase: new URL('https://marveldevelops.com'),
 }
 
 export default function RootLayout({

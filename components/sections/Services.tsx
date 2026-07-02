@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { Monitor, Smartphone, BarChart3, ClipboardList, Boxes, PenTool } from 'lucide-react'
+import { Monitor, Smartphone, BarChart3, ClipboardList, Boxes, Zap } from 'lucide-react'
 
 const services = [
   {
@@ -38,9 +38,9 @@ const services = [
   },
   {
     number: '06',
-    title: 'Design & User Experience',
-    description: 'Clean, simple designs that anyone can pick up and use without a manual.',
-    icon: PenTool,
+    title: 'Automations & Workflows',
+    description: 'Cut the repetitive work — reminders, follow-ups, status updates, and reports that run themselves.',
+    icon: Zap,
   },
 ]
 
@@ -133,19 +133,28 @@ export function Services() {
           />
         </motion.div>
 
-        {/* Service Cards Grid — desktop shows all; mobile shows first 3 + toggle */}
+        {/* Service Cards Grid
+             Mobile  (<sm)  : 1 col — cards 0–2 visible, 3–5 hidden behind toggle
+             Tablet  (sm–lg): 2 col — cards 0–3 visible, 4–5 hidden behind toggle
+             Desktop (lg+)  : 3 col — all 6 always visible, no toggle */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <div
               key={service.number}
-              className={index >= 3 && !showAll ? 'hidden lg:block' : 'block'}
+              className={
+                index < 3
+                  ? 'block'
+                  : index === 3
+                  ? showAll ? 'block' : 'hidden sm:block'
+                  : showAll ? 'block' : 'hidden lg:block'
+              }
             >
               <ServiceCard service={service} index={index} />
             </div>
           ))}
         </div>
 
-        {/* Show All Button - Mobile Only */}
+        {/* Show All Button — hidden on desktop where all 6 are always visible */}
         {isMounted && (
           <div className="mt-8 text-center lg:hidden">
             <button

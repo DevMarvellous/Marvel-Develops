@@ -99,7 +99,7 @@ export function Hero() {
           transition={{ duration: 0.8, ease, delay: 0.7 }}
           className="mb-10 max-w-xl font-sans text-lg font-light leading-relaxed text-white/65"
         >
-          Outends builds custom software for businesses &mdash; websites, apps, dashboards,
+          Marvel Develops builds custom software for businesses &mdash; websites, apps, dashboards,
           and management tools, made to fit exactly how you work.
         </motion.p>
 

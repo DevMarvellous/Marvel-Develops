@@ -5,7 +5,7 @@ import { Send, Loader2, Check } from 'lucide-react'
 import type { Message, PlannerSummary } from '@/lib/types'
 
 const OPENING_MESSAGE =
-  "Hi! I'm the Outends Project Planner. Tell me a bit about your business and the problem you're trying to solve — I'll help you figure out what to build."
+  "Hi! I'm the Marvel Develops Project Planner. Tell me a bit about your business and the problem you're trying to solve — I'll help you figure out what to build."
 
 const CONTACT_LINK = 'https://wa.me/2349030891731'
 
@@ -170,7 +170,7 @@ export function ProjectPlanner() {
           {submitState === 'error' && (
             <div className="mb-4 rounded-lg bg-red-50 p-4 text-sm text-red-600">
               Something went wrong. Please{' '}
-              <a href="mailto:hello@outends.com" className="underline">email us directly</a>.
+              <a href="mailto:marvellousadepoju79@gmail.com" className="underline">email us directly</a>.
             </div>
           )}
           <input
@@ -236,7 +236,7 @@ export function ProjectPlanner() {
                   Sending...
                 </>
               ) : (
-                'Send this to Outends'
+                'Send this to Marvel Develops'
               )}
             </button>
           </div>

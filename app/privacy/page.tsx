@@ -3,8 +3,8 @@ import { Footer } from '@/components/layout/Footer'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Privacy Policy — Outends',
-  description: 'Privacy policy for Outends',
+  title: 'Privacy Policy — Marvel Develops',
+  description: 'Privacy policy for Marvel Develops',
 }
 
 export default function PrivacyPage() {
@@ -29,11 +29,11 @@ export default function PrivacyPage() {
                 Who We Are
               </h2>
               <p className="font-sans leading-relaxed text-text-mid">
-                Outends is a software agency based in Ede, Osun State, Nigeria.
+                Marvel Develops is a software agency based in Ede, Osun State, Nigeria.
                 We design and build custom software — web, mobile, and SaaS — for businesses.
               </p>
               <p className="mt-4 font-sans leading-relaxed text-text-mid">
-                <strong className="text-text-dark">Contact:</strong> hello@outends.com
+                <strong className="text-text-dark">Contact:</strong> marvellousadepoju79@gmail.com
               </p>
             </section>
 
@@ -151,8 +151,8 @@ export default function PrivacyPage() {
               </ul>
               <p className="mt-4 font-sans leading-relaxed text-text-mid">
                 To exercise these rights, contact us at{' '}
-                <a href="mailto:hello@outends.com" className="text-royal-blue hover:underline">
-                  hello@outends.com
+                <a href="mailto:marvellousadepoju79@gmail.com" className="text-royal-blue hover:underline">
+                  marvellousadepoju79@gmail.com
                 </a>
               </p>
             </section>
@@ -176,7 +176,7 @@ export default function PrivacyPage() {
               <ul className="mt-4 space-y-2 font-sans text-text-mid">
                 <li className="flex items-start gap-2">
                   <span className="text-gold">&#9670;</span>
-                  Email: hello@outends.com
+                  Email: marvellousadepoju79@gmail.com
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-gold">&#9670;</span>

@@ -4,11 +4,11 @@ import Image from 'next/image'
 import { ArrowUpRight } from 'lucide-react'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
-import { projects } from '@/lib/portfolio'
+import { publishedProjects as projects } from '@/lib/portfolio'
 
 export const metadata: Metadata = {
-  title: 'Our Work — Outends',
-  description: 'Selected software projects built by Outends — web apps, mobile apps, and custom SaaS platforms.',
+  title: 'Our Work — Marvel Develops',
+  description: 'Selected software projects built by Marvel Develops — web apps, mobile apps, and custom SaaS platforms.',
 }
 
 export default function WorkPage() {

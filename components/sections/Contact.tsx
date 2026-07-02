@@ -22,7 +22,6 @@ const services = [
   'Dashboard & Reporting',
   'Management System',
   'Custom Software',
-  'Design & User Experience',
   "Not sure yet — let's talk",
 ]
 
@@ -125,7 +124,7 @@ export function Contact() {
               </a>
 
               <a
-                href="mailto:hello@outends.com"
+                href="mailto:marvellousadepoju79@gmail.com"
                 className="group flex items-start gap-4 rounded-xl p-4 transition-colors hover:bg-white/5"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-royal-blue/30">
@@ -134,7 +133,7 @@ export function Contact() {
                 <div>
                   <p className="font-sans text-sm text-text-white-muted">Send us an email</p>
                   <p className="font-sans text-base font-medium text-white transition-colors group-hover:text-royal-blue-soft">
-                    hello@outends.com
+                    marvellousadepoju79@gmail.com
                   </p>
                 </div>
               </a>
@@ -173,7 +172,7 @@ export function Contact() {
                     {formState === 'error' && (
                       <div className="mb-4 rounded-lg bg-red-50 p-4 text-sm text-red-600">
                         Something went wrong. Please{' '}
-                        <a href="mailto:hello@outends.com" className="underline">
+                        <a href="mailto:marvellousadepoju79@gmail.com" className="underline">
                           email us directly
                         </a>
                         .

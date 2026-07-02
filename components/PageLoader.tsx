@@ -44,7 +44,7 @@ export function PageLoader({ children }: PageLoaderProps) {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="flex items-center gap-4 font-serif text-5xl font-black tracking-tight text-white md:text-7xl"
+              className="flex items-center gap-4 font-serif text-3xl font-black tracking-tight text-white sm:text-5xl md:text-6xl"
             >
               <Image
                 src="/brand-logo.svg"
@@ -53,7 +53,7 @@ export function PageLoader({ children }: PageLoaderProps) {
                 height={80}
                 className="h-16 w-16 brightness-0 invert md:h-20 md:w-20"
               />
-              Outends
+              Marvel Develops
             </motion.div>
           </motion.div>
         )}

@@ -50,4 +50,4 @@ copy, colors, fonts, logo, AI prompt) and the exact file to edit.
 
 ## 📄 License
 All rights reserved. © 2026 Your Company Name.
-# outends
+# Marvel Develops

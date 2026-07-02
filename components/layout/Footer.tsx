@@ -8,26 +8,25 @@ const solutions = [
   'Dashboards & Reporting',
   'Management Systems',
   'Custom Software',
-  'Design & User Experience',
 ]
 
 const companyLinks = [
   { label: 'Services', href: '/#services' },
   { label: 'Work', href: '/work' },
-  { label: 'Process', href: '/#process' },
+  { label: 'About', href: '/about' },
   { label: 'FAQ', href: '/#faq' },
   { label: 'Contact', href: '/#contact' },
   { label: 'Privacy Policy', href: '/privacy' },
 ]
 
-// TODO: replace the bare social URLs with real Outends profiles as they go live.
+// TODO: replace the bare social URLs with real Marvel Develops profiles as they go live.
 const socialLinks = [
   { label: 'X', href: 'https://x.com/marvel_14_code', icon: ({ className }: { className?: string }) => (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
     </svg>
   )},
-  { label: 'Instagram', href: 'https://instagram.com', icon: Instagram },
+  { label: 'Instagram', href: 'https://instagram.com/marvel_develops', icon: Instagram },
   { label: 'TikTok', href: 'https://tiktok.com', icon: ({ className }: { className?: string }) => (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
       <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
@@ -52,13 +51,12 @@ export function Footer() {
                 className="h-8 w-8 brightness-0 invert"
               />
               <span className="font-serif text-2xl font-black tracking-tight text-white">
-                Outends
+                Marvel Develops
               </span>
             </Link>
             <div className="space-y-2 font-sans text-sm text-text-white-muted">
-              <p>Outends</p>
-              <p>outends.com</p>
-              <p>hello@outends.com</p>
+              <p>marveldevelops.com</p>
+              <p>marvellousadepoju79@gmail.com</p>
               <p>+234 903 089 1731</p>
               <p>Ede, Osun State, Nigeria</p>
             </div>
@@ -137,7 +135,7 @@ export function Footer() {
       <div className="border-t border-border-dark">
         <div className="mx-auto flex max-w-[var(--container-max)] flex-col items-center justify-between gap-4 px-[var(--container-pad-mobile)] py-6 lg:flex-row lg:px-[var(--container-pad-desktop)]">
           <p className="font-mono text-[11px] text-text-white-muted/40">
-            &copy; 2026 Outends &middot; Ede, Osun State, Nigeria
+            &copy; 2026 Marvel Develops &middot; Ede, Osun State, Nigeria
           </p>
 
           <div className="flex items-center gap-4 font-mono text-[11px] text-text-white-muted/40">

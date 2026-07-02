@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
-import { insertSubmission, recordEmailIds } from '@/lib/server/supabase'
 import { sendAdminNotification, scheduleCustomerFollowUp } from '@/lib/server/email'
 import { getClientIp, isRateLimited } from '@/lib/server/rate-limit'
 
@@ -35,18 +34,6 @@ export async function POST(request: Request) {
   }
 
   try {
-    const submission = await insertSubmission({
-      source: 'ai_planner',
-      full_name: data.fullName,
-      business_name: data.businessName,
-      email: data.email,
-      whatsapp: data.whatsapp,
-      industry: data.industry,
-      service: data.service,
-      message: data.summary,
-      details: data.details ?? {},
-    })
-
     const emailData = {
       source: 'ai_planner' as const,
       fullName: data.fullName,
@@ -58,16 +45,10 @@ export async function POST(request: Request) {
       message: data.summary,
     }
 
-    const [adminEmailId, followUp] = await Promise.all([
+    await Promise.all([
       sendAdminNotification(emailData),
       scheduleCustomerFollowUp(emailData),
     ])
-
-    await recordEmailIds(submission.id, {
-      admin_email_id: adminEmailId,
-      customer_email_id: followUp?.id,
-      customer_email_scheduled_for: followUp?.scheduledFor,
-    }).catch((error) => console.error('Failed to record email ids:', error))
 
     return NextResponse.json({ ok: true })
   } catch (error) {

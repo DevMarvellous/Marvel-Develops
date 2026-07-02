@@ -54,7 +54,7 @@ export function CTABand() {
               Plan my project with AI
             </Link>
             <a
-              href="https://wa.me/2349030891731?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20Outends"
+              href="https://wa.me/2349030891731?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20Marvel%20Develops"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/5 px-8 py-3.5 font-sans text-base font-semibold text-white backdrop-blur transition-all duration-250 hover:bg-white/10"

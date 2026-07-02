@@ -10,8 +10,8 @@ import { Menu, X } from 'lucide-react'
 const navLinks = [
   { href: '/#services', label: 'Services' },
   { href: '/work', label: 'Work' },
+  { href: '/about', label: 'About' },
   { href: '/plan', label: 'Plan my project' },
-  { href: '/#process', label: 'Process' },
   { href: '/#faq', label: 'FAQ' },
   { href: '/#contact', label: 'Contact' },
 ]
@@ -54,7 +54,7 @@ export function Navbar() {
           <Link href="/" className="relative z-10 flex items-center gap-2">
             <Image
               src="/brand-logo.svg"
-              alt="Outends"
+              alt="Marvel Develops"
               width={40}
               height={40}
               className={`h-8 w-8 transition-all duration-300 lg:h-9 lg:w-9 ${
@@ -67,7 +67,7 @@ export function Navbar() {
                 solid ? 'text-royal-blue' : 'text-white'
               }`}
             >
-              Outends
+              Marvel Develops
             </span>
           </Link>
 

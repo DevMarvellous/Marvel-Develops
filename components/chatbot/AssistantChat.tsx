@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Sparkles, X, Send, Loader2 } from 'lucide-react'
 import type { Message } from '@/lib/types'
 
-// Assistant name + opening line for Outends. (Name is a working placeholder.)
+// Assistant name + opening line for Marvel Develops. (Name is a working placeholder.)
 const ASSISTANT_NAME = 'Otto'
-const OPENING_MESSAGE = `Hey, I'm ${ASSISTANT_NAME} — the Outends assistant. I can walk you through what we build, how we work, or help you figure out what your project needs. What's on your mind?`
+const OPENING_MESSAGE = `Hey, I'm ${ASSISTANT_NAME} — the Marvel Develops assistant. I can walk you through what we build, how we work, or help you figure out what your project needs. What's on your mind?`
 
 const CONTACT_LINK = 'https://wa.me/2349030891731'
 

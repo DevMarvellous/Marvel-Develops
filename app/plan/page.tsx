@@ -4,7 +4,7 @@ import { Footer } from '@/components/layout/Footer'
 import { ProjectPlanner } from '@/components/planner/ProjectPlanner'
 
 export const metadata: Metadata = {
-  title: 'Plan My Project — Outends',
+  title: 'Plan My Project — Marvel Develops',
   description: 'Answer a few quick questions and our AI will help you figure out what to build — then send it straight to our team.',
 }
 

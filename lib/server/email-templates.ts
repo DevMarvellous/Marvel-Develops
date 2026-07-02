@@ -1,4 +1,4 @@
-import type { SubmissionSource } from '@/lib/server/supabase'
+export type SubmissionSource = 'contact_form' | 'ai_planner'
 
 export interface EmailSubmissionData {
   source: SubmissionSource
@@ -62,7 +62,7 @@ export function customerFollowUpEmail(data: EmailSubmissionData): { subject: str
       <div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#0F172A;">
         <p>Hi ${escapeHtml(data.fullName.split(' ')[0])},</p>
         <p>Thanks for telling us about your project — we've got it, and a real
-        person from the Outends team will get back to you within 24 hours.</p>
+        person from the Marvel Develops team will get back to you within 24 hours.</p>
         <p style="color:#64748B;font-size:13px;margin-bottom:4px;">What you told us:</p>
         <p style="font-size:14px;white-space:pre-wrap;">${escapeHtml(data.message)}</p>
         <p>Want to talk sooner? Chat with us directly on WhatsApp:</p>
@@ -71,7 +71,7 @@ export function customerFollowUpEmail(data: EmailSubmissionData): { subject: str
             wa.me/2349030891731
           </a>
         </p>
-        <p style="color:#64748B;font-size:13px;">— The Outends team</p>
+        <p style="color:#64748B;font-size:13px;">— The Marvel Develops team</p>
       </div>
     `,
   }
