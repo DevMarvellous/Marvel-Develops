@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 }
 
 const bio = [
-  "Marvellous Adepoju is a Computer Engineering student at Redeemer's University, Nigeria, and the person behind every project Marvel Develops ships. He has spent the last two years building real software for real businesses — not tutorials or side projects, but tools that people depend on every day to run their work.",
+  "Marvellous Adepoju is a Computer Engineering student at Redeemer's University, Nigeria, and the person behind every project Marvel Develops ships. He has been in software development for two years.",
   "He started because he kept watching businesses struggle with software that didn't fit how they actually operated. So he builds the kind he'd want to use himself: clean, reliable, and made around the actual problem — not what's fashionable.",
   "Today that means websites, mobile apps, dashboards, and management systems for founders and business owners who just want something that works. No jargon, no bloat, and no disappearing after launch.",
 ]
