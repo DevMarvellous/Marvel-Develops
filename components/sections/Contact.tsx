@@ -77,7 +77,7 @@ export function Contact() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left Column - Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease }}
           >
@@ -132,7 +132,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="font-sans text-sm text-text-white-muted">Send us an email</p>
-                  <p className="font-sans text-base font-medium text-white transition-colors group-hover:text-royal-blue-soft">
+                  <p className="break-all font-sans text-base font-medium text-white transition-colors group-hover:text-royal-blue-soft">
                     marvellousadepoju79@gmail.com
                   </p>
                 </div>
@@ -201,7 +201,7 @@ export function Contact() {
                             required
                             value={formData.fullName}
                             onChange={handleChange}
-                            className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3.5 font-sans text-[15px] text-text-dark placeholder:text-text-muted transition-all focus:border-royal-blue focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-royal-blue/10"
+                            className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3.5 font-sans text-base text-text-dark placeholder:text-text-muted transition-all focus:border-royal-blue focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-royal-blue/10"
                           />
                         </div>
                         <div>
@@ -214,7 +214,7 @@ export function Contact() {
                             required
                             value={formData.businessName}
                             onChange={handleChange}
-                            className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3.5 font-sans text-[15px] text-text-dark placeholder:text-text-muted transition-all focus:border-royal-blue focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-royal-blue/10"
+                            className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3.5 font-sans text-base text-text-dark placeholder:text-text-muted transition-all focus:border-royal-blue focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-royal-blue/10"
                           />
                         </div>
                       </div>
@@ -230,7 +230,7 @@ export function Contact() {
                             required
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3.5 font-sans text-[15px] text-text-dark placeholder:text-text-muted transition-all focus:border-royal-blue focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-royal-blue/10"
+                            className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3.5 font-sans text-base text-text-dark placeholder:text-text-muted transition-all focus:border-royal-blue focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-royal-blue/10"
                           />
                         </div>
                         <div>
@@ -243,13 +243,13 @@ export function Contact() {
                             required
                             value={formData.whatsapp}
                             onChange={handleChange}
-                            className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3.5 font-sans text-[15px] text-text-dark placeholder:text-text-muted transition-all focus:border-royal-blue focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-royal-blue/10"
+                            className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3.5 font-sans text-base text-text-dark placeholder:text-text-muted transition-all focus:border-royal-blue focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-royal-blue/10"
                           />
                         </div>
                       </div>
 
                       <div className="grid gap-4 sm:grid-cols-2">
-                        <div>
+                        <div className="relative">
                           <label htmlFor="industry" className="sr-only">Industry</label>
                           <select
                             id="industry"
@@ -257,15 +257,16 @@ export function Contact() {
                             required
                             value={formData.industry}
                             onChange={handleChange}
-                            className="w-full appearance-none rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3.5 font-sans text-[15px] text-text-dark transition-all focus:border-royal-blue focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-royal-blue/10"
+                            className="w-full appearance-none rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3.5 pr-10 font-sans text-base text-text-dark transition-all focus:border-royal-blue focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-royal-blue/10"
                           >
                             <option value="" disabled>Industry *</option>
                             {industries.map(ind => (
                               <option key={ind} value={ind}>{ind}</option>
                             ))}
                           </select>
+                          <svg className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                         </div>
-                        <div>
+                        <div className="relative">
                           <label htmlFor="service" className="sr-only">What do you need?</label>
                           <select
                             id="service"
@@ -273,13 +274,14 @@ export function Contact() {
                             required
                             value={formData.service}
                             onChange={handleChange}
-                            className="w-full appearance-none rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3.5 font-sans text-[15px] text-text-dark transition-all focus:border-royal-blue focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-royal-blue/10"
+                            className="w-full appearance-none rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3.5 pr-10 font-sans text-base text-text-dark transition-all focus:border-royal-blue focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-royal-blue/10"
                           >
                             <option value="" disabled>What do you need? *</option>
                             {services.map(svc => (
                               <option key={svc} value={svc}>{svc}</option>
                             ))}
                           </select>
+                          <svg className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                         </div>
                       </div>
 
@@ -292,7 +294,7 @@ export function Contact() {
                           placeholder="Describe your business and what you're trying to solve..."
                           value={formData.message}
                           onChange={handleChange}
-                          className="w-full resize-none rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3.5 font-sans text-[15px] text-text-dark placeholder:text-text-muted transition-all focus:border-royal-blue focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-royal-blue/10"
+                          className="w-full resize-none rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3.5 font-sans text-base text-text-dark placeholder:text-text-muted transition-all focus:border-royal-blue focus:bg-white focus:outline-none focus:ring-[3px] focus:ring-royal-blue/10"
                         />
                       </div>
 

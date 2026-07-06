@@ -50,7 +50,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-gray-white to-transparent" />
 
       {/* Content */}
-      <div className="relative mx-auto flex min-h-svh max-w-[var(--container-max)] flex-col items-center justify-center px-[var(--container-pad-mobile)] py-32 text-center lg:px-[var(--container-pad-desktop)]">
+      <div className="relative mx-auto flex min-h-svh max-w-[var(--container-max)] flex-col items-center justify-center px-[var(--container-pad-mobile)] py-24 text-center lg:px-[var(--container-pad-desktop)] lg:py-32">
         {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -97,7 +97,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease, delay: 0.7 }}
-          className="mb-10 max-w-xl font-sans text-lg font-light leading-relaxed text-white/65"
+          className="mb-10 max-w-xl font-sans text-lg font-normal leading-relaxed text-white/65"
         >
           Marvel Develops builds custom software for businesses &mdash; websites, apps, dashboards,
           and management tools, made to fit exactly how you work.
@@ -112,14 +112,14 @@ export function Hero() {
         >
           <Link
             href="/#contact"
-            className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 font-sans text-base font-semibold text-navy-deep transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[var(--shadow-hover)] active:scale-[0.97]"
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 font-sans text-base font-semibold text-navy-deep transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[var(--shadow-hover)] active:scale-[0.97] sm:w-auto"
           >
             Start a project
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
           <Link
             href="/work"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-3.5 font-sans text-base font-semibold text-white backdrop-blur transition-all duration-250 hover:border-white/40 hover:bg-white/10"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-3.5 font-sans text-base font-semibold text-white backdrop-blur transition-all duration-250 hover:border-white/40 hover:bg-white/10 sm:w-auto"
           >
             See our work
           </Link>
@@ -134,7 +134,7 @@ export function Hero() {
         >
           <Link
             href="/plan"
-            className="inline-flex items-center gap-1.5 font-sans text-sm font-medium text-white/60 underline-offset-4 transition-colors hover:text-gold hover:underline"
+            className="inline-flex items-center gap-1.5 px-1 py-3 font-sans text-sm font-medium text-white/60 underline-offset-4 transition-colors hover:text-gold hover:underline"
           >
             Not sure what you need? Plan it with AI &rarr;
           </Link>

@@ -126,7 +126,7 @@ export function ProjectPlanner() {
     <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
 
       {/* Chat area */}
-      <div ref={chatContainerRef} className="max-h-[52vh] overflow-y-auto p-6">
+      <div ref={chatContainerRef} className="max-h-[45vh] overflow-y-auto p-6 sm:max-h-[52vh]">
         <div className="space-y-4">
           {messages.map((message, index) => (
             <div key={index} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
@@ -173,7 +173,7 @@ export function ProjectPlanner() {
               onKeyDown={handleKeyDown}
               placeholder="Type your answer..."
               disabled={isLoading}
-              className="flex-1 rounded-xl border border-border bg-white px-4 py-3 font-sans text-[15px] text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
+              className="flex-1 rounded-xl border border-border bg-white px-4 py-3 font-sans text-base text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
             />
             <button
               onClick={handleSend}
@@ -184,7 +184,7 @@ export function ProjectPlanner() {
               {isLoading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-4 w-4" />}
             </button>
           </div>
-          <p className="mt-2 text-center font-sans text-[11px] text-text-muted">Press Enter to send · Shift+Enter for new line</p>
+          <p className="mt-2 hidden text-center font-sans text-[11px] text-text-muted sm:block">Press Enter to send · Shift+Enter for new line</p>
         </div>
       ) : (
         <div className="border-t border-border">
@@ -195,7 +195,7 @@ export function ProjectPlanner() {
               <p className="font-sans text-[11px] font-semibold uppercase tracking-widest text-text-muted">Your Project Brief</p>
               <button
                 onClick={() => setEditingSummary((v) => !v)}
-                className="flex items-center gap-1 rounded-lg px-2 py-1 font-sans text-[12px] text-text-muted transition-colors hover:bg-border hover:text-text-dark"
+                className="flex items-center gap-1 rounded-lg px-2 py-2.5 font-sans text-[12px] text-text-muted transition-colors hover:bg-border hover:text-text-dark"
               >
                 <Pencil className="h-3 w-3" />
                 {editingSummary ? 'Done' : 'Edit'}
@@ -272,7 +272,7 @@ export function ProjectPlanner() {
                     required
                     value={reviewData.fullName}
                     onChange={(e) => setReviewData((p) => ({ ...p, fullName: e.target.value }))}
-                    className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3 font-sans text-[15px] text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
+                    className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3 font-sans text-base text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -282,7 +282,7 @@ export function ProjectPlanner() {
                     placeholder="Acme Co."
                     value={reviewData.businessName}
                     onChange={(e) => setReviewData((p) => ({ ...p, businessName: e.target.value }))}
-                    className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3 font-sans text-[15px] text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
+                    className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3 font-sans text-base text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
                   />
                 </div>
               </div>
@@ -296,7 +296,7 @@ export function ProjectPlanner() {
                     required
                     value={reviewData.email}
                     onChange={(e) => setReviewData((p) => ({ ...p, email: e.target.value }))}
-                    className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3 font-sans text-[15px] text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
+                    className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3 font-sans text-base text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -307,7 +307,7 @@ export function ProjectPlanner() {
                     required
                     value={reviewData.whatsapp}
                     onChange={(e) => setReviewData((p) => ({ ...p, whatsapp: e.target.value }))}
-                    className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3 font-sans text-[15px] text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
+                    className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3 font-sans text-base text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
                   />
                 </div>
               </div>

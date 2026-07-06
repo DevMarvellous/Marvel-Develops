@@ -17,7 +17,7 @@ export default function WorkPage() {
       <Navbar />
       <main className="min-h-screen bg-white pb-24 pt-32 lg:pt-40">
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--container-pad-mobile)] lg:px-[var(--container-pad-desktop)]">
-          <header className="mb-14 max-w-3xl lg:mb-20">
+          <header className="mb-8 max-w-3xl lg:mb-20">
             <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.12em] text-gold">
               Our Work
             </p>
@@ -30,7 +30,7 @@ export default function WorkPage() {
             </p>
           </header>
 
-          <div className="grid gap-8 lg:grid-cols-2">
+          <div className="grid gap-8 sm:grid-cols-2">
             {projects.map((project) => (
               <Link
                 key={project.slug}
@@ -49,7 +49,7 @@ export default function WorkPage() {
                     {project.category}
                   </span>
                 </div>
-                <div className="flex flex-1 flex-col p-7">
+                <div className="flex flex-1 flex-col p-5 sm:p-7">
                   <div className="mb-2 flex items-start justify-between gap-3">
                     <h2 className="font-display text-xl font-bold text-text-dark">{project.title}</h2>
                     <ArrowUpRight className="h-5 w-5 shrink-0 text-text-muted transition-colors group-hover:text-royal-blue" />

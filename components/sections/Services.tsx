@@ -86,7 +86,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, x, y, transformStyle: 'preserve-3d' }}
-      className="group relative cursor-default rounded-[var(--radius-card)] border border-border bg-white p-7 transition-all duration-400 hover:-translate-y-2 hover:border-royal-blue hover:shadow-[var(--shadow-hover)]"
+      className="group relative cursor-default rounded-[var(--radius-card)] border border-border bg-white p-7 transition-all duration-400 hover:-translate-y-2 hover:border-royal-blue hover:shadow-[var(--shadow-hover)] active:scale-[0.98]"
     >
       {/* Gold border trace on hover */}
       <div className="pointer-events-none absolute inset-0 rounded-[var(--radius-card)] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -159,7 +159,7 @@ export function Services() {
           <div className="mt-8 text-center lg:hidden">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="font-sans text-sm font-semibold text-royal-blue underline underline-offset-4"
+              className="rounded-lg border border-royal-blue/30 px-4 py-3 font-sans text-sm font-semibold text-royal-blue transition-colors hover:bg-royal-blue/5"
             >
               {showAll ? 'Show less' : 'Show all services'}
             </button>
