@@ -100,6 +100,7 @@ export async function sendPlannerMessage(history: Message[], userMessage: string
     return { done: false, reply: text }
   } catch (error: unknown) {
     const msg = error instanceof Error ? error.message : String(error)
+    console.error('Planner API Error (raw):', msg)
     if (msg.includes('429') || msg.toLowerCase().includes('quota') || msg.toLowerCase().includes('rate')) {
       throw new Error('rate_limited')
     }
