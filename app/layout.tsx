@@ -24,7 +24,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Marvel Develops — Software, end to end',
   description: 'Marvel Develops is a software agency that builds custom software — web, mobile, and SaaS — for businesses.',
-  keywords: 'software agency, custom software development, web app development, SaaS, mobile app development',
+  keywords: 'software agency, custom software development, web app development, SaaS, mobile app development, Marvellous Adepoju',
+  authors: [{ name: 'Marvellous Adepoju', url: 'https://marveldevelops.com/about' }],
+  creator: 'Marvellous Adepoju',
   openGraph: {
     title: 'Marvel Develops — Software, end to end',
     description: 'Marvel Develops is a software agency that builds custom software — web, mobile, and SaaS — for businesses.',
@@ -58,12 +60,43 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  // JSON-LD structured data for Google Knowledge Graph
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Marvel Develops',
+    image: 'https://marveldevelops.com/brand-logo.svg',
+    description: 'Marvel Develops is a software agency that builds custom software — web, mobile, and SaaS — for businesses.',
+    '@id': 'https://marveldevelops.com',
+    url: 'https://marveldevelops.com',
+    telephone: '+2349030891731',
+    email: 'marvellousadepoju79@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'NG'
+    },
+    founder: {
+      '@type': 'Person',
+      name: 'Marvellous Adepoju',
+      jobTitle: 'Full-Stack Developer',
+      url: 'https://marveldevelops.com/about'
+    },
+    sameAs: [
+      'https://github.com/DevMarvellous',
+      'https://instagram.com/marvel_develops'
+    ]
+  };
+
   return (
     <html
       lang="en"
       className={`${inter.variable} ${jakarta.variable} ${jetbrainsMono.variable} bg-white overflow-x-hidden`}
     >
       <body className="font-sans antialiased overflow-x-hidden">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>

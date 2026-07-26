@@ -128,16 +128,18 @@ export const projects: Project[] = [
     overview:
       'The Harvester is an RCCG church in Nigeria that needed a website as welcoming and well-presented as their community. We designed and built a clean, visually distinctive site that works as the church\'s digital home — giving visitors a clear picture of who they are and how to get involved.',
     problem:
-      'The church had no dedicated web presence. Visitors looking for service times, location, or information about the community had nowhere to go online — everything relied on word of mouth and social media posts that got buried.',
+      'The Harvester church had no dedicated digital footprint. Visitors looking for service times, location, or information about the community had nowhere to go online — everything relied on word of mouth and social media posts that easily got buried. They needed a custom web platform that could clearly communicate their mission and serve as a welcoming digital home for new visitors.',
     solution:
-      'We designed and built a clean, visually distinctive website that serves as the church\'s permanent digital home. The site is fast, easy to navigate on any device, and gives visitors everything they need — who the church is, when and where services run, and how to get in touch.',
+      'We developed a lightning-fast custom website using a modern frontend architecture built on Native HTML5, CSS3, and JavaScript. We designed a highly responsive, mobile-first interface that drastically improved their online visibility and local SEO. This digital home makes it effortless for visitors to find service times and contact the administration, establishing a highly professional and reliable web presence for the church community.',
     highlights: [
       'Clean, distinctive design that reflects the character of the community',
-      'Fast, mobile-first build — works on any device',
+      'Fast, mobile-first build — works perfectly on any device',
       'Clear layout for service times, location, and contact information',
+      'Custom frontend architecture for lightning-fast load times',
     ],
-    stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    stack: ['Native HTML5', 'Vanilla CSS3', 'JavaScript'],
     image: '/work/harvester.png',
+    liveUrl: 'https://theharvesterministry.com',
     featured: true,
   },
 ]
