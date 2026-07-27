@@ -1,14 +1,15 @@
 import { MetadataRoute } from 'next'
+import { publishedProjects } from '@/lib/portfolio'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://marveldevelops.com'
 
-  return [
+  const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 1,
+      priority: 1.0,
     },
     {
       url: `${baseUrl}/about`,
@@ -27,6 +28,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
-    }
+    },
   ]
+
+  const projectRoutes: MetadataRoute.Sitemap = publishedProjects.map((p) => ({
+    url: `${baseUrl}/work/${p.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }))
+
+  return [...staticRoutes, ...projectRoutes]
 }

@@ -8,7 +8,15 @@ import { SectionHeader } from '@/components/ui/SectionHeader'
 
 export const metadata: Metadata = {
   title: 'About — Marvel Develops',
-  description: 'Marvellous Adepoju, founder of Marvel Develops — building websites, apps, dashboards, and management systems for businesses.',
+  description: 'Marvellous Adepoju, founder & system architect of Marvel Develops — building custom web applications, mobile apps, dashboards, and management systems for businesses.',
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'About Marvellous Adepoju — Marvel Develops',
+    description: 'Marvellous Adepoju, founder & system architect of Marvel Develops — building custom web applications, mobile apps, dashboards, and management systems for businesses.',
+    url: 'https://marveldevelops.com/about',
+  },
 }
 
 const bio = [

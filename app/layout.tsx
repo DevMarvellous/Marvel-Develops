@@ -23,29 +23,31 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: 'Marvel Develops — Software, end to end',
-  description: 'Marvel Develops is a software agency that builds custom software — web, mobile, and SaaS — for businesses.',
-  keywords: 'software agency, custom software development, web app development, SaaS, mobile app development, Marvellous Adepoju',
+  description: 'Marvel Develops is a full-stack software agency building custom web applications, mobile apps, SaaS products, and AI solutions for businesses worldwide.',
+  keywords: 'software agency, custom software development, web app development, SaaS, mobile app development, Marvellous Adepoju, React, Next.js, AI integration',
   authors: [{ name: 'Marvellous Adepoju', url: 'https://marveldevelops.com/about' }],
   creator: 'Marvellous Adepoju',
+  alternates: {
+    canonical: './',
+  },
   openGraph: {
     title: 'Marvel Develops — Software, end to end',
-    description: 'Marvel Develops is a software agency that builds custom software — web, mobile, and SaaS — for businesses.',
+    description: 'Marvel Develops is a full-stack software agency building custom web applications, mobile apps, SaaS products, and AI solutions for businesses worldwide.',
     url: 'https://marveldevelops.com',
     siteName: 'Marvel Develops',
     locale: 'en_US',
     type: 'website',
-    // TODO: add public/og-image.png (1200×630) — referenced below.
     images: [{
       url: '/og-image.png',
       width: 1200,
       height: 630,
-      alt: 'Marvel Develops',
+      alt: 'Marvel Develops — Custom Web Apps & Software Solutions',
     }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Marvel Develops — Software, end to end',
-    description: 'Marvel Develops is a software agency that builds custom software — web, mobile, and SaaS — for businesses.',
+    description: 'Marvel Develops is a full-stack software agency building custom web applications, mobile apps, SaaS products, and AI solutions for businesses worldwide.',
     images: ['/og-image.png'],
   },
   icons: {
@@ -71,20 +73,60 @@ export default function RootLayout({
     url: 'https://marveldevelops.com',
     telephone: '+2349030891731',
     email: 'marvellousadepoju79@gmail.com',
+    priceRange: '$$$',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'NG'
     },
+    areaServed: 'Worldwide',
     founder: {
       '@type': 'Person',
       name: 'Marvellous Adepoju',
-      jobTitle: 'Full-Stack Developer',
+      jobTitle: 'Full-Stack Developer & System Architect',
       url: 'https://marveldevelops.com/about'
     },
+    knowsAbout: [
+      'Full-Stack Web Development',
+      'Next.js & React Applications',
+      'Mobile App Development',
+      'SaaS System Architecture',
+      'Google Gemini AI Integrations',
+      'Custom API Development'
+    ],
     sameAs: [
       'https://github.com/DevMarvellous',
       'https://instagram.com/marvel_develops'
-    ]
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Software Development Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Custom Web Application Development',
+            description: 'Scalable, modern web apps built with Next.js, React, and TypeScript.'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'SaaS Architecture & Development',
+            description: 'End-to-end SaaS application engineering, database design, and cloud deployment.'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'AI Integration & Chatbot Solutions',
+            description: 'Custom AI assistants and automated planning tools integrated into business platforms.'
+          }
+        }
+      ]
+    }
   };
 
   return (

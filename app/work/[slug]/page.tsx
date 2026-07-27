@@ -19,9 +19,30 @@ export async function generateMetadata({
   const { slug } = await params
   const project = getProject(slug)
   if (!project) return { title: 'Case Study — Marvel Develops' }
+  const canonicalUrl = `https://marveldevelops.com/work/${project.slug}`
   return {
     title: `${project.title} — Marvel Develops`,
-    description: project.summary,
+    description: project.overview || project.summary,
+    alternates: {
+      canonical: `/work/${project.slug}`,
+    },
+    openGraph: {
+      title: `${project.title} Case Study | Marvel Develops`,
+      description: project.overview || project.summary,
+      url: canonicalUrl,
+      images: [
+        {
+          url: project.image,
+          alt: project.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${project.title} Case Study | Marvel Develops`,
+      description: project.overview || project.summary,
+      images: [project.image],
+    },
   }
 }
 

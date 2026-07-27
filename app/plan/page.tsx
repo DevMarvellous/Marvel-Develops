@@ -5,7 +5,15 @@ import { ProjectPlanner } from '@/components/planner/ProjectPlanner'
 
 export const metadata: Metadata = {
   title: 'Plan My Project — Marvel Develops',
-  description: 'Answer a few quick questions and our AI will help you figure out what to build — then send it straight to our team.',
+  description: 'Use our AI Project Planner to define requirements, tech stack, and scope for your web app, mobile app, or SaaS idea.',
+  alternates: {
+    canonical: '/plan',
+  },
+  openGraph: {
+    title: 'AI Project Planner | Marvel Develops',
+    description: 'Use our AI Project Planner to define requirements, tech stack, and scope for your web app, mobile app, or SaaS idea.',
+    url: 'https://marveldevelops.com/plan',
+  },
 }
 
 export default function PlanPage() {

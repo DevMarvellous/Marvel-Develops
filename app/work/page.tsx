@@ -8,7 +8,15 @@ import { publishedProjects as projects } from '@/lib/portfolio'
 
 export const metadata: Metadata = {
   title: 'Our Work — Marvel Develops',
-  description: 'Selected software projects built by Marvel Develops — web apps, mobile apps, and custom SaaS platforms.',
+  description: 'Selected software engineering projects built by Marvel Develops — custom web applications, mobile apps, and SaaS platforms.',
+  alternates: {
+    canonical: '/work',
+  },
+  openGraph: {
+    title: 'Our Work & Portfolio | Marvel Develops',
+    description: 'Selected software engineering projects built by Marvel Develops — custom web applications, mobile apps, and SaaS platforms.',
+    url: 'https://marveldevelops.com/work',
+  },
 }
 
 export default function WorkPage() {
