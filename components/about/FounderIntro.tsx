@@ -42,7 +42,7 @@ export function FounderIntro() {
             className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-white/80 backdrop-blur"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            Founder
+            Software Developer
           </motion.p>
 
           <motion.h1
@@ -63,7 +63,7 @@ export function FounderIntro() {
             className="mb-9"
           >
             <p className="font-display text-xl font-bold text-white">Marvellous Adepoju</p>
-            <p className="font-sans text-base text-white/60">Founder, Marvel Develops</p>
+            <p className="font-sans text-base text-white/60">Software Developer & Architect &middot; Marvel Develops</p>
           </motion.div>
 
           <motion.div
@@ -102,7 +102,7 @@ export function FounderIntro() {
           <div className="relative aspect-[4/5] overflow-hidden rounded-[24px] bg-navy">
             <Image
               src="/founder.jpg"
-              alt="Marvellous Adepoju, founder of Marvel Develops"
+              alt="Marvellous Adepoju — Software Developer & Architect behind Marvel Develops"
               fill
               sizes="(max-width: 1024px) 90vw, 460px"
               className="object-cover"
