@@ -83,7 +83,8 @@ export default function RootLayout({
       '@type': 'Person',
       name: 'Marvellous Adepoju',
       jobTitle: 'Full-Stack Developer & System Architect',
-      url: 'https://marveldevelops.com/about'
+      url: 'https://marveldevelops.com/about',
+      image: 'https://marveldevelops.com/founder.jpg'
     },
     knowsAbout: [
       'Full-Stack Web Development',
