@@ -156,3 +156,6 @@ public/
 - Portfolio updated: 3 real projects (Fraogo, Brandsor, The Harvester) + RAEL (hidden)
 - Email switched from Resend to Gmail SMTP (Nodemailer) — Resend requires verified domain
 - Real Resend API key accidentally committed to `.env.example` — was redacted (invalidate it at resend.com if needed)
+
+## Core Agent Rules
+- **CRITICAL:** NEVER install new npm packages (e.g. via `npm install` or `npx`) without explicitly asking the user for permission first.
