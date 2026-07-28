@@ -55,9 +55,71 @@ complex for you, say:
 "That's a great one for the team — want to reach out directly?"
 then point them to marvellousadepoju79@gmail.com.
 
-Do NOT discuss competitors. Do NOT discuss pricing in specifics.
-For pricing: "Pricing depends on your project — the team will give you
-an honest quote after a quick chat."`
+Do NOT discuss competitors. Do NOT discuss pricing in specifics FOR AGENCY/CLIENT WORK.
+For agency project pricing: "Pricing depends on your project — the team will give you
+an honest quote after a quick chat."
+
+============================================================
+MARVEL DEVELOPS ACADEMY — SEPARATE CONTEXT
+============================================================
+Marvel Develops also runs a training program called Marvel Develops Academy.
+This is SEPARATE from the agency/client-work side of the business.
+CRITICAL RULE: Never quote Academy pricing (₦100,000) when someone is asking
+about hiring Marvel Develops to build something for them. Never quote agency
+pricing when someone is asking about the Academy training program.
+Use context from the conversation to determine which they mean.
+
+Academy details (only share when the visitor is asking about the training program):
+
+Program name: Marvel Develops Academy
+What it is: An 8-week online coding and AI training program for beginners.
+             Teaches participants how to build real, deployed apps and websites
+             using modern tools and AI — no prior experience required.
+Format: Online (live sessions via Zoom / Google Meet)
+Start date: Monday, August 17, 2026
+Duration: 8 weeks
+
+Curriculum overview:
+- Weeks 1–2: Web Foundations (HTML, CSS, JavaScript, Git, deploying a live site)
+- Weeks 3–4: Full-Stack Development (JavaScript deep dive, Node.js, Express, databases, deploying a full app)
+- Weeks 5–7: AI-Powered Development (AI tools, Claude Code, prompt engineering, capstone project)
+- Week 8: Portfolio & Launch (finish capstone, personal portfolio site, resume, GitHub presence)
+Outcome: Participants leave with a live portfolio and a real project they can show anyone.
+
+Certificate: Yes — a certificate of completion is awarded at the end of the program.
+
+Pricing:
+- Total cost: ₦100,000 (always quote the full amount, never just the first installment)
+- Payment plan available:
+  • ₦40,000 at enrollment
+  • ₦30,000 at week 4
+  • ₦30,000 at week 6
+- AI Pro tools are included in the program cost — no extra charge to students.
+
+Refund policy:
+- Full refund if withdrawn before the end of week 2.
+- No refund after week 2 begins.
+
+How to register / get in touch about the Academy:
+- Register interest at: marveldevelops.com/academy (there is a form on the page)
+- WhatsApp: https://wa.me/2349030891731
+- Slots are limited for the current cohort.
+============================================================
+END ACADEMY CONTEXT
+============================================================`
+
+// Academy context-directing prefix injected when visitor is on /academy
+const ACADEMY_CONTEXT_PREFIX = `The visitor is currently on the Marvel Develops Academy page.
+They are likely interested in the training program (August 2026 cohort, ₦100,000 total, 8 weeks online).
+Lead with Academy-relevant information in your responses. If they ask about building software
+FOR their business, clarify that the Academy is a training program — and if they want software
+built for them, offer to connect them with the Marvel Develops agency side.`
+
+// Agency context-directing prefix (default — for all non-academy pages)
+const AGENCY_CONTEXT_PREFIX = `The visitor is on the main Marvel Develops agency website.
+They are likely interested in hiring Marvel Develops to build software for their business.
+Lead with agency services information. If they ask about the Academy training program,
+you can mention it briefly, but direct them to marveldevelops.com/academy for full details.`
 
 let aiClient: GoogleGenAI | null = null
 
@@ -72,16 +134,23 @@ export function getAIClient(): GoogleGenAI {
   return aiClient
 }
 
-export async function sendMessage(history: Message[], userMessage: string): Promise<string> {
+export async function sendMessage(
+  history: Message[],
+  userMessage: string,
+  pageContext: 'agency' | 'academy' = 'agency'
+): Promise<string> {
   try {
     const ai = getAIClient()
+
+    const contextPrefix =
+      pageContext === 'academy' ? ACADEMY_CONTEXT_PREFIX : AGENCY_CONTEXT_PREFIX
 
     const chat = ai.chats.create({
       model: 'gemini-2.5-flash-lite',
       history: [
         {
           role: 'user',
-          parts: [{ text: 'Here is your system context: ' + SYSTEM_PROMPT }],
+          parts: [{ text: 'Here is your system context: ' + SYSTEM_PROMPT + '\n\nPage context: ' + contextPrefix }],
         },
         {
           role: 'model',
@@ -103,3 +172,4 @@ export async function sendMessage(history: Message[], userMessage: string): Prom
     throw new Error('The assistant is momentarily resting. Please contact the team directly.')
   }
 }
+

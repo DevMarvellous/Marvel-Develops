@@ -11,10 +11,12 @@ const navLinks = [
   { href: '/#services', label: 'Services' },
   { href: '/work', label: 'Work' },
   { href: '/about', label: 'About' },
+  { href: '/academy', label: 'Academy' },
   { href: '/plan', label: 'Plan my project' },
   { href: '/#faq', label: 'FAQ' },
   { href: '/#contact', label: 'Contact' },
 ]
+
 
 export function Navbar() {
   const pathname = usePathname()

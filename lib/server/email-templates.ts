@@ -1,4 +1,4 @@
-export type SubmissionSource = 'contact_form' | 'ai_planner'
+export type SubmissionSource = 'contact_form' | 'ai_planner' | 'academy_register'
 
 export interface EmailSubmissionData {
   source: SubmissionSource
@@ -21,7 +21,11 @@ function escapeHtml(value: string): string {
 }
 
 const sourceLabel = (source: SubmissionSource) =>
-  source === 'ai_planner' ? 'AI Project Planner' : 'Contact Form'
+  source === 'ai_planner'
+    ? 'AI Project Planner'
+    : source === 'academy_register'
+    ? 'Academy Registration'
+    : 'Contact Form'
 
 export function adminNotificationEmail(data: EmailSubmissionData): { subject: string; html: string } {
   const rows: Array<[string, string | null | undefined]> = [
@@ -72,6 +76,51 @@ export function customerFollowUpEmail(data: EmailSubmissionData): { subject: str
           </a>
         </p>
         <p style="color:#64748B;font-size:13px;">— The Marvel Develops team</p>
+      </div>
+    `,
+  }
+}
+
+// ============================================================================
+// Academy registration admin notification
+// ============================================================================
+
+export interface AcademyRegistrationData {
+  fullName: string
+  phone: string
+  email?: string | null
+  registeringFor: string
+  message?: string | null
+}
+
+export function academyRegistrationEmail(
+  data: AcademyRegistrationData
+): { subject: string; html: string } {
+  const rows: Array<[string, string | null | undefined]> = [
+    ['Name', data.fullName],
+    ['Phone / WhatsApp', data.phone],
+    ['Email', data.email],
+    ['Registering for', data.registeringFor],
+  ]
+
+  const rowsHtml = rows
+    .filter(([, value]) => Boolean(value))
+    .map(
+      ([label, value]) =>
+        `<tr><td style="padding:6px 12px;color:#64748B;font-size:13px;">${escapeHtml(label)}</td><td style="padding:6px 12px;font-size:14px;color:#0F172A;">${escapeHtml(String(value))}</td></tr>`
+    )
+    .join('')
+
+  return {
+    subject: `🎓 New Academy Registration — ${data.fullName}`,
+    html: `
+      <div style="font-family:sans-serif;max-width:560px;margin:0 auto;">
+        <h2 style="color:#0F172A;">New Academy Registration</h2>
+        <p style="color:#64748B;font-size:13px;margin-bottom:12px;">Someone has registered interest in Marvel Develops Academy (August 2026 cohort).</p>
+        <table style="border-collapse:collapse;width:100%;margin-bottom:16px;">${rowsHtml}</table>
+        ${data.message ? `<p style="color:#64748B;font-size:13px;margin-bottom:4px;">Message</p><p style="font-size:14px;color:#0F172A;white-space:pre-wrap;">${escapeHtml(data.message)}</p>` : ''}
+        <hr style="border:none;border-top:1px solid #E5E7EB;margin:20px 0;" />
+        <p style="color:#64748B;font-size:12px;">Reply to this email or WhatsApp the registrant to follow up.</p>
       </div>
     `,
   }

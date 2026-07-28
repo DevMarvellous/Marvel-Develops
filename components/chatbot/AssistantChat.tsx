@@ -12,7 +12,13 @@ const CONTACT_LINK = 'https://wa.me/2349030891731'
 
 const MAX_MESSAGES = 20
 
-export function AssistantChat() {
+interface AssistantChatProps {
+  /** Which page the visitor is on — used to direct the AI's context.
+   *  Defaults to 'agency' (main site). Pass 'academy' on the Academy page. */
+  pageContext?: 'agency' | 'academy'
+}
+
+export function AssistantChat({ pageContext = 'agency' }: AssistantChatProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
   const [messages, setMessages] = useState<Message[]>([])
@@ -77,7 +83,7 @@ export function AssistantChat() {
       // Lazy-load the fetch wrapper so it's not in the initial page bundle.
       // The actual AI SDK now lives only in the server route, never shipped to the browser.
       const { sendChatMessage } = await import('@/lib/chat-client')
-      const response = await sendChatMessage(messages, userMessage)
+      const response = await sendChatMessage(messages, userMessage, pageContext)
       setMessages(prev => [...prev, { role: 'assistant', content: response }])
     } catch {
       setMessages(prev => [...prev, {

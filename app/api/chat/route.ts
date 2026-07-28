@@ -12,16 +12,18 @@ export async function POST(request: Request) {
   const body = await request.json().catch(() => null)
   const history = body?.history as Message[] | undefined
   const message = body?.message as string | undefined
+  const pageContext = (body?.pageContext as 'agency' | 'academy' | undefined) ?? 'agency'
 
   if (!message || typeof message !== 'string') {
     return NextResponse.json({ error: 'Message is required' }, { status: 400 })
   }
 
   try {
-    const reply = await sendMessage(history ?? [], message)
+    const reply = await sendMessage(history ?? [], message, pageContext)
     return NextResponse.json({ reply })
   } catch (error) {
     console.error('Chat route error:', error)
     return NextResponse.json({ error: 'Failed to get a response' }, { status: 500 })
   }
 }
+
