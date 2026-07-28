@@ -6,19 +6,11 @@
       <stop offset="100%" stop-color="#7C3AED"/>
     </linearGradient>
   </defs>
-
-  <!-- Bars forming the M silhouette -->
+  <rect x="0" y="0" width="240" height="220" fill="#FFFFFF"/>
   <rect x="20"  y="55"  width="26" height="140" rx="6" fill="url(#barGradient)"/>
   <rect x="58"  y="95"  width="26" height="100" rx="6" fill="url(#barGradient)"/>
   <rect x="96"  y="135" width="26" height="60"  rx="6" fill="url(#barGradient)"/>
   <rect x="134" y="75"  width="26" height="120" rx="6" fill="url(#barGradient)"/>
   <rect x="172" y="15"  width="26" height="180" rx="6" fill="url(#barGradient)"/>
-
-  <!-- Checkmark accent stroke, in gold, crossing the bars -->
-  <path d="M 71 100 L 109 180 L 185 40"
-        fill="none"
-        stroke="#F59E0B"
-        stroke-width="16"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
+  <path d="M 71 100 L 109 180 L 185 40" fill="none" stroke="#F59E0B" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

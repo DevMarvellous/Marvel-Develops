@@ -65,7 +65,7 @@ export default function AcademyLayout({
               alt="Marvel Develops"
               width={36}
               height={36}
-              className="h-8 w-8 brightness-0 invert lg:h-9 lg:w-9"
+              className="h-8 w-8 lg:h-9 lg:w-9"
               priority
             />
             <span className="font-display text-xl font-black tracking-tight text-white lg:text-[22px]">

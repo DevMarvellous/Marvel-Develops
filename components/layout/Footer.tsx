@@ -48,7 +48,7 @@ export function Footer() {
                 alt="Brand Symbol"
                 width={32}
                 height={32}
-                className="h-8 w-8 brightness-0 invert"
+                className="h-8 w-8"
               />
               <span className="font-display text-2xl font-black tracking-tight text-white">
                 Marvel Develops

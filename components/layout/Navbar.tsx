@@ -59,9 +59,7 @@ export function Navbar() {
               alt="Marvel Develops"
               width={40}
               height={40}
-              className={`h-8 w-8 transition-all duration-300 lg:h-9 lg:w-9 ${
-                solid ? '' : 'brightness-0 invert'
-              }`}
+              className={`h-8 w-8 transition-all duration-300 lg:h-9 lg:w-9`}
               priority
             />
             <span

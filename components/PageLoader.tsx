@@ -51,7 +51,7 @@ export function PageLoader({ children }: PageLoaderProps) {
                 alt="Brand Symbol"
                 width={80}
                 height={80}
-                className="h-16 w-16 brightness-0 invert md:h-20 md:w-20"
+                className="h-16 w-16 md:h-20 md:w-20"
               />
               Marvel Develops
             </motion.div>
