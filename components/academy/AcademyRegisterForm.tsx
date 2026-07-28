@@ -52,7 +52,7 @@ export function AcademyRegisterForm() {
         body: JSON.stringify({
           fullName: form.fullName,
           phone: form.phone,
-          email: form.email || undefined,
+          email: form.email,
           registeringFor: form.registeringFor,
           message: form.message || undefined,
           honeypot: form.honeypot,
@@ -180,16 +180,16 @@ export function AcademyRegisterForm() {
                   />
                 </div>
 
-                {/* Email (optional) */}
+                {/* Email (required) */}
                 <div>
                   <label htmlFor="academy-email" className={labelClass}>
-                    Email Address{' '}
-                    <span className="font-normal text-text-muted">(optional)</span>
+                    Email Address <span className="text-gold">*</span>
                   </label>
                   <input
                     id="academy-email"
                     name="email"
                     type="email"
+                    required
                     maxLength={200}
                     placeholder="your@email.com"
                     value={form.email}

@@ -1,13 +1,13 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { getClientIp, isRateLimited } from '@/lib/server/rate-limit'
-import { academyRegistrationEmail } from '@/lib/server/email-templates'
+import { academyRegistrationEmail, academyConfirmationEmail } from '@/lib/server/email-templates'
 import nodemailer from 'nodemailer'
 
 const academySchema = z.object({
   fullName: z.string().min(1).max(200),
   phone: z.string().min(1).max(40),
-  email: z.string().email().optional().or(z.literal('')),
+  email: z.string().email(), // required — needed for confirmation email
   registeringFor: z.string().min(1).max(100),
   message: z.string().max(2000).optional(),
   honeypot: z.string().optional(),
@@ -25,7 +25,7 @@ function createTransport() {
   })
 }
 
-const FROM = 'Marvel Develops <marvellousadepoju79@gmail.com>'
+const FROM = 'Marvel Develops Academy <marvellousadepoju79@gmail.com>'
 
 export async function POST(request: Request) {
   const ip = getClientIp(request)
@@ -48,17 +48,26 @@ export async function POST(request: Request) {
 
   try {
     const transport = createTransport()
-    const to = process.env.ADMIN_NOTIFICATION_EMAIL!
+    const adminTo = process.env.ADMIN_NOTIFICATION_EMAIL!
 
-    const { subject, html } = academyRegistrationEmail({
+    const registrationData = {
       fullName: data.fullName,
       phone: data.phone,
-      email: data.email || null,
+      email: data.email,
       registeringFor: data.registeringFor,
       message: data.message || null,
-    })
+    }
 
-    await transport.sendMail({ from: FROM, to, subject, html })
+    // Send both emails in parallel:
+    // 1. Admin notification (to ADMIN_NOTIFICATION_EMAIL)
+    // 2. Registrant confirmation (to their email address)
+    const { subject: adminSubject, html: adminHtml } = academyRegistrationEmail(registrationData)
+    const { subject: confirmSubject, html: confirmHtml } = academyConfirmationEmail(registrationData)
+
+    await Promise.all([
+      transport.sendMail({ from: FROM, to: adminTo, subject: adminSubject, html: adminHtml }),
+      transport.sendMail({ from: FROM, to: data.email, subject: confirmSubject, html: confirmHtml }),
+    ])
 
     return NextResponse.json({ ok: true })
   } catch (error) {
@@ -66,3 +75,4 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: 'Something went wrong' }, { status: 500 })
   }
 }
+
