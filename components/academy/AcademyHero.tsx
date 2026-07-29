@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowDown, CalendarDays } from 'lucide-react'
 
-const ease = [0.16, 1, 0.3, 1]
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 export function AcademyHero() {
   const [isMounted, setIsMounted] = useState(false)

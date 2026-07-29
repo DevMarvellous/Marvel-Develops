@@ -8,7 +8,7 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { featuredProjects } from '@/lib/portfolio'
 
-const ease = [0.16, 1, 0.3, 1]
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 export function WorkTeaser() {
   const sectionRef = useRef<HTMLElement>(null)

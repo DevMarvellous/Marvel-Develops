@@ -6,7 +6,7 @@ import { SectionHeader } from '@/components/ui/SectionHeader'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { BadgeCheck, Download } from 'lucide-react'
 
-const ease = [0.16, 1, 0.3, 1]
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 const phases = [
   {

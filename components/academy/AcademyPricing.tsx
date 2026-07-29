@@ -6,7 +6,7 @@ import { ACADEMY_PRICING, formatNaira } from '@/lib/academy-config'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { BadgeCheck, CreditCard, Info } from 'lucide-react'
 
-const ease = [0.16, 1, 0.3, 1]
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 export function AcademyPricing() {
   const sectionRef = useRef<HTMLElement>(null)

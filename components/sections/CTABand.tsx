@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight, MessageCircle, Sparkles } from 'lucide-react'
 
-const ease = [0.16, 1, 0.3, 1]
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 export function CTABand() {
   const sectionRef = useRef<HTMLElement>(null)

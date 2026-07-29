@@ -7,7 +7,7 @@ import { ExternalLink } from 'lucide-react'
 import Image from 'next/image'
 import { projects } from '@/lib/portfolio'
 
-const ease = [0.16, 1, 0.3, 1]
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 // Pull specific projects by slug, in display order
 const FEATURED_SLUGS = [

@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { Rocket, FolderOpen, Brain } from 'lucide-react'
 
-const ease = [0.16, 1, 0.3, 1]
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 const reasons = [
   {

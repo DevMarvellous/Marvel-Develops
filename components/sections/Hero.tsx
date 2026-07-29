@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ChevronDown, ArrowRight, ShieldCheck, Users, Repeat } from 'lucide-react'
 
-const ease = [0.16, 1, 0.3, 1]
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 const trust = [
   { icon: ShieldCheck, label: 'Software you own' },

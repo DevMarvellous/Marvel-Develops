@@ -167,7 +167,7 @@ export async function sendMessage(
     const result = await chat.sendMessage({
       message: userMessage
     })
-    return result.text
+    return result.text || ''
   } catch (error) {
     console.error('Assistant API Error:', error)
     throw new Error('The assistant is momentarily resting. Please contact the team directly.')

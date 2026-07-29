@@ -44,7 +44,7 @@ const services = [
   },
 ]
 
-const ease = [0.16, 1, 0.3, 1]
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null)

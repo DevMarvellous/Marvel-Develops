@@ -84,7 +84,7 @@ export async function sendPlannerMessage(history: Message[], userMessage: string
     })
 
     const result = await chat.sendMessage({ message: userMessage })
-    const text = result.text.trim()
+    const text = (result.text || '').trim()
 
     if (text.startsWith('PLAN_READY')) {
       const jsonText = text.slice('PLAN_READY'.length).trim()

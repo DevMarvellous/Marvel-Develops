@@ -25,7 +25,7 @@ const services = [
   "Not sure yet — let's talk",
 ]
 
-const ease = [0.16, 1, 0.3, 1]
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 export function Contact() {
   const sectionRef = useRef<HTMLElement>(null)

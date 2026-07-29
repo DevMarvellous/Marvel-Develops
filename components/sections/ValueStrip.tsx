@@ -10,7 +10,7 @@ const values = [
   'Post-Launch Support',
 ]
 
-const ease = [0.16, 1, 0.3, 1]
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 export function ValueStrip() {
   const sectionRef = useRef<HTMLElement>(null)

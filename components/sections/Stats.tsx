@@ -10,7 +10,7 @@ const stats = [
   { value: 'Always', label: 'We stay with you after launch, not vanish' },
 ]
 
-const ease = [0.16, 1, 0.3, 1]
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 export function Stats() {
   const sectionRef = useRef<HTMLElement>(null)

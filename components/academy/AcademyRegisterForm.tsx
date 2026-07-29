@@ -7,7 +7,7 @@ import { SectionHeader } from '@/components/ui/SectionHeader'
 import { Loader2, CheckCircle2 } from 'lucide-react'
 import { toast } from 'sonner'
 
-const ease = [0.16, 1, 0.3, 1]
+const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 interface FormState {
   fullName: string
