@@ -21,15 +21,13 @@ export const metadata: Metadata = {
 }
 
 const bio = [
-  "Marvellous Adepoju is a Computer Engineering student at Redeemer's University, Nigeria, and the person behind every project Marvel Develops ships. He has been in software development for two years.",
-  "He started because he kept watching businesses struggle with software that didn't fit how they actually operated. So he builds the kind he'd want to use himself: clean, reliable, and made around the actual problem — not what's fashionable.",
-  "Today that means websites, mobile apps, dashboards, and management systems for founders and business owners who just want something that works. No jargon, no bloat, and no disappearing after launch.",
+  "Marvellous Adepoju is a Computer Engineering student at Redeemer's University and the lead developer behind Marvel Develops.",
+  "He builds clean, reliable software—including websites, mobile apps, and custom dashboards. His focus is on solving actual business problems without unnecessary jargon, bloated features, or disappearing after launch.",
 ]
 
 const ebunoluwaBio = [
-  "Ebunoluwa Adepoju is the Marketing and Media Lead at Marvel Develops, bringing a deep passion for emerging technologies and modern communication.",
-  "As a Mass Communication student and a natural leader, she ensures that the technical solutions built by the team translate into clear, trustworthy narratives for our clients and their audiences.",
-  "A creative force, Ebunoluwa blends her talents as a spoken word artist and spokesperson with cutting-edge AI video generation to craft compelling media. Her voice and vision help humanize our software, bridging the gap between complex code and the people who use it."
+  "Ebunoluwa Adepoju is the Marketing and Media Lead at Marvel Develops and a 300-level Mass Communication student.",
+  "A natural leader and spoken word artist, she leverages AI-generated video and emerging tech to ensure our software solutions are communicated clearly and connect genuinely with their intended audiences.",
 ]
 
 const focusAreas = [
