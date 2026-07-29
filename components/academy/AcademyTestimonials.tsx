@@ -7,19 +7,18 @@ import { Quote } from 'lucide-react'
 
 const ease = [0.16, 1, 0.3, 1]
 
-// TODO: Replace PLACEHOLDER text below with real testimonial quotes, names, and roles.
 const testimonials = [
   {
     quote:
-      'PLACEHOLDER — Replace this with a real testimonial quote from a student or parent. This should describe what they got out of the training in their own words.',
-    name: 'PLACEHOLDER Name',
+      'The Marvel Develops Academy was exactly what I needed. Learning to build real, deployed applications with modern tools and AI gave me the confidence to start my career in tech. The hands-on capstone project was fantastic.',
+    name: 'Emmanuel Adegeye',
     role: 'Student · Marvel Develops Academy',
   },
   {
     quote:
-      'PLACEHOLDER — Replace this with a second real testimonial. Ideally from a parent registering their child, or someone who had zero experience before joining.',
-    name: 'PLACEHOLDER Name',
-    role: 'PLACEHOLDER Role',
+      'I started this program with absolutely zero experience, and by the end of it I was building full-stack web applications. The instructors break everything down so clearly, and the AI tools we learned are game-changers.',
+    name: 'David Omotayo',
+    role: 'Graduate · Marvel Develops Academy',
   },
 ]
 
