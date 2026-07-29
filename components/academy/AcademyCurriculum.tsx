@@ -109,7 +109,7 @@ export function AcademyCurriculum() {
             {/* Tab content */}
             {phases.map((phase) => (
               <TabsContent key={phase.id} value={phase.id}>
-                <div className="rounded-[20px] border border-border bg-gray-white p-6 lg:p-10">
+                <div className="rounded-[20px] border border-border bg-gray-white p-5 lg:p-10">
                   <p className="mb-1 font-mono text-[11px] uppercase tracking-[0.14em] text-gold">
                     {phase.label}
                   </p>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { ExternalLink } from 'lucide-react'
@@ -11,9 +11,9 @@ const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 // Pull specific projects by slug, in display order
 const FEATURED_SLUGS = [
-  'harvester-church-website',
-  'fraogo-operations-platform',
   'brandsor-brand-identity-platform',
+  'fraogo-operations-platform',
+  'harvester-church-website',
 ]
 
 const featuredProjects = FEATURED_SLUGS.map((slug) =>
@@ -23,6 +23,8 @@ const featuredProjects = FEATURED_SLUGS.map((slug) =>
 export function AcademyProjects() {
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.15 })
+  const [isExpanded, setIsExpanded] = useState(false)
+  const showViewAllBtn = !isExpanded && featuredProjects.length > 1
 
   return (
     <section
@@ -34,7 +36,7 @@ export function AcademyProjects() {
           initial={{ opacity: 0, y: 48, filter: 'blur(4px)' }}
           animate={isInView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
           transition={{ duration: 0.8, ease }}
-          className="mb-14"
+          className="mb-8 lg:mb-14"
         >
           <SectionHeader
             label="Real Projects"
@@ -50,7 +52,9 @@ export function AcademyProjects() {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, ease, delay: 0.1 + i * 0.1 }}
-              className="group flex flex-col overflow-hidden rounded-[20px] border border-border bg-white shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-hover)]"
+              className={`group flex flex-col overflow-hidden rounded-[20px] border border-border bg-white shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-hover)] ${
+                !isExpanded && i > 0 ? 'hidden lg:flex' : ''
+              }`}
             >
               {/* Screenshot */}
               <div className="relative aspect-[16/9] overflow-hidden bg-gray-light">
@@ -64,7 +68,7 @@ export function AcademyProjects() {
               </div>
 
               {/* Info */}
-              <div className="flex flex-1 flex-col p-5 lg:p-6">
+              <div className="flex flex-1 flex-col p-4 lg:p-6">
                 <p className="mb-1 font-mono text-[11px] uppercase tracking-[0.14em] text-gold">
                   {project.category}
                 </p>
@@ -90,6 +94,17 @@ export function AcademyProjects() {
             </motion.div>
           ))}
         </div>
+
+        {showViewAllBtn && (
+          <div className="mt-8 flex justify-center lg:hidden">
+            <button
+              onClick={() => setIsExpanded(true)}
+              className="rounded-full border border-border bg-white px-6 py-3 font-sans text-sm font-semibold text-text-dark shadow-[var(--shadow-card)] transition-colors hover:bg-gray-light"
+            >
+              View all projects
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )

@@ -15,12 +15,12 @@ const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 const faqs = [
   {
-    q: 'Does my child need a laptop?',
-    a: 'Yes — a working laptop or desktop computer is required to participate. A phone alone is not enough for coding work. The laptop does not need to be powerful; a standard everyday laptop is fine.',
-  },
-  {
     q: 'Do I need any coding experience before starting?',
     a: 'None at all. The programme is designed specifically for beginners — we start from the very basics and build up from there. If you can use a browser, you can start.',
+  },
+  {
+    q: 'Does my child need a laptop?',
+    a: 'Yes — a working laptop or desktop computer is required to participate. A phone alone is not enough for coding work. The laptop does not need to be powerful; a standard everyday laptop is fine.',
   },
   {
     q: 'Is this online or in-person?',

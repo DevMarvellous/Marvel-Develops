@@ -21,9 +21,9 @@ export const metadata: Metadata = {
 }
 
 const bio = [
-  "Marvellous Adepoju is a Software Engineer with over 2 years of experience developing custom software solutions and automations for businesses.",
-  "He is a member of the International Association of Project Managers (IAPM) Nigeria and an official Realtor at Lifepage International.",
-  "He builds clean, reliable tools that solve actual business problems without unnecessary jargon, and is currently pursuing his degree in Computer Engineering at Redeemer's University.",
+  "Marvellous has been building production software since 2024 — websites, full-stack web apps, AI-integrated platforms, and management systems for real businesses across Nigeria and internationally.",
+  "He built Marvel Develops from the ground up, and every project in the portfolio was shipped by him directly. The Academy curriculum is drawn from exactly what he uses on real client work — not a textbook repackaged as a course.",
+  "His approach: teach by building. Every concept is introduced in the context of something you actually ship. By the time you leave, you won't just understand the theory — you'll have the proof."
 ]
 
 const ebunoluwaBio = [

@@ -9,6 +9,7 @@ import { AcademyPricing } from '@/components/academy/AcademyPricing'
 import { AcademyFAQ } from '@/components/academy/AcademyFAQ'
 import { AcademyRegisterForm } from '@/components/academy/AcademyRegisterForm'
 import { AcademyFinalCTA } from '@/components/academy/AcademyFinalCTA'
+import { MobileStickyCTA } from '@/components/academy/MobileStickyCTA'
 
 /**
  * /academy — Marvel Develops Academy landing page.
@@ -44,7 +45,7 @@ export default function AcademyPage() {
       <AcademyProjects />
 
       {/* 5 — Testimonials (TODO: replace PLACEHOLDER content) */}
-      <AcademyTestimonials />
+      {/* <AcademyTestimonials /> */}
 
       {/* 6 — About the Instructor (TODO: refine bio copy) */}
       <AcademyInstructor />
@@ -60,6 +61,8 @@ export default function AcademyPage() {
 
       {/* 10 — Final CTA */}
       <AcademyFinalCTA />
+
+      <MobileStickyCTA />
     </>
   )
 }

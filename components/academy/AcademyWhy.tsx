@@ -59,7 +59,7 @@ export function AcademyWhy() {
                 initial={reason.animateFrom}
                 animate={isInView ? { x: 0, y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.8, ease }}
-                className="rounded-[20px] border border-border bg-white p-6 shadow-[var(--shadow-card)] lg:p-9"
+                className="rounded-[20px] border border-border bg-white p-5 shadow-[var(--shadow-card)] lg:p-9"
               >
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-royal-blue-soft">
                   <Icon className="h-6 w-6 stroke-royal-blue stroke-[1.5]" />

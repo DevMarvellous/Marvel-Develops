@@ -103,7 +103,7 @@ export function AssistantChat({ pageContext = 'agency' }: AssistantChatProps) {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className={`fixed right-6 z-50 transition-all duration-300 ${pageContext === 'academy' ? 'bottom-24 lg:bottom-6' : 'bottom-6'}`}>
       {/* Chat Button */}
       {isMounted && (
         <motion.button

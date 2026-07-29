@@ -75,19 +75,13 @@ export function AcademyInstructor() {
             className="mb-8 space-y-4 font-sans text-[15px] leading-relaxed text-white/65"
           >
             <p>
-              Marvellous has been building production software since 2024 — websites, full-stack
-              web apps, AI-integrated platforms, and management systems for real businesses across
-              Nigeria and internationally.
+              Marvellous Adepoju is a Software Engineer with over 2 years of experience developing custom software solutions and automations for businesses.
             </p>
             <p>
-              He built Marvel Develops from the ground up, and every project in the portfolio
-              was shipped by him directly. The Academy curriculum is drawn from exactly what he
-              uses on real client work — not a textbook repackaged as a course.
+              He is a member of the International Association of Project Managers (IAPM) Nigeria and an official Realtor at Lifepage International.
             </p>
             <p>
-              His approach: teach by building. Every concept is introduced in the context of
-              something you actually ship. By the time you leave, you won&apos;t just understand
-              the theory — you&apos;ll have the proof.
+              He builds clean, reliable tools that solve actual business problems without unnecessary jargon, and is currently pursuing his degree in Computer Engineering at Redeemer&apos;s University.
             </p>
           </motion.div>
 

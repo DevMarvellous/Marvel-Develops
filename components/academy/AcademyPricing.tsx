@@ -37,7 +37,7 @@ export function AcademyPricing() {
           initial={{ opacity: 0, y: 48, filter: 'blur(4px)' }}
           animate={isInView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
           transition={{ duration: 0.8, ease }}
-          className="mb-12 text-center"
+          className="mb-8 lg:mb-12 text-center"
         >
           <SectionHeader
             label="Pricing"
@@ -57,7 +57,7 @@ export function AcademyPricing() {
             {/* Price header */}
             <div className="border-b border-border bg-navy-deep px-8 py-8 text-center text-white">
               <p className="mb-2 font-mono text-[12px] uppercase tracking-[0.14em] text-white/60">
-                Programme Total
+                Total Investment
               </p>
               
               {isEarlyBird ? (
@@ -70,9 +70,14 @@ export function AcademyPricing() {
                   </p>
                 </>
               ) : (
-                <p className="font-display text-[clamp(48px,7vw,72px)] font-black leading-none tracking-tight text-white">
-                  {formatNaira(ACADEMY_PRICING.totalPrice)}
-                </p>
+                <div className="flex items-baseline gap-4">
+                  <p className="font-display text-[clamp(48px,7vw,72px)] font-black leading-none tracking-tight text-white">
+                    {formatNaira(ACADEMY_PRICING.totalPrice)}
+                  </p>
+                  <p className="font-display text-[clamp(28px,4vw,36px)] font-bold text-white/60">
+                    / $55
+                  </p>
+                </div>
               )}
               
               <p className="mt-3 font-sans text-sm text-white/55">
@@ -142,10 +147,14 @@ export function AcademyPricing() {
                 id="academy-pricing-cta"
                 className="mt-7 w-full rounded-full bg-gold py-4 font-sans text-base font-semibold text-navy-deep shadow-[0_4px_20px_rgba(245,158,11,0.3)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(245,158,11,0.4)] active:scale-[0.97]"
               >
-                Register Interest
+                Reserve Your Spot
               </button>
             </div>
           </div>
+          
+          <p className="mt-6 text-center font-sans text-[13px] leading-relaxed text-text-muted px-4">
+            Most coding bootcamps in Nigeria cost ₦150,000 and up — this includes AI tool access most programmes charge extra for.
+          </p>
         </motion.div>
       </div>
     </section>

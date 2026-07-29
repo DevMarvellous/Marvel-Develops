@@ -112,7 +112,7 @@ export function AcademyHero() {
             onClick={scrollToRegister}
             className="group inline-flex items-center gap-2 rounded-full bg-gold px-9 py-4 font-sans text-base font-semibold text-navy-deep shadow-[0_4px_24px_rgba(245,158,11,0.35)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_8px_36px_rgba(245,158,11,0.45)] active:scale-[0.97]"
           >
-            Register Interest
+            Reserve Your Spot
             <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
           </button>
         </motion.div>

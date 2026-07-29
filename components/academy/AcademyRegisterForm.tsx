@@ -94,12 +94,12 @@ export function AcademyRegisterForm() {
           initial={{ opacity: 0, y: 48, filter: 'blur(4px)' }}
           animate={isInView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
           transition={{ duration: 0.8, ease }}
-          className="mb-12 text-center"
+          className="mb-8 lg:mb-12 text-center"
         >
           <SectionHeader
-            label="Register Interest"
+            label="Reserve Your Spot"
             headline={<>Secure your spot.</>}
-            subtext="Slots are limited for the August 2026 cohort. Fill in your details and we'll be in touch with next steps."
+            subtext="This is our first cohort. Fill in your details and we'll be in touch with next steps."
             centered
           />
         </motion.div>
@@ -251,7 +251,7 @@ export function AcademyRegisterForm() {
                     Submitting…
                   </span>
                 ) : (
-                  'Register Interest →'
+                  'Reserve Your Spot →'
                 )}
               </button>
 

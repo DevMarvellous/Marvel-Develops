@@ -62,11 +62,11 @@
 
   /* Container */
   --container-max: 1200px;
-  --container-pad-mobile: 20px;
+  --container-pad-mobile: 16px;
   --container-pad-desktop: 48px;
 
   /* Section padding */
-  --section-py-mobile: 64px;
+  --section-py-mobile: 32px;
   --section-py-desktop: 120px;
 
   /* Border radius */

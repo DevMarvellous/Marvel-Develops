@@ -29,15 +29,14 @@ export function AcademyFinalCTA() {
           transition={{ duration: 0.8, ease }}
         >
           <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-5 py-2 font-mono text-[12px] uppercase tracking-[0.14em] text-gold">
-            Limited Slots
+            First Cohort — Enrolling Now
           </p>
 
           <h2 className="mb-5 font-display text-[clamp(28px,4.5vw,52px)] font-bold leading-[1.1] tracking-tight">
             Ready to start building?
           </h2>
           <p className="mb-10 mx-auto max-w-lg font-sans text-lg leading-relaxed text-white/65">
-            Slots for the August 2026 cohort are limited. Register your interest now to
-            secure your place — no payment required to register.
+            This is our first cohort, and classes start Monday, August 17, 2026. Reserve your spot now so you don't miss the first two weeks of foundations.
           </p>
 
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -46,7 +45,7 @@ export function AcademyFinalCTA() {
               id="academy-final-cta-btn"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-9 py-4 font-sans text-base font-semibold text-navy-deep shadow-[0_4px_24px_rgba(245,158,11,0.35)] transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[0_8px_36px_rgba(245,158,11,0.45)] active:scale-[0.97] sm:w-auto"
             >
-              Register Interest
+              Reserve Your Spot
               <ArrowDown className="h-4 w-4" />
             </button>
 
