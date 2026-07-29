@@ -42,10 +42,14 @@ export function adminNotificationEmail(data: EmailSubmissionData): { subject: st
 
   const rowsHtml = rows
     .filter(([, value]) => Boolean(value))
-    .map(
-      ([label, value]) =>
-        `<tr><td style="padding:6px 12px;color:#64748B;font-size:13px;">${escapeHtml(label)}</td><td style="padding:6px 12px;font-size:14px;color:#0F172A;">${escapeHtml(String(value))}</td></tr>`
-    )
+    .map(([label, value]) => {
+      let displayValue = escapeHtml(String(value))
+      if (label === 'WhatsApp' && value) {
+        const cleanNumber = String(value).replace(/[^0-9]/g, '')
+        displayValue = `<a href="https://wa.me/${cleanNumber}" style="color:#4F46E5;">${escapeHtml(String(value))}</a>`
+      }
+      return `<tr><td style="padding:6px 12px;color:#64748B;font-size:13px;">${escapeHtml(label)}</td><td style="padding:6px 12px;font-size:14px;color:#0F172A;">${displayValue}</td></tr>`
+    })
     .join('')
 
   return {
@@ -107,10 +111,14 @@ export function academyRegistrationEmail(
 
   const rowsHtml = rows
     .filter(([, value]) => Boolean(value))
-    .map(
-      ([label, value]) =>
-        `<tr><td style="padding:6px 12px;color:#64748B;font-size:13px;">${escapeHtml(label)}</td><td style="padding:6px 12px;font-size:14px;color:#0F172A;">${escapeHtml(String(value))}</td></tr>`
-    )
+    .map(([label, value]) => {
+      let displayValue = escapeHtml(String(value))
+      if (label === 'Phone / WhatsApp' && value) {
+        const cleanNumber = String(value).replace(/[^0-9]/g, '')
+        displayValue = `<a href="https://wa.me/${cleanNumber}" style="color:#4F46E5;">${escapeHtml(String(value))}</a>`
+      }
+      return `<tr><td style="padding:6px 12px;color:#64748B;font-size:13px;">${escapeHtml(label)}</td><td style="padding:6px 12px;font-size:14px;color:#0F172A;">${displayValue}</td></tr>`
+    })
     .join('')
 
   return {
