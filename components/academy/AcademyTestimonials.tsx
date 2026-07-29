@@ -17,7 +17,7 @@ const testimonials = [
   {
     quote:
       'I started this program with absolutely zero experience, and by the end of it I was building full-stack web applications. The instructors break everything down so clearly, and the AI tools we learned are game-changers.',
-    name: 'David Omotayo',
+    name: 'Dominion Gbuvworo',
     role: 'Graduate · Marvel Develops Academy',
   },
 ]

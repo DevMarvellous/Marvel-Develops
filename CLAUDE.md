@@ -159,3 +159,4 @@ public/
 
 ## Core Agent Rules
 - **CRITICAL:** NEVER install new npm packages (e.g. via `npm install` or `npx`) without explicitly asking the user for permission first.
+- **CRITICAL:** NEVER push to git (`git push`) without explicitly telling the user first and getting their permission.
