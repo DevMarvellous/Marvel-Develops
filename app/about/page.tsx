@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Monitor, Smartphone, BarChart3, ClipboardList, ArrowRight } from 'lucide-react'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
@@ -25,6 +26,12 @@ const bio = [
   "Today that means websites, mobile apps, dashboards, and management systems for founders and business owners who just want something that works. No jargon, no bloat, and no disappearing after launch.",
 ]
 
+const ebunoluwaBio = [
+  "Ebunoluwa Adepoju is the Marketing and Media Lead at Marvel Develops, bringing a deep passion for emerging technologies and modern communication.",
+  "As a Mass Communication student and a natural leader, she ensures that the technical solutions built by the team translate into clear, trustworthy narratives for our clients and their audiences.",
+  "A creative force, Ebunoluwa blends her talents as a spoken word artist and spokesperson with cutting-edge AI video generation to craft compelling media. Her voice and vision help humanize our software, bridging the gap between complex code and the people who use it."
+]
+
 const focusAreas = [
   { icon: Monitor, label: 'Websites & web apps', description: 'Fast, professional, and built to convert.' },
   { icon: Smartphone, label: 'Mobile apps', description: 'For Android and iPhone, made to feel effortless.' },
@@ -46,6 +53,34 @@ export default function AboutPage() {
               <SectionHeader label="Bio" headline="The short version." />
               <div className="space-y-5 font-sans text-lg leading-relaxed text-text-mid">
                 {bio.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Ebunoluwa Profile */}
+        <section className="px-[var(--container-pad-mobile)] pb-20 lg:px-[var(--container-pad-desktop)] lg:pb-28">
+          <div className="mx-auto max-w-[var(--container-max)]">
+            <div className="grid gap-12 lg:grid-cols-[280px_1fr] lg:gap-20">
+              <div className="relative">
+                <div className="relative aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-[24px] bg-gray-white border border-border">
+                  <Image
+                    src="/ebunoluwa.jpg"
+                    alt="Ebunoluwa Adepoju - Marketing and Media Lead"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 280px"
+                  />
+                </div>
+                <div className="mt-6">
+                  <h3 className="font-display text-2xl font-bold text-text-dark">Ebunoluwa Adepoju</h3>
+                  <p className="mt-2 font-mono text-sm font-semibold tracking-wide text-royal-blue uppercase">Marketing & Media Lead</p>
+                </div>
+              </div>
+              <div className="space-y-5 font-sans text-lg leading-relaxed text-text-mid lg:pt-8">
+                {ebunoluwaBio.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
