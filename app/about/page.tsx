@@ -21,12 +21,13 @@ export const metadata: Metadata = {
 }
 
 const bio = [
-  "Marvellous Adepoju is a Computer Engineering student at Redeemer's University and the lead developer behind Marvel Develops.",
-  "He builds clean, reliable software—including websites, mobile apps, and custom dashboards. His focus is on solving actual business problems without unnecessary jargon, bloated features, or disappearing after launch.",
+  "Marvellous Adepoju is a Software Engineer with over 2 years of experience developing custom software solutions and automations for businesses.",
+  "He is a member of the International Association of Project Managers (IAPM) Nigeria and an official Realtor at Lifepage International.",
+  "He builds clean, reliable tools that solve actual business problems without unnecessary jargon, and is currently pursuing his degree in Computer Engineering at Redeemer's University.",
 ]
 
 const ebunoluwaBio = [
-  "Ebunoluwa Adepoju is the Marketing and Media Lead at Marvel Develops and a 300-level Mass Communication student.",
+  "Ebunoluwa Adepoju is the Marketing and Media Lead at Marvel Develops and a Mass Communication student.",
   "A natural leader and spoken word artist, she leverages AI-generated video and emerging tech to ensure our software solutions are communicated clearly and connect genuinely with their intended audiences.",
 ]
 
