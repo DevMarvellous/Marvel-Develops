@@ -1,5 +1,6 @@
 import { GoogleGenAI } from '@google/genai'
 import type { Message } from '@/lib/types'
+import { ACADEMY_PRICING, formatNaira } from '@/lib/academy-config'
 
 // ============================================================================
 // Marvel Develops AI assistant system prompt. Keep it accurate — never
@@ -64,7 +65,7 @@ MARVEL DEVELOPS ACADEMY — SEPARATE CONTEXT
 ============================================================
 Marvel Develops also runs a training program called Marvel Develops Academy.
 This is SEPARATE from the agency/client-work side of the business.
-CRITICAL RULE: Never quote Academy pricing (₦100,000) when someone is asking
+CRITICAL RULE: Never quote Academy pricing (${formatNaira(ACADEMY_PRICING.totalPrice)}) when someone is asking
 about hiring Marvel Develops to build something for them. Never quote agency
 pricing when someone is asking about the Academy training program.
 Use context from the conversation to determine which they mean.
@@ -89,11 +90,11 @@ Outcome: Participants leave with a live portfolio and a real project they can sh
 Certificate: Yes — a certificate of completion is awarded at the end of the program.
 
 Pricing:
-- Total cost: ₦100,000 (always quote the full amount, never just the first installment)
+- Total cost: ${formatNaira(ACADEMY_PRICING.totalPrice)} (always quote the full amount, never just the first installment)
 - Payment plan available:
-  • ₦40,000 at enrollment
-  • ₦30,000 at week 4
-  • ₦30,000 at week 6
+  • ${formatNaira(ACADEMY_PRICING.installments[0].amount)} at enrollment
+  • ${formatNaira(ACADEMY_PRICING.installments[1].amount)} at week 4
+  • ${formatNaira(ACADEMY_PRICING.installments[2].amount)} at week 6
 - AI Pro tools are included in the program cost — no extra charge to students.
 
 Refund policy:
@@ -110,7 +111,7 @@ END ACADEMY CONTEXT
 
 // Academy context-directing prefix injected when visitor is on /academy
 const ACADEMY_CONTEXT_PREFIX = `The visitor is currently on the Marvel Develops Academy page.
-They are likely interested in the training program (August 2026 cohort, ₦100,000 total, 8 weeks online).
+They are likely interested in the training program (August 2026 cohort, ${formatNaira(ACADEMY_PRICING.totalPrice)} total, 8 weeks online).
 Lead with Academy-relevant information in your responses. If they ask about building software
 FOR their business, clarify that the Academy is a training program — and if they want software
 built for them, offer to connect them with the Marvel Develops agency side.`

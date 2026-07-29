@@ -1,3 +1,5 @@
+import { ACADEMY_PRICING, formatNaira } from '@/lib/academy-config'
+
 export type SubmissionSource = 'contact_form' | 'ai_planner' | 'academy_register'
 
 export interface EmailSubmissionData {
@@ -182,7 +184,7 @@ export function academyConfirmationEmail(
           <!-- Key details -->
           <p style="margin:0 0 8px;font-size:13px;color:#64748B;">A few quick things to know:</p>
           <ul style="margin:0 0 20px;padding-left:20px;">
-            <li style="font-size:14px;line-height:1.7;color:#374151;">Total programme cost is <strong>&#8358;100,000</strong> &mdash; payable in 3 instalments (&#8358;40k at enrollment, &#8358;30k at week 4, &#8358;30k at week 6).</li>
+            <li style="font-size:14px;line-height:1.7;color:#374151;">Total programme cost is <strong>${formatNaira(ACADEMY_PRICING.totalPrice)}</strong> &mdash; payable in 3 instalments (${formatNaira(ACADEMY_PRICING.installments[0].amount)} at enrollment, ${formatNaira(ACADEMY_PRICING.installments[1].amount)} at week 4, ${formatNaira(ACADEMY_PRICING.installments[2].amount)} at week 6).</li>
             <li style="font-size:14px;line-height:1.7;color:#374151;">AI Pro tools are included &mdash; no extra subscriptions needed.</li>
             <li style="font-size:14px;line-height:1.7;color:#374151;">You will receive a certificate of completion at the end.</li>
             <li style="font-size:14px;line-height:1.7;color:#374151;">Full refund available if you withdraw before the end of week 2.</li>

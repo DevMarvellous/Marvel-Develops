@@ -52,8 +52,13 @@ export const metadata: Metadata = {
     images: ['/og-image.png'],
   },
   icons: {
-    icon: '/brand-logo.svg',
-    apple: '/brand-logo.svg',
+    icon: [
+      { url: '/favicon.ico?v=2', sizes: 'any' },
+      { url: '/brand-logo.svg?v=2', type: 'image/svg+xml' }
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png?v=2' }
+    ],
   },
   metadataBase: new URL('https://marveldevelops.com'),
 }

@@ -1,21 +1,26 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { ACADEMY_PRICING, formatNaira } from '@/lib/academy-config'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import { BadgeCheck, CreditCard, Info } from 'lucide-react'
 
 const ease = [0.16, 1, 0.3, 1]
 
-const installments = [
-  { label: 'At enrollment', amount: '₦40,000' },
-  { label: 'Week 4', amount: '₦30,000' },
-  { label: 'Week 6', amount: '₦30,000' },
-]
-
 export function AcademyPricing() {
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
+
+  const [isEarlyBird, setIsEarlyBird] = useState(false)
+
+  useEffect(() => {
+    if (ACADEMY_PRICING.earlyBird.enabled) {
+      const now = new Date()
+      const deadline = new Date(ACADEMY_PRICING.earlyBird.deadline)
+      setIsEarlyBird(now < deadline)
+    }
+  }, [])
 
   const scrollToRegister = () => {
     document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' })
@@ -54,9 +59,22 @@ export function AcademyPricing() {
               <p className="mb-2 font-mono text-[12px] uppercase tracking-[0.14em] text-white/60">
                 Programme Total
               </p>
-              <p className="font-display text-[clamp(48px,7vw,72px)] font-black leading-none tracking-tight text-white">
-                ₦100,000
-              </p>
+              
+              {isEarlyBird ? (
+                <>
+                  <p className="font-display text-[clamp(48px,7vw,72px)] font-black leading-none tracking-tight text-white">
+                    {formatNaira(ACADEMY_PRICING.earlyBird.price)}
+                  </p>
+                  <p className="mt-2 inline-flex items-center justify-center rounded-full bg-gold/10 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-gold">
+                    if you register before {new Date(ACADEMY_PRICING.earlyBird.deadline).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })} — then {formatNaira(ACADEMY_PRICING.totalPrice)}
+                  </p>
+                </>
+              ) : (
+                <p className="font-display text-[clamp(48px,7vw,72px)] font-black leading-none tracking-tight text-white">
+                  {formatNaira(ACADEMY_PRICING.totalPrice)}
+                </p>
+              )}
+              
               <p className="mt-3 font-sans text-sm text-white/55">
                 8 weeks &middot; Online &middot; AI Pro tools included
               </p>
@@ -75,7 +93,7 @@ export function AcademyPricing() {
               </p>
 
               <div className="space-y-3">
-                {installments.map((inst, i) => (
+                {ACADEMY_PRICING.installments.map((inst, i) => (
                   <div
                     key={inst.label}
                     className="flex items-center justify-between rounded-xl border border-border bg-gray-white px-5 py-3.5"
@@ -87,7 +105,7 @@ export function AcademyPricing() {
                       <span className="font-sans text-[14px] text-text-dark">{inst.label}</span>
                     </div>
                     <span className="font-display text-[16px] font-bold text-text-dark">
-                      {inst.amount}
+                      {formatNaira(inst.amount)}
                     </span>
                   </div>
                 ))}

@@ -1,5 +1,6 @@
 import { AcademyHero } from '@/components/academy/AcademyHero'
 import { AcademyWhy } from '@/components/academy/AcademyWhy'
+import { AcademyFormatAndSupport } from '@/components/academy/AcademyFormatAndSupport'
 import { AcademyCurriculum } from '@/components/academy/AcademyCurriculum'
 import { AcademyProjects } from '@/components/academy/AcademyProjects'
 import { AcademyTestimonials } from '@/components/academy/AcademyTestimonials'
@@ -33,7 +34,10 @@ export default function AcademyPage() {
       {/* 2 — Why This Training */}
       <AcademyWhy />
 
-      {/* 3 — Full 8-Week Curriculum */}
+      {/* 3 — Format & Support */}
+      <AcademyFormatAndSupport />
+
+      {/* 4 — Full 8-Week Curriculum */}
       <AcademyCurriculum />
 
       {/* 4 — Real Projects Built By Marvel Develops */}

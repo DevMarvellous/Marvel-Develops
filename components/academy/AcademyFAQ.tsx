@@ -2,6 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { ACADEMY_PRICING, formatNaira } from '@/lib/academy-config'
 import { SectionHeader } from '@/components/ui/SectionHeader'
 import {
   Accordion,
@@ -39,7 +40,7 @@ const faqs = [
   },
   {
     q: 'Do I need to pay extra for AI tools during the training?',
-    a: 'No — access to the AI Pro tools used throughout the programme is included in the ₦100,000 programme cost. You will not be asked to pay for any extra subscriptions or tools.',
+    a: `No — access to the AI Pro tools used throughout the programme is included in the ${formatNaira(ACADEMY_PRICING.totalPrice)} programme cost. You will not be asked to pay for any extra subscriptions or tools.`,
   },
 ]
 
