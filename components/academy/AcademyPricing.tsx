@@ -75,7 +75,7 @@ export function AcademyPricing() {
                     {formatNaira(ACADEMY_PRICING.totalPrice)}
                   </p>
                   <p className="font-display text-[clamp(28px,4vw,36px)] font-bold text-white/60">
-                    / $55
+                    / $33
                   </p>
                 </div>
               )}
