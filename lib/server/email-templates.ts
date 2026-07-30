@@ -1,4 +1,4 @@
-import { ACADEMY_PRICING, formatNaira } from '@/lib/academy-config'
+import { ACADEMY_PRICING, ACADEMY_WHATSAPP_GROUP_URL, formatNaira } from '@/lib/academy-config'
 
 export type SubmissionSource = 'contact_form' | 'ai_planner' | 'academy_register'
 
@@ -193,16 +193,17 @@ export function academyConfirmationEmail(
           <p style="margin:0 0 8px;font-size:13px;color:#64748B;">A few quick things to know:</p>
           <ul style="margin:0 0 20px;padding-left:20px;">
             <li style="font-size:14px;line-height:1.7;color:#374151;">Total programme cost is <strong>${formatNaira(ACADEMY_PRICING.totalPrice)}</strong> &mdash; payable in 3 instalments (${formatNaira(ACADEMY_PRICING.installments[0].amount)} at enrollment, ${formatNaira(ACADEMY_PRICING.installments[1].amount)} at week 4, ${formatNaira(ACADEMY_PRICING.installments[2].amount)} at week 6).</li>
-            <li style="font-size:14px;line-height:1.7;color:#374151;">AI Pro tools are included &mdash; no extra subscriptions needed.</li>
             <li style="font-size:14px;line-height:1.7;color:#374151;">You will receive a certificate of completion at the end.</li>
             <li style="font-size:14px;line-height:1.7;color:#374151;">Full refund available if you withdraw before the end of week 2.</li>
           </ul>
 
-          <p style="margin:0 0 16px;line-height:1.6;">Have a question in the meantime? Message us directly on WhatsApp:</p>
+          <p style="margin:0 0 16px;line-height:1.6;">Join our official WhatsApp group for updates, or message us directly if you have any questions:</p>
 
-          <!-- WhatsApp CTA -->
+          <!-- WhatsApp CTAs -->
           <div style="text-align:center;margin:24px 0;">
-            <a href="https://wa.me/2349030891731?text=Hi%2C%20I%20just%20registered%20for%20Marvel%20Develops%20Academy" style="display:inline-block;background:#25D366;color:#ffffff;font-weight:700;font-size:15px;padding:14px 32px;border-radius:9999px;text-decoration:none;">Message on WhatsApp</a>
+            <a href="${ACADEMY_WHATSAPP_GROUP_URL}" style="display:inline-block;background:#25D366;color:#ffffff;font-weight:700;font-size:15px;padding:14px 28px;border-radius:9999px;text-decoration:none;margin-bottom:10px;">Join WhatsApp Group</a>
+            <br />
+            <a href="https://wa.me/2349030891731?text=Hi%2C%20I%20just%20registered%20for%20Marvel%20Develops%20Academy" style="display:inline-block;background:#F1F5F9;color:#0F172A;font-weight:600;font-size:14px;padding:10px 24px;border-radius:9999px;text-decoration:none;margin-top:6px;">Message Direct on WhatsApp</a>
           </div>
 
           <p style="margin:24px 0 0;font-size:13px;color:#9CA3AF;">— The Marvel Develops team<br />marveldevelops.com/academy</p>

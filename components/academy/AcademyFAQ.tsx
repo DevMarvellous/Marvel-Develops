@@ -38,10 +38,6 @@ const faqs = [
     q: 'Do I get a certificate?',
     a: 'Yes. Everyone who completes the full 8-week programme receives a certificate of completion from Marvel Develops.',
   },
-  {
-    q: 'Do I need to pay extra for AI tools during the training?',
-    a: `No — access to the AI Pro tools used throughout the programme is included in the ${formatNaira(ACADEMY_PRICING.totalPrice)} programme cost. You will not be asked to pay for any extra subscriptions or tools.`,
-  },
 ]
 
 export function AcademyFAQ() {

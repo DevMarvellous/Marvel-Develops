@@ -128,7 +128,7 @@ export function AcademyHero() {
             'No prior experience needed',
             'Real projects — not just theory',
             'Certificate on completion',
-            'AI tools included at no extra cost',
+            'Live interactive sessions',
           ].map((item) => (
             <span key={item} className="inline-flex items-center gap-2 font-sans text-sm text-white/50">
               <span className="h-1.5 w-1.5 rounded-full bg-gold/70" />

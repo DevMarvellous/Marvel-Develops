@@ -47,14 +47,14 @@ export default function AcademyPage() {
       {/* 5 — Testimonials (TODO: replace PLACEHOLDER content) */}
       {/* <AcademyTestimonials /> */}
 
-      {/* 6 — About the Instructor (TODO: refine bio copy) */}
-      <AcademyInstructor />
-
       {/* 7 — Pricing & Payment Plan */}
       <AcademyPricing />
 
       {/* 8 — FAQ */}
       <AcademyFAQ />
+
+      {/* About the Instructor */}
+      <AcademyInstructor />
 
       {/* 9 — Registration Form (lead capture only — no payment) */}
       <AcademyRegisterForm />

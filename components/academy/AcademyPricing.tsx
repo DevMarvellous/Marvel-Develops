@@ -81,7 +81,7 @@ export function AcademyPricing() {
               )}
               
               <p className="mt-3 font-sans text-sm text-white/55">
-                8 weeks &middot; Online &middot; AI Pro tools included
+                8 weeks &middot; Online &middot; Practical Cohort
               </p>
             </div>
 
@@ -118,12 +118,6 @@ export function AcademyPricing() {
 
               {/* Inclusions */}
               <div className="mt-6 space-y-3">
-                <div className="flex items-start gap-3">
-                  <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                  <p className="font-sans text-[14px] text-text-mid">
-                    Includes access to AI Pro tools used throughout the training — no extra cost to you.
-                  </p>
-                </div>
                 <div className="flex items-start gap-3">
                   <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
                   <p className="font-sans text-[14px] text-text-mid">

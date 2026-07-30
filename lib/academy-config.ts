@@ -14,6 +14,8 @@ export const ACADEMY_PRICING = {
   },
 }
 
+export const ACADEMY_WHATSAPP_GROUP_URL = 'https://chat.whatsapp.com/BWOseG8UqurKaBJRZUQatU?s=em&p=a&mlu=4&amv=2'
+
 export function formatNaira(amount: number): string {
   return `${ACADEMY_PRICING.currency}${amount.toLocaleString('en-NG')}`
 }

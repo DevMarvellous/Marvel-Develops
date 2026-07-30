@@ -1,11 +1,12 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useInView } from 'framer-motion'
 import { motion } from 'framer-motion'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { Loader2, CheckCircle2 } from 'lucide-react'
+import { Loader2, CheckCircle2, MessageCircle, ExternalLink } from 'lucide-react'
 import { toast } from 'sonner'
+import { ACADEMY_WHATSAPP_GROUP_URL } from '@/lib/academy-config'
 
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
@@ -33,6 +34,24 @@ export function AcademyRegisterForm() {
   const [form, setForm] = useState<FormState>(initialForm)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [countdown, setCountdown] = useState(30)
+
+  useEffect(() => {
+    if (!submitted) return
+
+    const timer = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer)
+          window.location.href = ACADEMY_WHATSAPP_GROUP_URL
+          return 0
+        }
+        return prev - 1
+      })
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [submitted])
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -67,7 +86,7 @@ export function AcademyRegisterForm() {
 
       setSubmitted(true)
       toast.success("You're registered!", {
-        description: "We've got your details. We'll be in touch soon about the August cohort.",
+        description: "Redirecting you to our WhatsApp group in 30 seconds...",
         duration: 6000,
       })
     } catch {
@@ -99,7 +118,7 @@ export function AcademyRegisterForm() {
           <SectionHeader
             label="Reserve Your Spot"
             headline={<>Secure your spot.</>}
-            subtext="This is our first cohort. Fill in your details and we'll be in touch with next steps."
+            subtext="This is our first cohort. Fill in your details and join our WhatsApp group for updates."
             centered
           />
         </motion.div>
@@ -111,21 +130,31 @@ export function AcademyRegisterForm() {
           className="mx-auto max-w-lg"
         >
           {submitted ? (
-            <div className="flex flex-col items-center gap-4 rounded-[24px] border border-border bg-white p-10 text-center shadow-[var(--shadow-card)]">
-              <CheckCircle2 className="h-12 w-12 text-royal-blue" />
-              <h3 className="font-display text-2xl font-bold text-text-dark">You&apos;re registered!</h3>
+            <div className="flex flex-col items-center gap-5 rounded-[24px] border border-border bg-white p-8 text-center shadow-[var(--shadow-card)] lg:p-10">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-emerald-100 text-[#25D366]">
+                <CheckCircle2 className="h-10 w-10" />
+              </div>
+              <h3 className="font-display text-2xl font-bold text-text-dark">You&apos;re Registered!</h3>
               <p className="font-sans text-[15px] leading-relaxed text-text-mid">
-                We&apos;ve received your details and will be in touch shortly about the August 2026 cohort.
-                In the meantime, feel free to message us on WhatsApp with any questions.
+                We&apos;ve received your details. You will be automatically redirected to our official WhatsApp group in{' '}
+                <span className="font-mono font-bold text-royal-blue">{countdown}s</span> to complete your onboarding.
               </p>
-              <a
-                href="https://wa.me/2349030891731"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-7 py-3 font-sans text-base font-semibold text-white transition-opacity hover:opacity-90"
-              >
-                Message on WhatsApp
-              </a>
+
+              <div className="w-full rounded-2xl bg-royal-blue-soft p-4 text-center border border-royal-blue/10">
+                <p className="font-sans text-xs text-text-muted mb-3">
+                  Taking too long? Click below to join immediately:
+                </p>
+                <a
+                  href={ACADEMY_WHATSAPP_GROUP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3.5 font-sans text-base font-bold text-white shadow-md transition-all duration-200 hover:bg-[#20bd5a] hover:shadow-lg active:scale-[0.98]"
+                >
+                  <MessageCircle className="h-5 w-5 fill-current" />
+                  Join WhatsApp Group Now
+                  <ExternalLink className="h-4 w-4 opacity-80" />
+                </a>
+              </div>
             </div>
           ) : (
             <form

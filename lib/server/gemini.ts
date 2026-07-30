@@ -95,7 +95,6 @@ Pricing:
   • ${formatNaira(ACADEMY_PRICING.installments[0].amount)} at enrollment
   • ${formatNaira(ACADEMY_PRICING.installments[1].amount)} at week 4
   • ${formatNaira(ACADEMY_PRICING.installments[2].amount)} at week 6
-- AI Pro tools are included in the program cost — no extra charge to students.
 
 Refund policy:
 - Full refund if withdrawn before the end of week 2.
