@@ -1,16 +1,15 @@
 export const ACADEMY_PRICING = {
-  totalPrice: 45000,
+  totalPrice: 95000,
   installments: [
-    { label: "At enrollment", amount: 20000 },
-    { label: "Week 4", amount: 15000 },
-    { label: "Week 6", amount: 10000 },
+    { label: "At enrollment", amount: 50000 },
+    { label: "Week 4", amount: 45000 },
   ],
   currency: "₦",
-  // Optional early-bird promo — currently OFF. Leave `enabled: false` unless I turn it on.
+  // Optional early-bird promo — currently OFF.
   earlyBird: {
     enabled: false,
-    price: 40000,
-    deadline: "2026-09-05", // placeholder, I will confirm the real date before enabling
+    price: 85000,
+    deadline: "2026-09-05",
   },
 }
 

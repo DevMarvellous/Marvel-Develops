@@ -3,18 +3,21 @@ import Image from 'next/image'
 import { Instagram, Facebook } from 'lucide-react'
 
 const solutions = [
-  'Websites & Web Apps',
-  'Mobile Apps',
-  'Dashboards & Reporting',
-  'Management Systems',
-  'Custom Software',
+  'High-Converting Web Systems',
+  'Mobile Applications',
+  'Automations & Workflows',
+  'Custom Management Systems',
+  'Tailored Business Software',
+  'AI Consulting & Integration',
 ]
 
 const companyLinks = [
   { label: 'Services', href: '/#services' },
   { label: 'Work', href: '/work' },
   { label: 'About', href: '/about' },
-  { label: 'FAQ', href: '/#faq' },
+  { label: '10 Free Softwares', href: '/special' },
+  { label: 'Academy', href: '/academy' },
+  { label: 'Plan My Project', href: '/plan' },
   { label: 'Contact', href: '/#contact' },
   { label: 'Privacy Policy', href: '/privacy' },
 ]

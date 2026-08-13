@@ -21,9 +21,9 @@ export const metadata: Metadata = {
 }
 
 const bio = [
-  "Marvellous has been building production software since 2024 — websites, full-stack web apps, AI-integrated platforms, and management systems for real businesses across Nigeria and internationally.",
-  "He built Marvel Develops from the ground up, and every project in the portfolio was shipped by him directly. The Academy curriculum is drawn from exactly what he uses on real client work — not a textbook repackaged as a course.",
-  "His approach: teach by building. Every concept is introduced in the context of something you actually ship. By the time you leave, you won't just understand the theory — you'll have the proof."
+  "I'm Marvellous Adepoju — software developer, lead architect, and founder of Marvel Develops.",
+  "I build custom web applications, mobile apps, business management systems, and automated workflows for growing businesses.",
+  "I'm also actively sharing my engineering journey, software tutorials, and behind-the-scenes build logs across social media. Whether you need custom software built from scratch or guidance on automating your operations, I'm directly involved in every step of the project."
 ]
 
 const ebunoluwaBio = [
@@ -32,10 +32,10 @@ const ebunoluwaBio = [
 ]
 
 const focusAreas = [
-  { icon: Monitor, label: 'Websites & web apps', description: 'Fast, professional, and built to convert.' },
-  { icon: Smartphone, label: 'Mobile apps', description: 'For Android and iPhone, made to feel effortless.' },
-  { icon: BarChart3, label: 'Dashboards & reporting', description: 'Turning raw data into clear decisions.' },
-  { icon: ClipboardList, label: 'Management systems', description: 'Built around how your business actually runs.' },
+  { icon: Monitor, label: 'High-Converting Web Systems', description: 'Fast, modern websites and applications built to convert.' },
+  { icon: Smartphone, label: 'Mobile Applications', description: 'Custom iOS and Android apps made for great user experience.' },
+  { icon: ClipboardList, label: 'Automations & Systems', description: 'Cutting manual work with automated workflow tools.' },
+  { icon: BarChart3, label: 'AI Consulting & Integration', description: 'Integrating custom AI workflows directly into business tools.' },
 ]
 
 export default function AboutPage() {

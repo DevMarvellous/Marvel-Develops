@@ -315,6 +315,9 @@ export function Contact() {
                           </>
                         )}
                       </button>
+                      <p className="mt-3 text-center font-sans text-xs text-text-muted">
+                        🔒 100% Confidential. We sign NDAs upon request before discussing project details.
+                      </p>
                     </form>
                   </>
                 )}

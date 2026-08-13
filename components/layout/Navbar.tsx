@@ -5,16 +5,14 @@ import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Calendar } from 'lucide-react'
 
 const navLinks = [
   { href: '/#services', label: 'Services' },
   { href: '/work', label: 'Work' },
   { href: '/about', label: 'About' },
   { href: '/academy', label: 'Academy' },
-  { href: '/plan', label: 'Plan my project' },
-  { href: '/#faq', label: 'FAQ' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/plan', label: '✨ AI Planner' },
 ]
 
 
@@ -89,15 +87,17 @@ export function Navbar() {
 
           {/* CTA Button - Desktop */}
           <Link
-            href="/#contact"
-            className={`hidden rounded-full px-6 py-2.5 font-sans text-[15px] font-semibold transition-all duration-250 lg:flex ${
+            href={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/marvellousadepoju79/30min"}
+            target={process.env.NEXT_PUBLIC_CALENDLY_URL ? "_blank" : undefined}
+            rel={process.env.NEXT_PUBLIC_CALENDLY_URL ? "noopener noreferrer" : undefined}
+            className={`hidden items-center gap-2 rounded-full px-6 py-2.5 font-sans text-[15px] font-semibold transition-all duration-250 lg:flex ${
               solid
                 ? 'bg-royal-blue text-white hover:bg-royal-blue-dark hover:-translate-y-0.5 hover:shadow-[var(--shadow-hover)]'
                 : 'bg-white text-royal-blue hover:bg-gray-white'
             }`}
           >
-            <span className="mr-2">&rarr;</span>
-            Start a project
+            <Calendar className="h-4 w-4" />
+            Book Strategy Call
           </Link>
 
           {/* Mobile Menu Button */}
@@ -159,11 +159,14 @@ export function Navbar() {
 
               <div className="p-6">
                 <Link
-                  href="/#contact"
+                  href={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/marvellousadepoju79/30min"}
+                  target={process.env.NEXT_PUBLIC_CALENDLY_URL ? "_blank" : undefined}
+                  rel={process.env.NEXT_PUBLIC_CALENDLY_URL ? "noopener noreferrer" : undefined}
                   onClick={() => setIsDrawerOpen(false)}
-                  className="block w-full rounded-full bg-royal-blue py-4 text-center font-sans text-lg font-semibold text-white transition-colors hover:bg-royal-blue-dark"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-royal-blue py-4 font-sans text-lg font-semibold text-white transition-colors hover:bg-royal-blue-dark"
                 >
-                  Start a project
+                  <Calendar className="h-5 w-5" />
+                  Book Strategy Call
                 </Link>
               </div>
             </motion.div>

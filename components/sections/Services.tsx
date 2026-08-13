@@ -3,44 +3,44 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { Monitor, Smartphone, BarChart3, ClipboardList, Boxes, Zap } from 'lucide-react'
+import { Monitor, Smartphone, Zap, ClipboardList, Boxes, Sparkles } from 'lucide-react'
 
 const services = [
   {
     number: '01',
-    title: 'Websites & Web Apps',
-    description: 'Fast, professional websites and online tools that work smoothly on every device.',
+    title: 'High-Converting Web Systems',
+    description: 'Fast, modern websites and web applications built to convert visitors into paying clients and capture leads automatically.',
     icon: Monitor,
   },
   {
     number: '02',
-    title: 'Mobile Apps',
-    description: 'Apps for Android and iPhone that your customers will actually enjoy using.',
+    title: 'Mobile Applications',
+    description: 'Custom iOS and Android mobile apps designed to keep your customers connected and engaged directly with your business.',
     icon: Smartphone,
   },
   {
     number: '03',
-    title: 'Dashboards & Reporting',
-    description: 'See your business at a glance — sales, customers, and performance, all in one clear place.',
-    icon: BarChart3,
+    title: 'Automations & Workflows',
+    description: 'Cut out repetitive manual work with automated lead follow-ups, email notifications, status updates, and background tasks.',
+    icon: Zap,
   },
   {
     number: '04',
-    title: 'Management Systems',
-    description: 'Software to run the day-to-day: inventory, bookings, records, staff, and more.',
+    title: 'Custom Management Systems',
+    description: 'Tailor-made internal software to manage your daily operations — inventory, bookings, clients, staff, and records in one place.',
     icon: ClipboardList,
   },
   {
     number: '05',
-    title: 'Custom Software',
-    description: 'Tools built around exactly how your business works — not the other way around.',
+    title: 'Tailored Business Software',
+    description: 'Bespoke tools designed around the exact way your business operates when standard off-the-shelf software falls short.',
     icon: Boxes,
   },
   {
     number: '06',
-    title: 'Automations & Workflows',
-    description: 'Cut the repetitive work — reminders, follow-ups, status updates, and reports that run themselves.',
-    icon: Zap,
+    title: 'AI Consulting & Integration',
+    description: 'Integrate custom AI chatbots, intelligent customer support agents, and AI workflow automations directly into your software.',
+    icon: Sparkles,
   },
 ]
 

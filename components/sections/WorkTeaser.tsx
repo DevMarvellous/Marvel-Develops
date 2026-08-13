@@ -38,7 +38,7 @@ export function WorkTeaser() {
           </Link>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {featuredProjects.map((project, index) => (
             <motion.div
               key={project.slug}
@@ -48,26 +48,26 @@ export function WorkTeaser() {
             >
               <Link
                 href={`/work/${project.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-card)] border border-border bg-white transition-all duration-400 hover:-translate-y-2 hover:border-royal-blue hover:shadow-[var(--shadow-hover)]"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white transition-all duration-300 hover:-translate-y-1.5 hover:border-royal-blue hover:shadow-lg"
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-gray-light">
+                <div className="relative aspect-[16/9] overflow-hidden bg-gray-light">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute left-3 top-3 rounded-full bg-navy-deep/80 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-white backdrop-blur">
+                  <span className="absolute left-2.5 top-2.5 rounded-full bg-navy-deep/80 px-2.5 py-0.5 font-mono text-[9px] uppercase tracking-[0.1em] text-white backdrop-blur">
                     {project.category}
                   </span>
                 </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <div className="mb-2 flex items-start justify-between gap-3">
-                    <h3 className="font-display text-lg font-bold text-text-dark">{project.title}</h3>
-                    <ArrowUpRight className="h-5 w-5 shrink-0 text-text-muted transition-colors group-hover:text-royal-blue" />
+                <div className="flex flex-1 flex-col p-4">
+                  <div className="mb-1.5 flex items-start justify-between gap-2">
+                    <h3 className="font-display text-base font-bold text-text-dark group-hover:text-royal-blue transition-colors line-clamp-1">{project.title}</h3>
+                    <ArrowUpRight className="h-4 w-4 shrink-0 text-text-muted transition-colors group-hover:text-royal-blue" />
                   </div>
-                  <p className="flex-1 font-sans text-[14px] leading-relaxed text-text-mid">
+                  <p className="flex-1 font-sans text-[13px] leading-relaxed text-text-mid line-clamp-2">
                     {project.summary}
                   </p>
                 </div>
@@ -76,7 +76,7 @@ export function WorkTeaser() {
           ))}
         </div>
 
-        <div className="mt-10 text-center lg:hidden">
+        <div className="mt-8 text-center lg:hidden">
           <Link href="/work" className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-royal-blue">
             View all work
             <ArrowRight className="h-4 w-4" />

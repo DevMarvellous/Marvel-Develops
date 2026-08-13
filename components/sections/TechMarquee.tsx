@@ -5,6 +5,8 @@ const stack = [
   'Next.js',
   'TypeScript',
   'Node.js',
+  'n8n',
+  'Make.com',
   'React Native',
   'Flutter',
   'PostgreSQL',

@@ -18,7 +18,7 @@
 - [ ] **Instructor Bio**: Update your personal backstory and achievements in `components/academy/AcademyInstructor.tsx` (it currently has placeholder text).
 
 ### 2. Academy Launch: Email Verification & Testing
-- [ ] **Brevo Sender Auth**: Log into your Brevo dashboard and verify that `marvellousadepoju79@gmail.com` is an authenticated sender. (The free tier requires this for the `FROM` address to work).
+- [ ] **Brevo Sender Auth**: Log into your Brevo dashboard and verify that `marveldevelops@gmail.com` is an authenticated sender. (The free tier requires this for the `FROM` address to work).
 - [ ] **Test Registration**: Submit a dummy registration on `/academy` locally or on Vercel to confirm that BOTH the admin notification email and the registrant confirmation email arrive successfully.
 
 ### 3. Vercel Environment Variables

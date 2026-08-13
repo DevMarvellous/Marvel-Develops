@@ -17,22 +17,21 @@ type Reason = {
 const reasons: Reason[] = [
   {
     icon: Shield,
-    title: 'Experienced people, not beginners.',
-    description: "Your project is handled by people who've built this kind of software before — no practicing on your time or money.",
+    title: 'Built by experts, not beginners.',
+    description: 'Your project is handled by experienced software developers who have done this before — no trial and error on your time or money.',
     animateFrom: { x: -60, opacity: 0 },
   },
   {
     icon: Infinity,
-    title: "We don't disappear after launch.",
-    description: 'We stay on to help, fix, and improve things — not vanish once the work is delivered.',
-    // TODO: confirm the exact terms you want to promise (length / what's covered).
-    guarantee: '30 days of free support after launch — guaranteed.',
+    title: '30 Days of free support after launch.',
+    description: 'We don\'t disappear once your project is delivered. We stay with you for a full month to fix any issues and ensure everything runs smoothly.',
+    guarantee: '30 Days post-launch support included',
     animateFrom: { y: 60, opacity: 0 },
   },
   {
     icon: Gauge,
-    title: 'Built to last and to grow.',
-    description: 'We build software that runs smoothly today and can grow right alongside your business.',
+    title: 'Built to grow with your business.',
+    description: 'We build fast, reliable systems that won\'t slow down, crash, or break as your customer base and sales grow.',
     animateFrom: { x: 60, opacity: 0 },
   },
 ]

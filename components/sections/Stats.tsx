@@ -4,10 +4,10 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const stats = [
-  { value: '100%', label: 'The software we build is yours to keep' },
-  { value: 'Weekly', label: 'Clear progress updates you can actually see' },
-  { value: 'End to end', label: 'We handle design, building, and launch' },
-  { value: 'Always', label: 'We stay with you after launch, not vanish' },
+  { value: '100%', label: 'You fully own your software & source code' },
+  { value: '0', label: 'Zero hidden fees or unexpected charges' },
+  { value: 'Weekly', label: 'Live updates so you see progress every week' },
+  { value: '30 Days', label: 'Free support & maintenance after launch' },
 ]
 
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]

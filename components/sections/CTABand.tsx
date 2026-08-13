@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, MessageCircle, Sparkles } from 'lucide-react'
+import { ArrowRight, MessageCircle, Sparkles, Calendar } from 'lucide-react'
 
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
@@ -32,18 +32,20 @@ export function CTABand() {
 
         <div className="relative">
           <h2 className="mx-auto mb-4 max-w-2xl font-display text-[clamp(28px,4vw,46px)] font-bold leading-tight text-white">
-            Have a project in mind? Let&apos;s build it.
+            Have a software idea or business challenge?
           </h2>
-          <p className="mx-auto mb-9 max-w-xl font-sans text-lg text-white/80">
-            Tell us what you&apos;re trying to solve. We&apos;ll tell you how we&apos;d approach it —
-            no pitch, just a real conversation.
+          <p className="mx-auto mb-9 max-w-xl font-sans text-lg text-white/80 leading-relaxed">
+            Book a free 15-minute strategy call. We&apos;ll listen to your needs, explain how we can build it, and give you a clear, fixed price &mdash; zero sales pressure.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 lg:flex-row">
             <Link
-              href="/#contact"
+              href={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/marvellousadepoju79/30min"}
+              target={process.env.NEXT_PUBLIC_CALENDLY_URL ? "_blank" : undefined}
+              rel={process.env.NEXT_PUBLIC_CALENDLY_URL ? "noopener noreferrer" : undefined}
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 font-sans text-base font-semibold text-royal-blue transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[var(--shadow-hover)] active:scale-[0.97]"
             >
-              Start a project
+              <Calendar className="h-4 w-4 text-royal-blue" />
+              Book Strategy Call
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link

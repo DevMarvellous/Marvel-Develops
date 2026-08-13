@@ -3,14 +3,14 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ChevronDown, ArrowRight, ShieldCheck, Users, Repeat } from 'lucide-react'
+import { ChevronDown, ArrowRight, ShieldCheck, Users, Repeat, Calendar } from 'lucide-react'
 
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
 const trust = [
-  { icon: ShieldCheck, label: 'Software you own' },
-  { icon: Users, label: 'Experienced team' },
-  { icon: Repeat, label: 'Clear progress updates' },
+  { icon: ShieldCheck, label: '100% Software ownership' },
+  { icon: Users, label: 'Fixed prices & delivery dates' },
+  { icon: Repeat, label: '30 Days free support after launch' },
 ]
 
 export function Hero() {
@@ -66,8 +66,8 @@ export function Hero() {
         </motion.div>
 
         {/* Headline */}
-        <h1 className="mb-7 max-w-3xl font-display text-[clamp(34px,6vw,60px)] font-bold leading-[1.08] tracking-tight">
-          {['We build the', 'software your', null].map((line, i) =>
+        <h1 className="mb-7 max-w-4xl font-display text-[clamp(34px,6vw,60px)] font-bold leading-[1.08] tracking-tight">
+          {['Custom software built to', 'grow your business &', null].map((line, i) =>
             line ? (
               <motion.span
                 key={i}
@@ -86,7 +86,7 @@ export function Hero() {
                 transition={{ duration: 0.8, ease, delay: 0.25 + i * 0.12 }}
                 className="block"
               >
-                <span className="text-gradient">business</span> runs on.
+                <span className="text-gradient">save you time.</span>
               </motion.span>
             )
           )}
@@ -97,10 +97,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease, delay: 0.7 }}
-          className="mb-10 max-w-xl font-sans text-lg font-normal leading-relaxed text-white/65"
+          className="mb-10 max-w-2xl font-sans text-lg font-normal leading-relaxed text-white/75"
         >
-          Marvel Develops builds custom software for businesses &mdash; websites, apps, dashboards,
-          and management tools, made to fit exactly how you work.
+          Stop struggling with software that doesn&apos;t fit your business. We build custom websites,
+          mobile apps, and management tools made to fit exactly how you operate.
         </motion.p>
 
         {/* CTAs */}
@@ -111,10 +111,13 @@ export function Hero() {
           className="flex flex-col gap-4 sm:flex-row"
         >
           <Link
-            href="/#contact"
+            href={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/marvellousadepoju79/30min"}
+            target={process.env.NEXT_PUBLIC_CALENDLY_URL ? "_blank" : undefined}
+            rel={process.env.NEXT_PUBLIC_CALENDLY_URL ? "noopener noreferrer" : undefined}
             className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 font-sans text-base font-semibold text-navy-deep transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[var(--shadow-hover)] active:scale-[0.97] sm:w-auto"
           >
-            Start a project
+            <Calendar className="h-4 w-4 text-royal-blue" />
+            Book a Free Strategy Call
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
           <Link
@@ -124,6 +127,11 @@ export function Hero() {
             See our work
           </Link>
         </motion.div>
+
+        {/* Micro-copy promise */}
+        <p className="mt-3 font-sans text-xs text-white/50">
+          ⚡ 15-Min Call &middot; Zero Sales Pressure &middot; Free Technical Advice
+        </p>
 
         {/* AI planner nudge */}
         <motion.div

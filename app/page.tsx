@@ -14,6 +14,7 @@ import { CTABand } from '@/components/sections/CTABand'
 import { Contact } from '@/components/sections/Contact'
 import { Footer } from '@/components/layout/Footer'
 import { AssistantChat } from '@/components/chatbot/AssistantChat'
+import { FloatingWhatsApp } from '@/components/ui/FloatingWhatsApp'
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <FloatingWhatsApp />
       <AssistantChat />
     </PageLoader>
   )
