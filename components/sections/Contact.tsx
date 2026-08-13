@@ -16,7 +16,7 @@ const industries = [
   'Fintech',
   'Logistics & Transport',
   'Startups & SaaS',
-  'Other',
+  'Other / Not sure yet',
 ]
 
 const services = [
