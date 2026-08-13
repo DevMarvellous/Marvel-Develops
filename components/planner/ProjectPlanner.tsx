@@ -153,20 +153,20 @@ export function ProjectPlanner() {
   }
 
   return (
-    <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+    <div className="w-full overflow-hidden rounded-2xl border border-border/80 bg-white shadow-md">
       {/* Chat header */}
-      <div className="flex items-center gap-2.5 border-b border-border bg-navy-deep px-6 py-4 text-white">
+      <div className="flex items-center gap-2.5 border-b border-border/80 bg-navy-deep px-4 sm:px-6 py-3.5 sm:py-4 text-white">
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold/20">
           <Sparkles className="h-4 w-4 text-gold" />
         </div>
         <div>
-          <h2 className="font-sans text-base font-bold">AI Project Architecture Planner</h2>
-          <p className="font-sans text-xs text-white/60">Guided scope &amp; instant architecture recommendation</p>
+          <h2 className="font-sans text-sm sm:text-base font-bold">AI Project Architecture Planner</h2>
+          <p className="font-sans text-[11px] sm:text-xs text-white/60">Guided scope &amp; instant architecture recommendation</p>
         </div>
       </div>
 
       {/* Chat area */}
-      <div ref={chatContainerRef} className="max-h-[45vh] overflow-y-auto p-6 sm:max-h-[52vh]">
+      <div ref={chatContainerRef} className="max-h-[52vh] sm:max-h-[58vh] xl:max-h-[54vh] overflow-y-auto p-4 sm:p-6">
         <div className="space-y-4">
           {messages.map((message, index) => (
             <div key={index} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
@@ -176,13 +176,13 @@ export function ProjectPlanner() {
                 </div>
               )}
               <div
-                className={`max-w-[85%] rounded-2xl px-4 py-3 ${
+                className={`max-w-[90%] sm:max-w-[85%] rounded-2xl px-4 py-3 ${
                   message.role === 'user'
                     ? 'rounded-tr-sm bg-royal-blue text-white'
-                    : 'rounded-tl-sm border border-border bg-gray-white text-text-dark'
+                    : 'rounded-tl-sm border border-border/80 bg-gray-white text-text-dark'
                 }`}
               >
-                <p className="whitespace-pre-wrap font-sans text-[15px] leading-relaxed">{message.content}</p>
+                <p className="whitespace-pre-wrap font-sans text-[14px] sm:text-[15px] leading-relaxed">{message.content}</p>
               </div>
             </div>
           ))}

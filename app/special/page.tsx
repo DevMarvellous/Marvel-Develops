@@ -21,10 +21,12 @@ export default function SpecialPage() {
     email: '',
     phone: '',
     message: '',
+    agreeTestimonial: false,
   })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!formData.agreeTestimonial) return
     setFormState('loading')
 
     try {
@@ -38,7 +40,7 @@ export default function SpecialPage() {
           whatsapp: formData.phone,
           industry: 'Special Initiative',
           service: '10 Free Software Build',
-          message: formData.message || 'No description provided (will discuss on call)',
+          message: `${formData.message || 'No description provided (will discuss on call)'} | Agreed to Video Testimonial: YES`,
         }),
       })
 
@@ -245,9 +247,25 @@ export default function SpecialPage() {
                         />
                       </div>
 
+                      {/* Video Testimonial Agreement Checkbox */}
+                      <div className="flex items-start gap-3 rounded-xl border border-gold/40 bg-gold/5 p-3.5">
+                        <input
+                          type="checkbox"
+                          id="agreeTestimonial"
+                          name="agreeTestimonial"
+                          required
+                          checked={formData.agreeTestimonial}
+                          onChange={(e) => setFormData(prev => ({ ...prev, agreeTestimonial: e.target.checked }))}
+                          className="mt-0.5 h-4 w-4 shrink-0 rounded border-border text-royal-blue focus:ring-royal-blue"
+                        />
+                        <label htmlFor="agreeTestimonial" className="font-sans text-xs font-semibold text-text-dark leading-relaxed cursor-pointer select-none">
+                          I agree to provide an honest video review &amp; case study testimonial upon successful completion of my software. *
+                        </label>
+                      </div>
+
                       <button
                         type="submit"
-                        disabled={formState === 'loading'}
+                        disabled={formState === 'loading' || !formData.agreeTestimonial}
                         className="flex w-full items-center justify-center gap-2 rounded-xl bg-navy-deep py-4 font-sans text-base font-semibold text-white transition-all hover:bg-royal-blue disabled:opacity-70"
                       >
                         {formState === 'loading' ? (
