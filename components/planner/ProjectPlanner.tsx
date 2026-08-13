@@ -1,13 +1,22 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Send, Loader2, Check, Pencil, ArrowRight } from 'lucide-react'
+import { Send, Loader2, Check, Pencil, ArrowRight, MessageCircle, Calendar, Sparkles, Building2, Hotel, Zap, Scale, Smartphone } from 'lucide-react'
 import type { Message, PlannerSummary } from '@/lib/types'
 
 const OPENING_MESSAGE =
-  "Hi! I'm the Marvel Develops Project Planner. Tell me a bit about your business and the problem you're trying to solve — I'll help you figure out what to build."
+  "Hi! I'm the Marvel Develops Project Planner. Pick a quick-start focus below or tell me about your business idea — I'll help you structure a clear software plan."
 
 const CONTACT_LINK = 'https://wa.me/2349030891731'
+const CALENDLY_LINK = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com/marvellousadepoju79/30min'
+
+const QUICK_START_CHIPS = [
+  { label: 'Real Estate & Property System', icon: Building2, prompt: 'I want to plan a Real Estate & Property Management System for my business.' },
+  { label: 'Hotel & Short-Let Booking', icon: Hotel, prompt: 'I want to plan a Hotel & Short-Let Booking Engine for my business.' },
+  { label: 'Workflow & Lead Automation', icon: Zap, prompt: 'I want to plan an Automated Workflow & Lead Follow-up Tool.' },
+  { label: 'Legal / Professional Portal', icon: Scale, prompt: 'I want to plan a Client Portal for a Legal & Professional firm.' },
+  { label: 'Custom Mobile or Web App', icon: Smartphone, prompt: 'I want to plan a Custom Web App or Mobile Application.' },
+]
 
 export function ProjectPlanner() {
   const [messages, setMessages] = useState<Message[]>([{ role: 'assistant', content: OPENING_MESSAGE }])
@@ -17,6 +26,7 @@ export function ProjectPlanner() {
   const [editingSummary, setEditingSummary] = useState(false)
   const [reviewData, setReviewData] = useState({ fullName: '', email: '', whatsapp: '', businessName: '', honeypot: '' })
   const [submitState, setSubmitState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [hasStarted, setHasStarted] = useState(false)
   const chatContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -25,12 +35,12 @@ export function ProjectPlanner() {
     }
   }, [messages, summary])
 
-  const handleSend = async () => {
-    if (!input.trim() || isLoading) return
+  const sendUserMessage = async (userMessage: string) => {
+    if (!userMessage.trim() || isLoading) return
 
-    const userMessage = input.trim()
-    const history = messages
+    setHasStarted(true)
     setInput('')
+    const history = messages
     setMessages((prev) => [...prev, { role: 'user', content: userMessage }])
     setIsLoading(true)
 
@@ -57,6 +67,14 @@ export function ProjectPlanner() {
     } finally {
       setIsLoading(false)
     }
+  }
+
+  const handleSend = () => {
+    sendUserMessage(input)
+  }
+
+  const handleChipClick = (prompt: string) => {
+    sendUserMessage(prompt)
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -93,29 +111,41 @@ export function ProjectPlanner() {
     }
   }
 
+  // Construct pre-filled WhatsApp message URL with project summary
+  const getWhatsAppBriefUrl = () => {
+    if (!summary) return CONTACT_LINK
+    const text = `Hi Marvellous! I used your AI Planner on Marvel Develops.\n\n*Industry:* ${summary.industry}\n*Service:* ${summary.serviceCategory}\n*Summary:* ${summary.fullSummary}\n\nI'd like to discuss building this!`
+    return `https://wa.me/2349030891731?text=${encodeURIComponent(text)}`
+  }
+
   if (submitState === 'success') {
     return (
-      <div className="flex flex-col items-center justify-center rounded-2xl border border-border bg-white px-6 py-16 text-center">
+      <div className="flex flex-col items-center justify-center rounded-2xl border border-border bg-white px-6 py-16 text-center shadow-sm">
         <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-50">
           <Check className="h-8 w-8 text-green-500" />
         </div>
-        <h3 className="mb-2 font-display text-2xl font-bold text-text-dark">Plan received!</h3>
-        <p className="mb-1 font-sans text-text-mid">We&apos;ll review your brief and be in touch within 24 hours.</p>
-        <p className="mb-8 font-sans text-sm text-text-muted">Check your email for a confirmation.</p>
+        <h3 className="mb-2 font-display text-2xl font-bold text-text-dark">Project Brief Received!</h3>
+        <p className="mb-1 font-sans text-text-mid">Founder Marvellous Adepoju will review your plan and respond within 24 hours.</p>
+        <p className="mb-8 font-sans text-sm text-text-muted">A copy of your brief has been emailed to our system.</p>
+        
         <div className="flex flex-col items-center gap-3 sm:flex-row">
           <a
-            href="/work"
-            className="inline-flex items-center gap-2 rounded-full bg-royal-blue px-6 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-royal-blue-dark"
-          >
-            See our work <ArrowRight className="h-4 w-4" />
-          </a>
-          <a
-            href={CONTACT_LINK}
+            href={CALENDLY_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-sans text-sm font-semibold text-text-mid hover:text-text-dark"
+            className="inline-flex items-center gap-2 rounded-full bg-royal-blue px-6 py-3.5 font-sans text-sm font-semibold text-white transition-all hover:bg-royal-blue-dark hover:shadow-md"
           >
-            Or chat us on WhatsApp →
+            <Calendar className="h-4 w-4" />
+            Book Strategy Call Now
+          </a>
+          <a
+            href={getWhatsAppBriefUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-whatsapp/30 bg-whatsapp/10 px-6 py-3.5 font-sans text-sm font-semibold text-whatsapp transition-colors hover:bg-whatsapp/20"
+          >
+            <MessageCircle className="h-4 w-4" />
+            Send Brief on WhatsApp
           </a>
         </div>
       </div>
@@ -124,6 +154,16 @@ export function ProjectPlanner() {
 
   return (
     <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+      {/* Chat header */}
+      <div className="flex items-center gap-2.5 border-b border-border bg-navy-deep px-6 py-4 text-white">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold/20">
+          <Sparkles className="h-4 w-4 text-gold" />
+        </div>
+        <div>
+          <h2 className="font-sans text-base font-bold">AI Project Architecture Planner</h2>
+          <p className="font-sans text-xs text-white/60">Guided scope &amp; instant architecture recommendation</p>
+        </div>
+      </div>
 
       {/* Chat area */}
       <div ref={chatContainerRef} className="max-h-[45vh] overflow-y-auto p-6 sm:max-h-[52vh]">
@@ -136,7 +176,7 @@ export function ProjectPlanner() {
                 </div>
               )}
               <div
-                className={`max-w-[78%] rounded-2xl px-4 py-3 ${
+                className={`max-w-[85%] rounded-2xl px-4 py-3 ${
                   message.role === 'user'
                     ? 'rounded-tr-sm bg-royal-blue text-white'
                     : 'rounded-tl-sm border border-border bg-gray-white text-text-dark'
@@ -146,6 +186,30 @@ export function ProjectPlanner() {
               </div>
             </div>
           ))}
+
+          {/* Quick-Start Chips (Only visible before user sends first message) */}
+          {!hasStarted && (
+            <div className="mt-4 pt-2">
+              <p className="mb-3 font-sans text-xs font-semibold uppercase tracking-wider text-text-muted">
+                ⚡ Select a quick-start industry or goal:
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {QUICK_START_CHIPS.map((chip) => {
+                  const Icon = chip.icon
+                  return (
+                    <button
+                      key={chip.label}
+                      onClick={() => handleChipClick(chip.prompt)}
+                      className="group flex items-center gap-2 rounded-xl border border-border bg-white px-3.5 py-2.5 font-sans text-xs font-semibold text-text-dark transition-all hover:border-royal-blue hover:bg-royal-blue/5 hover:text-royal-blue"
+                    >
+                      <Icon className="h-4 w-4 text-royal-blue group-hover:scale-110 transition-transform" />
+                      {chip.label}
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+          )}
 
           {isLoading && (
             <div className="flex items-end gap-2">
@@ -162,7 +226,7 @@ export function ProjectPlanner() {
         </div>
       </div>
 
-      {/* Input or review form */}
+      {/* Input or Summary & Closing Actions */}
       {!summary ? (
         <div className="border-t border-border bg-gray-white/50 px-4 py-3">
           <div className="flex items-center gap-2">
@@ -171,7 +235,7 @@ export function ProjectPlanner() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Type your answer..."
+              placeholder="Type your business goal or answer..."
               disabled={isLoading}
               className="flex-1 rounded-xl border border-border bg-white px-4 py-3 font-sans text-base text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
             />
@@ -188,40 +252,34 @@ export function ProjectPlanner() {
         </div>
       ) : (
         <div className="border-t border-border">
-
-          {/* Project brief card */}
+          {/* Project Brief Summary Card */}
           <div className="bg-navy-deep/[0.03] px-6 py-5">
             <div className="mb-3 flex items-center justify-between">
-              <p className="font-sans text-[11px] font-semibold uppercase tracking-widest text-text-muted">Your Project Brief</p>
+              <p className="font-sans text-[11px] font-semibold uppercase tracking-widest text-text-muted">Generated Architecture &amp; Brief</p>
               <button
                 onClick={() => setEditingSummary((v) => !v)}
-                className="flex items-center gap-1 rounded-lg px-2 py-2.5 font-sans text-[12px] text-text-muted transition-colors hover:bg-border hover:text-text-dark"
+                className="flex items-center gap-1 rounded-lg px-2 py-1 font-sans text-[12px] text-text-muted transition-colors hover:bg-border hover:text-text-dark"
               >
                 <Pencil className="h-3 w-3" />
-                {editingSummary ? 'Done' : 'Edit'}
+                {editingSummary ? 'Done' : 'Edit Brief'}
               </button>
             </div>
 
             {/* Tags row */}
             <div className="mb-3 flex flex-wrap gap-2">
               {summary.serviceCategory && (
-                <span className="rounded-full bg-royal-blue/10 px-3 py-1 font-sans text-[12px] font-medium text-royal-blue">
-                  {summary.serviceCategory}
+                <span className="rounded-full bg-royal-blue/10 px-3 py-1 font-sans text-[12px] font-semibold text-royal-blue">
+                  Category: {summary.serviceCategory}
                 </span>
               )}
               {summary.industry && (
-                <span className="rounded-full bg-gold/10 px-3 py-1 font-sans text-[12px] font-medium text-gold-dark">
-                  {summary.industry}
+                <span className="rounded-full bg-gold/10 px-3 py-1 font-sans text-[12px] font-semibold text-gold-dark">
+                  Industry: {summary.industry}
                 </span>
               )}
               {summary.timeline && summary.timeline.toLowerCase() !== 'not specified' && (
                 <span className="rounded-full bg-border px-3 py-1 font-sans text-[12px] font-medium text-text-mid">
-                  {summary.timeline}
-                </span>
-              )}
-              {summary.budget && summary.budget.toLowerCase() !== 'not specified' && (
-                <span className="rounded-full bg-border px-3 py-1 font-sans text-[12px] font-medium text-text-mid">
-                  {summary.budget}
+                  Timeline: {summary.timeline}
                 </span>
               )}
             </div>
@@ -234,19 +292,58 @@ export function ProjectPlanner() {
                 className="w-full resize-none rounded-xl border border-border bg-white px-4 py-3 font-sans text-[14px] text-text-dark focus:border-royal-blue focus:outline-none"
               />
             ) : (
-              <p className="font-sans text-[14px] leading-relaxed text-text-mid">{summary.fullSummary}</p>
+              <p className="font-sans text-[14px] leading-relaxed text-text-dark font-medium">{summary.fullSummary}</p>
             )}
+
+            {/* Recommended Architecture Box */}
+            <div className="mt-4 rounded-xl border border-royal-blue/20 bg-royal-blue/5 p-4">
+              <p className="font-sans text-xs font-bold uppercase tracking-wider text-royal-blue">
+                💡 Recommended Marvel Architecture &amp; Delivery:
+              </p>
+              <p className="mt-1 font-sans text-xs text-text-mid leading-relaxed">
+                • <strong>Tech Stack:</strong> Modern Next.js TypeScript Web App + Cloud Database + WhatsApp API Integration<br />
+                • <strong>Includes:</strong> Custom Admin Dashboard + Mobile-Responsive User Interface + 30 Days Free Post-Launch Support
+              </p>
+            </div>
           </div>
 
-          {/* Contact fields */}
-          <div className="px-6 py-5">
-            <p className="mb-1 font-display text-lg font-bold text-text-dark">Almost done — where should we send this?</p>
-            <p className="mb-5 font-sans text-sm text-text-muted">We&apos;ll review your brief and get back to you within 24 hours.</p>
+          {/* 3 High-Converting Handoff Actions */}
+          <div className="px-6 py-6">
+            <p className="mb-2 font-display text-lg font-bold text-text-dark">Ready to bring this plan to life?</p>
+            <p className="mb-5 font-sans text-sm text-text-muted">Choose how you&apos;d like to connect with founder Marvellous Adepoju:</p>
 
+            {/* Instant Handoff Buttons */}
+            <div className="mb-6 grid gap-3 sm:grid-cols-2">
+              <a
+                href={CALENDLY_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-xl bg-royal-blue px-4 py-3.5 font-sans text-sm font-semibold text-white shadow-sm transition-all hover:bg-royal-blue-dark"
+              >
+                <Calendar className="h-4 w-4" />
+                Book Strategy Call (Calendly)
+              </a>
+              <a
+                href={getWhatsAppBriefUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-xl border border-whatsapp/30 bg-whatsapp/10 px-4 py-3.5 font-sans text-sm font-semibold text-whatsapp transition-colors hover:bg-whatsapp/20"
+              >
+                <MessageCircle className="h-4 w-4" />
+                Send Brief on WhatsApp
+              </a>
+            </div>
+
+            <div className="relative mb-6 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-border" /></div>
+              <span className="relative bg-white px-3 font-sans text-xs uppercase tracking-wider text-text-muted font-semibold">Or send to our email system</span>
+            </div>
+
+            {/* Email form */}
             {submitState === 'error' && (
               <div className="mb-4 rounded-xl bg-red-50 p-4 font-sans text-sm text-red-600">
                 Something went wrong. Please{' '}
-                <a href="mailto:marvellousadepoju79@gmail.com" className="font-semibold underline">email us directly</a>.
+                <a href="mailto:marveldevelops@gmail.com" className="font-semibold underline">email us directly</a>.
               </div>
             )}
 
@@ -268,21 +365,21 @@ export function ProjectPlanner() {
                   <label className="font-sans text-[12px] font-semibold text-text-dark">Full Name <span className="text-red-400">*</span></label>
                   <input
                     type="text"
-                    placeholder="John Doe"
+                    placeholder="e.g. David Williams"
                     required
                     value={reviewData.fullName}
                     onChange={(e) => setReviewData((p) => ({ ...p, fullName: e.target.value }))}
-                    className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3 font-sans text-base text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
+                    className="w-full rounded-xl border border-border bg-gray-white px-4 py-3 font-sans text-sm text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
                   />
                 </div>
                 <div className="space-y-1.5">
                   <label className="font-sans text-[12px] font-semibold text-text-dark">Business Name</label>
                   <input
                     type="text"
-                    placeholder="Acme Co."
+                    placeholder="e.g. Apex Realty"
                     value={reviewData.businessName}
                     onChange={(e) => setReviewData((p) => ({ ...p, businessName: e.target.value }))}
-                    className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3 font-sans text-base text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
+                    className="w-full rounded-xl border border-border bg-gray-white px-4 py-3 font-sans text-sm text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
                   />
                 </div>
               </div>
@@ -292,22 +389,22 @@ export function ProjectPlanner() {
                   <label className="font-sans text-[12px] font-semibold text-text-dark">Email Address <span className="text-red-400">*</span></label>
                   <input
                     type="email"
-                    placeholder="you@example.com"
+                    placeholder="david@example.com"
                     required
                     value={reviewData.email}
                     onChange={(e) => setReviewData((p) => ({ ...p, email: e.target.value }))}
-                    className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3 font-sans text-base text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
+                    className="w-full rounded-xl border border-border bg-gray-white px-4 py-3 font-sans text-sm text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
                   />
                 </div>
                 <div className="space-y-1.5">
                   <label className="font-sans text-[12px] font-semibold text-text-dark">WhatsApp Number <span className="text-red-400">*</span></label>
                   <input
                     type="tel"
-                    placeholder="+234 800 000 0000"
+                    placeholder="+234..."
                     required
                     value={reviewData.whatsapp}
                     onChange={(e) => setReviewData((p) => ({ ...p, whatsapp: e.target.value }))}
-                    className="w-full rounded-xl border-[1.5px] border-border bg-gray-white px-4 py-3 font-sans text-base text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
+                    className="w-full rounded-xl border border-border bg-gray-white px-4 py-3 font-sans text-sm text-text-dark placeholder:text-text-muted focus:border-royal-blue focus:outline-none"
                   />
                 </div>
               </div>
@@ -315,27 +412,20 @@ export function ProjectPlanner() {
               <button
                 onClick={handleSubmitPlan}
                 disabled={submitState === 'loading' || !reviewData.fullName || !reviewData.email || !reviewData.whatsapp}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-royal-blue px-6 py-4 font-sans text-base font-bold text-white shadow-[0_4px_20px_rgba(37,99,235,0.25)] transition-all hover:bg-royal-blue-dark disabled:opacity-50"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-navy-deep py-3.5 font-sans text-sm font-semibold text-white transition-all hover:bg-royal-blue disabled:opacity-50"
               >
                 {submitState === 'loading' ? (
                   <>
                     <Loader2 className="h-5 w-5 animate-spin" />
-                    Sending your plan...
+                    Submitting Plan...
                   </>
                 ) : (
                   <>
-                    Send this to Marvel Develops
+                    Submit Plan Brief to Email
                     <ArrowRight className="h-4 w-4" />
                   </>
                 )}
               </button>
-
-              <p className="text-center font-sans text-[12px] text-text-muted">
-                Or reach us directly on{' '}
-                <a href={CONTACT_LINK} target="_blank" rel="noopener noreferrer" className="font-semibold text-text-mid hover:text-text-dark">
-                  WhatsApp
-                </a>
-              </p>
             </div>
           </div>
         </div>
