@@ -7,24 +7,25 @@ import type { ContactFormData } from '@/lib/types'
 import { Check, Loader2, MessageCircle, Phone, Mail } from 'lucide-react'
 
 const industries = [
-  'Fintech',
   'Real Estate & Property',
-  'Healthcare',
   'Hospitality & Hotels',
   'E-commerce & Retail',
   'Legal & Professional',
   'Education',
+  'Healthcare',
+  'Fintech',
   'Logistics & Transport',
   'Startups & SaaS',
   'Other',
 ]
 
 const services = [
-  'Website or Web App',
-  'Mobile App',
-  'Dashboard & Reporting',
-  'Management System',
-  'Custom Software',
+  'Web Software & Websites',
+  'Mobile Applications',
+  'Automations & Workflows',
+  'Custom Management Systems',
+  'AI Integration & Chatbots',
+  'Tailored Business Software',
   "Not sure yet — let's talk",
 ]
 
