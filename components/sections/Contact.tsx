@@ -8,11 +8,14 @@ import { Check, Loader2, MessageCircle, Phone, Mail } from 'lucide-react'
 
 const industries = [
   'Fintech',
+  'Real Estate & Property',
   'Healthcare',
+  'Hospitality & Hotels',
   'E-commerce & Retail',
+  'Legal & Professional',
   'Education',
-  'Logistics',
-  'Startups',
+  'Logistics & Transport',
+  'Startups & SaaS',
   'Other',
 ]
 

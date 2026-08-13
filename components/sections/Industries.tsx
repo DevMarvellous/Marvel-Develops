@@ -3,14 +3,17 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { SectionHeader } from '@/components/ui/SectionHeader'
-import { Landmark, Stethoscope, ShoppingCart, GraduationCap, Truck, Rocket } from 'lucide-react'
+import { Landmark, Stethoscope, ShoppingCart, GraduationCap, Truck, Rocket, Building2, Hotel, Scale } from 'lucide-react'
 
 const industries = [
   { name: 'Fintech', icon: Landmark },
+  { name: 'Real Estate & Property', icon: Building2 },
   { name: 'Healthcare', icon: Stethoscope },
+  { name: 'Hospitality & Hotels', icon: Hotel },
   { name: 'E-commerce & Retail', icon: ShoppingCart },
+  { name: 'Legal & Professional', icon: Scale },
   { name: 'Education', icon: GraduationCap },
-  { name: 'Logistics', icon: Truck },
+  { name: 'Logistics & Transport', icon: Truck },
   { name: 'Startups & SaaS', icon: Rocket },
 ]
 
@@ -36,7 +39,7 @@ export function Industries() {
         </motion.div>
 
         {/* Industry Tiles Grid */}
-        <div className="grid grid-cols-2 gap-4 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-3">
           {industries.map((industry, index) => {
             const Icon = industry.icon
             return (
@@ -44,7 +47,7 @@ export function Industries() {
                 key={industry.name}
                 initial={{ opacity: 0, y: 48, filter: 'blur(4px)' }}
                 animate={isInView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
-                transition={{ duration: 0.8, ease, delay: index * 0.1 }}
+                transition={{ duration: 0.8, ease, delay: index * 0.08 }}
                 className="group relative cursor-default overflow-hidden rounded-[14px] border border-border bg-gray-white p-7 text-center transition-all duration-350"
               >
                 {/* Flood fill effect on hover */}
