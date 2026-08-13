@@ -9,7 +9,7 @@ import { ArrowRight, CheckCircle2, Gift, Sparkles, MessageCircle, Check, Loader2
 const perks = [
   'Full-custom web software or workflow automation built specifically for your business.',
   'Zero development fee — 100% free build phase.',
-  'Direct 1-on-1 collaboration with founder & lead architect Marvellous Adepoju.',
+  'Direct 1-on-1 collaboration with Lead Architect Marvellous Adepoju.',
   'Dedicated deployment & launch support.',
 ]
 
@@ -38,7 +38,7 @@ export default function SpecialPage() {
           whatsapp: formData.phone,
           industry: 'Special Initiative',
           service: '10 Free Software Build',
-          message: formData.message,
+          message: formData.message || 'No description provided (will discuss on call)',
         }),
       })
 
@@ -110,7 +110,7 @@ export default function SpecialPage() {
                   As an ambitious software agency, real-world case studies and video reviews from active business owners are worth more than traditional advertising.
                 </p>
                 <p className="mb-8 font-sans text-lg leading-relaxed text-text-mid">
-                  We are taking 10 selected businesses through a full software engineering sprint. We design, build, and deploy your web app, booking system, or automation workflow without charging any dev fee. In return, all we ask is an honest video review and permission to feature your case study on our website & social channels.
+                  We are taking 10 selected businesses through a full software engineering sprint. We design, build, and deploy your web app, booking system, or automation workflow without charging any dev fee. In return, all we ask is an honest video review and permission to feature your case study on our website &amp; social channels.
                 </p>
                 
                 <div className="space-y-4">
@@ -126,20 +126,31 @@ export default function SpecialPage() {
               {/* Form container */}
               <div id="apply" className="rounded-[28px] border border-border bg-gray-white p-8 shadow-[var(--shadow-card)] lg:p-10">
                 {formState === 'success' ? (
-                  <div className="flex flex-col items-center justify-center py-12 text-center">
+                  <div className="flex flex-col items-center justify-center py-8 text-center">
                     <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gold/20">
                       <Check className="h-8 w-8 text-gold" />
                     </div>
-                    <h3 className="mb-2 font-sans text-xl font-bold text-text-dark">Application Received!</h3>
-                    <p className="mb-4 font-sans text-text-mid">Founder Marvellous Adepoju will review your details and respond within 24 hours.</p>
-                    <a
-                      href="https://wa.me/2349030891731"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-sans text-sm font-semibold text-royal-blue hover:underline"
-                    >
-                      Chat on WhatsApp in the meantime &rarr;
-                    </a>
+                    <h3 className="mb-2 font-sans text-2xl font-bold text-text-dark">Application Received!</h3>
+                    <p className="mb-6 font-sans text-text-mid">Lead Architect Marvellous Adepoju will review your details. Next step: Schedule your 15-minute call to review project eligibility.</p>
+                    
+                    <div className="flex flex-col gap-3 w-full">
+                      <a
+                        href={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/marvellousadepoju79/30min"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 rounded-full bg-royal-blue px-6 py-4 font-sans text-base font-semibold text-white shadow-md transition-all hover:bg-royal-blue-dark"
+                      >
+                        📅 Schedule Call on Calendly &rarr;
+                      </a>
+                      <a
+                        href="https://wa.me/2349030891731?text=Hi%20Marvellous%2C%20I%20just%20applied%20for%20the%20free%20software%20initiative"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-sans text-sm font-semibold text-text-mid hover:text-royal-blue"
+                      >
+                        Or message directly on WhatsApp
+                      </a>
+                    </div>
                   </div>
                 ) : (
                   <>
@@ -149,7 +160,7 @@ export default function SpecialPage() {
                         Spot Application
                       </div>
                       <h3 className="font-display text-2xl font-bold text-text-dark">Claim 1 of 10 Free Spots</h3>
-                      <p className="mt-1 font-sans text-sm text-text-mid">Fill out this quick form and founder Marvellous Adepoju will get back to you within 24 hours.</p>
+                      <p className="mt-1 font-sans text-sm text-text-mid">Fill out this quick form and Lead Architect Marvellous Adepoju will get back to you within 24 hours.</p>
                     </div>
 
                     {formState === 'error' && (
@@ -176,7 +187,7 @@ export default function SpecialPage() {
 
                       <div>
                         <label className="mb-1.5 block font-sans text-xs font-semibold uppercase tracking-wider text-text-dark">
-                          Business Name & Website / Page *
+                          Business Name &amp; Website / Page *
                         </label>
                         <input
                           type="text"
@@ -222,15 +233,14 @@ export default function SpecialPage() {
 
                       <div>
                         <label className="mb-1.5 block font-sans text-xs font-semibold uppercase tracking-wider text-text-dark">
-                          What software tool or automation does your business need? *
+                          What software tool or automation does your business need? (Optional)
                         </label>
                         <textarea
                           name="message"
-                          rows={4}
-                          required
+                          rows={3}
                           value={formData.message}
                           onChange={handleChange}
-                          placeholder="Describe your current manual problem or the tool you want us to build for your business..."
+                          placeholder="Briefly describe your manual problem or tool idea (or leave blank to discuss on call)..."
                           className="w-full rounded-xl border border-border bg-white px-4 py-3 font-sans text-sm text-text-dark outline-none transition-colors focus:border-royal-blue"
                         />
                       </div>

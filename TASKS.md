@@ -22,13 +22,7 @@
 - [ ] **Test Registration**: Submit a dummy registration on `/academy` locally or on Vercel to confirm that BOTH the admin notification email and the registrant confirmation email arrive successfully.
 
 ### 3. Vercel Environment Variables
-Ensure these exactly match your `.env.local` inside **Vercel → Project Settings → Environment Variables**:
-- [ ] `GEMINI_API_KEY`
-- [ ] `BREVO_SMTP_USER`
-- [ ] `BREVO_SMTP_KEY`
-- [ ] `ADMIN_NOTIFICATION_EMAIL`
-- [ ] `ADMIN_PASSWORD`
-- [ ] `NEXT_PUBLIC_GA_ID`
+- [x] **Vercel Env Vars Configured**: `GEMINI_API_KEY`, `BREVO_SMTP_USER`, `BREVO_SMTP_KEY`, `ADMIN_NOTIFICATION_EMAIL`, `ADMIN_PASSWORD`, `NEXT_PUBLIC_GA_ID`, and `NEXT_PUBLIC_CALENDLY_URL` updated in Vercel.
 
 ### 4. Google Business Profile & Local SEO
 - [ ] Go to [google.com/business](https://google.com/business) and click "Manage Now".
