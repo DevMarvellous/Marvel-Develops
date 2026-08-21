@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import Script from 'next/script'
 import { Monitor, Smartphone, BarChart3, ClipboardList, ArrowRight } from 'lucide-react'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
@@ -41,6 +42,7 @@ const focusAreas = [
 export default function AboutPage() {
   return (
     <>
+      <Script src="https://platform.linkedin.com/badges/js/profile.js" strategy="lazyOnload" />
       <Navbar />
       <main className="min-h-screen bg-white">
         <FounderIntro />
@@ -54,6 +56,29 @@ export default function AboutPage() {
                 {bio.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
+
+                {/* Official LinkedIn Badge Container */}
+                <div className="pt-3">
+                  <div
+                    className="badge-base LI-profile-badge inline-block"
+                    data-locale="en_US"
+                    data-size="medium"
+                    data-theme="light"
+                    data-type="HORIZONTAL"
+                    data-vanity="marveldevelops"
+                    data-version="v1"
+                  >
+                    <a
+                      className="badge-base__link LI-simple-link inline-flex items-center gap-2 rounded-full border border-border bg-royal-blue-soft px-5 py-2.5 font-sans text-sm font-semibold text-royal-blue transition-colors hover:bg-royal-blue/10"
+                      href="https://www.linkedin.com/in/marveldevelops?trk=profile-badge"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span>Marvellous Adepoju on LinkedIn</span>
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -142,6 +142,34 @@ export const projects: Project[] = [
     liveUrl: 'https://theharvesterministry.com',
     featured: true,
   },
+  {
+    slug: 'faadey-couture-fashion-platform',
+    title: 'Faadey — Luxury Bespoke Fashion & Lookbook Platform',
+    category: 'E-Commerce & Digital Showcase',
+    client: 'Faadey Couture',
+    year: '2026',
+    summary:
+      'A high-end, mobile-first digital storefront, interactive continuous Lookbook, and private staff management portal engineered for an authentic Ondo bespoke fashion and footwear brand with worldwide delivery.',
+    overview:
+      'Faadey Couture is a bespoke Nigerian native attire and footwear brand headquartered in Ondo City, crafting royal Aso-Oke, Senator wear, and handcrafted shoes for clients in Nigeria and the diaspora across the UK, US, and Canada. We designed and built a mobile-first digital experience from the ground up: an ultra-luxurious dark interface with 3px animated shifting gradients, touch-swipe sliders, an integrated dynamic Lookbook with instant zoom and direct WhatsApp order generation, a dedicated Chronicles news hub with full modal reading, and a lightweight, zero-database standalone PHP admin portal that allows staff to publish new lookbook photos and articles in under 10 seconds directly from their smartphones.',
+    problem:
+      'The client had an abandoned, bloated WordPress installation with over 10,000 redundant files and slow load times, but no functional digital storefront to showcase their bespoke Aso-Oke, Senator wear, and handcrafted shoes to diaspora clients. Inquiries were handled manually on social media with no structured catalog or easy order flow. Furthermore, non-technical staff needed a simple, frictionless way to upload new custom creations and publish style articles directly from mobile phones without managing complex dashboards or risking server downtime.',
+    solution:
+      'We replaced the bloated architecture with a lightning-fast, zero-database static frontend coupled with a self-contained native PHP admin system. On the public side: an auto-cycling multi-look hero fitting showcase, touch-swipe sliders for attire and footwear, an integrated dynamic Lookbook with category filter chips and tap-to-zoom Lightboxes, and 1-tap WhatsApp consultation buttons that automatically pre-fill the specific design title into the chat. For storytelling: Faadey Chronicles news hub with full modal reading and social sharing. On the admin side: a private mobile-first portal for 1-click photo uploads and article publishing directly from any smartphone with zero database overhead.',
+    highlights: [
+      'High-end luxury UI with animated 3px shifting gradient borders and responsive dark theme',
+      'Mobile-first touch-swipe carousels for bespoke native attire and handcrafted footwear',
+      'Dynamic continuous Lookbook with category filtering, tap-to-zoom Lightbox, and expandable grid',
+      '1-tap direct WhatsApp order builder that automatically passes selected style names and customer sizing',
+      'Faadey Chronicles journal hub with fullscreen modal reader and social sharing (WhatsApp & X)',
+      'Zero-database, standalone native PHP admin dashboard for rapid mobile uploads and content deletion',
+      'Comprehensive SEO with Schema.org (ClothingStore, LocalBusiness, Blog), XML sitemap, and OpenGraph social cards',
+    ],
+    stack: ['HTML5', 'Tailwind CSS', 'Vanilla JavaScript', 'PHP 8', 'JSON Data Stores', 'Schema.org JSON-LD'],
+    image: '/work/faadey.png',
+    liveUrl: 'https://faadey.com',
+    featured: true,
+  },
 ]
 
 export const publishedProjects = projects.filter((p) => p.published !== false)

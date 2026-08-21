@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, MessageCircle } from 'lucide-react'
+import { ArrowRight, MessageCircle, Linkedin } from 'lucide-react'
 
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1]
 
@@ -70,11 +70,11 @@ export function FounderIntro() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease, delay: 0.45 }}
-            className="flex flex-col gap-4 sm:flex-row"
+            className="flex flex-wrap gap-3.5"
           >
             <Link
               href="/plan"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 font-sans text-base font-semibold text-navy-deep transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[var(--shadow-hover)] active:scale-[0.97]"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 font-sans text-base font-semibold text-navy-deep transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[var(--shadow-hover)] active:scale-[0.97]"
             >
               Plan a project
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -83,10 +83,20 @@ export function FounderIntro() {
               href="https://wa.me/2349030891731?text=Hi%20Marvellous%2C%20I%27d%20like%20to%20discuss%20a%20project"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 font-sans text-base font-semibold text-white backdrop-blur transition-all duration-250 hover:border-white/40 hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-sans text-base font-semibold text-white backdrop-blur transition-all duration-250 hover:border-white/40 hover:bg-white/10"
             >
               <MessageCircle className="h-4 w-4" />
               Message me
+            </a>
+            <a
+              href="https://www.linkedin.com/in/marveldevelops"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#0A66C2]/40 bg-[#0A66C2]/15 px-6 py-3.5 font-sans text-base font-semibold text-white backdrop-blur transition-all duration-250 hover:border-[#0A66C2] hover:bg-[#0A66C2]/30"
+              title="Connect on LinkedIn"
+            >
+              <Linkedin className="h-4 w-4 text-[#38bdf8]" />
+              LinkedIn
             </a>
           </motion.div>
         </div>

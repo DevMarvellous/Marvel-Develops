@@ -11,6 +11,7 @@ const navLinks = [
   { href: '/#services', label: 'Services' },
   { href: '/work', label: 'Work' },
   { href: '/about', label: 'About' },
+  { href: '/blog', label: 'Insights' },
   { href: '/academy', label: 'Academy' },
   { href: '/plan', label: '✨ AI Planner' },
 ]

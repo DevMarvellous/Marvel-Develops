@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Instagram, Facebook } from 'lucide-react'
+import { Instagram, Facebook, Linkedin } from 'lucide-react'
 
 const solutions = [
   'High-Converting Web Systems',
@@ -15,6 +15,7 @@ const companyLinks = [
   { label: 'Services', href: '/#services' },
   { label: 'Work', href: '/work' },
   { label: 'About', href: '/about' },
+  { label: 'Insights', href: '/blog' },
   { label: '10 Free Softwares', href: '/special' },
   { label: 'Academy', href: '/academy' },
   { label: 'Plan My Project', href: '/plan' },
@@ -24,6 +25,7 @@ const companyLinks = [
 
 // TODO: replace the bare social URLs with real Marvel Develops profiles as they go live.
 const socialLinks = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/marveldevelops', icon: Linkedin },
   { label: 'X', href: 'https://x.com/marvel_14_code', icon: ({ className }: { className?: string }) => (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>

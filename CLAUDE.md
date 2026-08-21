@@ -71,6 +71,7 @@ All vars must be added in Vercel → Settings → Environment Variables.
 |---|---|---|
 | `fraogo-operations-platform` | Fraogo — Operations Platform | Published, featured |
 | `brandsor-brand-identity-platform` | Brandsor — Brand Identity Platform | Published, featured |
+| `faadey-couture-fashion-platform` | Faadey — Luxury Bespoke Fashion Platform | Published, featured |
 | `harvester-church-website` | The Harvester — RCCG Church Website | Published, featured |
 | `rael-real-estate-tech` | RAEL — Real Estate Tech Platform | `published: false` — hidden until project ships |
 
