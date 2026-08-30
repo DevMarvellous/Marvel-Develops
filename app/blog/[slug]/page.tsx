@@ -199,7 +199,7 @@ export default async function BlogPostPage({
                 <div className="flex items-center gap-2.5">
                   <Sparkles className="h-4 w-4 text-gold flex-shrink-0" />
                   <p className="font-sans text-xs font-medium text-navy-deep sm:text-sm">
-                    This article breaks down the engineering behind our live client project:
+                    This article breaks down the software system behind our live client project:
                   </p>
                 </div>
                 <Link

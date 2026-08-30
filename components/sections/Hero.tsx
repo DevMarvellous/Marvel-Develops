@@ -129,8 +129,8 @@ export function Hero() {
         </motion.div>
 
         {/* Micro-copy promise */}
-        <p className="mt-3 font-sans text-xs text-white/50">
-          ⚡ 15-Min Call &middot; Zero Sales Pressure &middot; Free Technical Audit
+        <p className="mt-3 font-sans text-xs text-white/60">
+          ⚡ 15-Minute Free Consultation &middot; Clear Project Estimate &middot; Direct Advice
         </p>
 
         {/* AI planner nudge */}

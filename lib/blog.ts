@@ -53,7 +53,7 @@ export interface BlogPost {
   slug: string
   title: string
   excerpt: string
-  category: 'Case Breakdown' | 'Strategy' | 'Engineering' | 'AI & Automation'
+  category: 'Case Breakdown' | 'Strategy' | 'Tech for Business' | 'AI & Automation'
   publishedAt: string
   readTime: string
   coverImage?: string
@@ -69,7 +69,7 @@ export interface BlogPost {
 
 export const defaultAuthor: Author = {
   name: 'Marvellous Adepoju',
-  role: 'Founder & Full-Stack System Architect at Marvel Develops',
+  role: 'Founder & Lead Architect at Marvel Develops',
   avatar: '/founder.jpg',
   linkedin: 'https://www.linkedin.com/in/marveldevelops',
   x: 'https://x.com/marvel_14_code',
@@ -79,7 +79,7 @@ export const blogCategories = [
   'All',
   'Case Breakdown',
   'Strategy',
-  'Engineering',
+  'Tech for Business',
   'AI & Automation',
 ] as const
 
@@ -88,7 +88,7 @@ export type BlogCategory = (typeof blogCategories)[number]
 export const blogPosts: BlogPost[] = [
   {
     slug: 'how-we-engineered-11-area-operations-platform-logistics',
-    title: 'How We Engineered an 11-Area Operations Suite for a Logistics Company',
+    title: 'How We Built an 11-Area Operations System for a Logistics Company',
     excerpt:
       'The complete architectural and operational breakdown of building Fraogo — eliminating hundreds of manual customer enquiry calls, automating 8 email triggers, and centralizing logistics across continents.',
     category: 'Case Breakdown',
@@ -281,10 +281,10 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'how-to-scope-and-ship-saas-mvp-in-6-weeks',
-    title: 'Scoping and Shipping a Scalable SaaS MVP in 6 Weeks: The Engineering Playbook',
+    title: 'Scoping and Shipping a Scalable SaaS MVP in 6 Weeks: The Practical Guide',
     excerpt:
-      'How non-technical founders and fast-moving teams can scope, architect, and launch a production-grade software product in 42 days without cutting corners on security or UX.',
-    category: 'Engineering',
+      'How non-technical founders and fast-moving teams can scope, architect, and launch a production-ready software product in 42 days without cutting corners on security or UX.',
+    category: 'Tech for Business',
     publishedAt: '2026-07-28',
     readTime: '8 min read',
     featured: false,

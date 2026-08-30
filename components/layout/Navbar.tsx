@@ -5,11 +5,10 @@ import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X, Calendar } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const navLinks = [
   { href: '/#services', label: 'Services' },
-  { href: '/work', label: 'Work' },
   { href: '/work', label: 'Case Studies' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Insights' },
@@ -87,21 +86,6 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA Button - Desktop */}
-          <Link
-            href={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/marvellousadepoju79/30min"}
-            target={process.env.NEXT_PUBLIC_CALENDLY_URL ? "_blank" : undefined}
-            rel={process.env.NEXT_PUBLIC_CALENDLY_URL ? "noopener noreferrer" : undefined}
-            className={`hidden items-center gap-2 rounded-full px-6 py-2.5 font-sans text-[15px] font-semibold transition-all duration-250 lg:flex ${
-              solid
-                ? 'bg-royal-blue text-white hover:bg-royal-blue-dark hover:-translate-y-0.5 hover:shadow-[var(--shadow-hover)]'
-                : 'bg-white text-royal-blue hover:bg-gray-white'
-            }`}
-          >
-            <Calendar className="h-4 w-4" />
-            Book Free Consultation
-          </Link>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsDrawerOpen(true)}
@@ -130,23 +114,25 @@ export function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', stiffness: 400, damping: 40 }}
-              className="fixed bottom-0 right-0 top-0 z-50 flex w-full max-w-sm flex-col bg-navy-deep bg-grid"
+              className="fixed bottom-0 right-0 top-0 z-50 flex w-full max-w-sm flex-col justify-between bg-navy-deep bg-grid p-8"
             >
-              <button
-                onClick={() => setIsDrawerOpen(false)}
-                className="absolute right-4 top-4 p-2 text-white"
-                aria-label="Close menu"
-              >
-                <X className="h-6 w-6" />
-              </button>
+              <div className="flex justify-end">
+                <button
+                  onClick={() => setIsDrawerOpen(false)}
+                  className="p-2 text-white/80 hover:text-white"
+                  aria-label="Close menu"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
 
-              <div className="flex flex-1 flex-col items-center justify-center gap-8">
+              <div className="flex flex-col items-center justify-center gap-7 py-12">
                 {navLinks.map((link, index) => (
                   <motion.div
                     key={link.href}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.06 }}
+                    transition={{ delay: index * 0.05 }}
                   >
                     <Link
                       href={link.href}
@@ -159,17 +145,8 @@ export function Navbar() {
                 ))}
               </div>
 
-              <div className="p-6">
-                <Link
-                  href={process.env.NEXT_PUBLIC_CALENDLY_URL || "https://calendly.com/marvellousadepoju79/30min"}
-                  target={process.env.NEXT_PUBLIC_CALENDLY_URL ? "_blank" : undefined}
-                  rel={process.env.NEXT_PUBLIC_CALENDLY_URL ? "noopener noreferrer" : undefined}
-                  onClick={() => setIsDrawerOpen(false)}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-royal-blue py-4 font-sans text-lg font-semibold text-white transition-colors hover:bg-royal-blue-dark"
-                >
-                  <Calendar className="h-5 w-5" />
-                  Book Free Consultation
-                </Link>
+              <div className="text-center font-sans text-xs text-white/40">
+                marveldevelops.com
               </div>
             </motion.div>
           </>

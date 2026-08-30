@@ -35,7 +35,7 @@ export function CTABand() {
             Have a software idea or business challenge?
           </h2>
           <p className="mx-auto mb-9 max-w-xl font-sans text-lg text-white/80 leading-relaxed">
-            Book a free 15-minute consultation. We&apos;ll audit your current setup, listen to your needs, and give you a clear, fixed price &mdash; zero sales pressure.
+            Book a free 15-minute consultation. We&apos;ll listen to what you need, explain how we can build it, and give you a clear, fixed quote.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 lg:flex-row">
             <Link
