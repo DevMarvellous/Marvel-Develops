@@ -10,8 +10,7 @@ This file gives Claude Code instant context on this project so any new session c
 
 - Live URL: https://marveldevelops.vercel.app
 - GitHub: DevMarvellous
-- Admin email: marvellousadepoju79@gmail.com
-- WhatsApp: +2349030891731
+- Admin email: marveldevelops@gmail.com
 - Instagram: @marvel_develops
 - Domain (not yet purchased): marveldevelops.com
 
@@ -32,9 +31,8 @@ This file gives Claude Code instant context on this project so any new session c
 ## Key Architectural Decisions
 
 ### No database
-Supabase was removed entirely. Contact form and planner submissions are emailed directly to marvellousadepoju79@gmail.com. Admin panel shows an info message — no data tables.
+Supabase was removed entirely. Contact form and planner submissions are emailed directly to marveldevelops@gmail.com. Admin panel shows an info message — no data tables.
 
-### Email: Gmail SMTP now, Resend later
 Currently using Nodemailer with Gmail App Password (`GMAIL_USER` + `GMAIL_APP_PASSWORD`). Both the admin notification and customer follow-up send immediately (no scheduling delay).
 
 **When marveldevelops.com is purchased:**
@@ -56,10 +54,9 @@ Protected by a single password at `/admin`. No user accounts, no sessions table.
 | Variable | Purpose |
 |---|---|
 | `GEMINI_API_KEY` | Google Gemini for AI features |
-| `GMAIL_USER` | `marvellousadepoju79@gmail.com` |
+| `GMAIL_USER` | `marveldevelops@gmail.com` |
 | `GMAIL_APP_PASSWORD` | 16-char Gmail App Password (not the account password) |
 | `ADMIN_NOTIFICATION_EMAIL` | Where contact/planner leads land (same Gmail) |
-| `ADMIN_PASSWORD` | Password to log into `/admin` |
 
 All vars must be added in Vercel → Settings → Environment Variables.
 

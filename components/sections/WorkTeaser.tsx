@@ -25,15 +25,15 @@ export function WorkTeaser() {
           >
             <SectionHeader
               number="02"
-              label="Selected Work"
-              headline={<>Products we&apos;ve<br />shipped.</>}
+              label="Case Studies"
+              headline={<>Real problems we&apos;ve<br />solved.</>}
             />
           </motion.div>
           <Link
             href="/work"
             className="group mb-12 hidden items-center gap-2 font-sans text-sm font-semibold text-royal-blue lg:mb-16 lg:inline-flex"
           >
-            View all work
+            View all case studies
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
@@ -78,7 +78,7 @@ export function WorkTeaser() {
 
         <div className="mt-8 text-center lg:hidden">
           <Link href="/work" className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-royal-blue">
-            View all work
+            View all case studies
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

@@ -13,7 +13,7 @@ function createTransport() {
   })
 }
 
-const FROM = 'Marvel Develops <marvellousadepoju79@gmail.com>'
+const FROM = 'Marvel Develops <marveldevelops@gmail.com>'
 
 export async function sendAdminNotification(data: EmailSubmissionData): Promise<void> {
   const transport = createTransport()

@@ -109,7 +109,7 @@ export default function AcademyLayout({
               WhatsApp
             </a>
             <a
-              href="mailto:marvellousadepoju79@gmail.com"
+              href="mailto:marveldevelops@gmail.com"
               className="hover:text-gold transition-colors"
             >
               Email

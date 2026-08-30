@@ -29,6 +29,8 @@ export interface Project {
   /** Path under /public (drop screenshots into /public/work/). */
   image: string
   liveUrl?: string
+  /** Optional Loom / YouTube video URL — renders on the case-study page when set. */
+  videoUrl?: string
   featured?: boolean
   /** Set to false to hide from the site without deleting the entry. */
   published?: boolean
@@ -114,7 +116,6 @@ export const projects: Project[] = [
     ],
     stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     image: '/work/rael.png',
-    featured: true,
     published: false,
   },
   {
@@ -169,6 +170,33 @@ export const projects: Project[] = [
     image: '/work/faadey.png',
     liveUrl: 'https://faadey.com',
     featured: true,
+  },
+  {
+    slug: 'automated-business-workflows-n8n',
+    title: 'Automated Business Workflows — n8n',
+    category: 'Automation & AI',
+    client: 'Internal Capability',
+    year: '2025–2026',
+    summary:
+      'End-to-end business automation pipelines — lead capture, CRM syncing, invoice triggers, WhatsApp notifications, and multi-app webhooks — built to eliminate repetitive manual work.',
+    overview:
+      'We design and deploy automated workflows using n8n that connect the tools businesses already use. From the moment a lead submits a form to the point an invoice is generated and a WhatsApp confirmation lands on their phone — every step runs on autopilot. These pipelines replace hours of manual admin with reliable, instant automation that scales with the business.',
+    problem:
+      'Most small and mid-size businesses run on disconnected tools — a form builder here, a spreadsheet there, invoices in one app, customer messages in another. Staff spend hours every week copying data between systems, sending follow-up emails manually, and chasing status updates. As volume grows, things slip through the cracks: leads go cold, invoices are late, and no one has a clear view of what\'s happening.',
+    solution:
+      'We build custom automation pipelines using n8n that wire everything together. A new form submission instantly creates a CRM entry, triggers a branded confirmation email, notifies the team on Slack or WhatsApp, and schedules a follow-up task — all without anyone lifting a finger. For operations teams, we automate invoice generation, payment reminders, status update notifications, and reporting dashboards that pull live data from multiple sources.',
+    highlights: [
+      'Lead capture pipelines — form submission → CRM entry → email confirmation → team notification in seconds',
+      'Invoice & payment automation — generate, send, and follow up on invoices without manual effort',
+      'WhatsApp & Slack notifications — instant alerts for new orders, registrations, or status changes',
+      'Multi-app webhooks — connect any combination of tools (Google Sheets, Notion, Airtable, Stripe, etc.)',
+      'Scheduled workflows — recurring reports, data syncs, and cleanup tasks on autopilot',
+      'Zero-code handoff — clients get visual workflow maps they can understand and monitor',
+    ],
+    stack: ['n8n', 'Webhooks', 'REST APIs', 'Google Sheets', 'WhatsApp API', 'Slack', 'Notion', 'Stripe'],
+    image: '/work/n8n-automation.png',
+    featured: true,
+    published: false,
   },
 ]
 

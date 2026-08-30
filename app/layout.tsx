@@ -25,7 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Marvel Develops — Software, end to end',
   description: 'Marvel Develops is a full-stack software agency building custom web applications, mobile apps, SaaS products, and AI solutions for businesses worldwide.',
-  keywords: 'software agency, custom software development, web app development, SaaS, mobile app development, Marvellous Adepoju, React, Next.js, AI integration',
+  keywords: 'software agency, custom software development, web app development, SaaS, mobile app development, Marvellous Adepoju, DevMarvellous, Next.js developer, full-stack engineer Nigeria, n8n workflow automation, custom business management software, diaspora software agency, AI integration, React, TypeScript',
   authors: [{ name: 'Marvellous Adepoju', url: 'https://marveldevelops.com/about' }],
   creator: 'Marvellous Adepoju',
   alternates: {
@@ -78,7 +78,7 @@ export default function RootLayout({
     '@id': 'https://marveldevelops.com',
     url: 'https://marveldevelops.com',
     telephone: '+2349030891731',
-    email: 'marvellousadepoju79@gmail.com',
+    email: 'marveldevelops@gmail.com',
     priceRange: '$$$',
     address: {
       '@type': 'PostalAddress',
@@ -102,7 +102,10 @@ export default function RootLayout({
     ],
     sameAs: [
       'https://github.com/DevMarvellous',
-      'https://instagram.com/marvel_develops'
+      'https://www.linkedin.com/in/marveldevelops',
+      'https://x.com/marvel_14_code',
+      'https://instagram.com/marvel_develops',
+      'https://facebook.com/marveldevelops'
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',

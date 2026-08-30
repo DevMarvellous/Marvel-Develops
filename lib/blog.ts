@@ -71,7 +71,7 @@ export const defaultAuthor: Author = {
   name: 'Marvellous Adepoju',
   role: 'Founder & Full-Stack System Architect at Marvel Develops',
   avatar: '/founder.jpg',
-  linkedin: 'https://www.linkedin.com/in/marvellous-adepoju-87a4192b0',
+  linkedin: 'https://www.linkedin.com/in/marveldevelops',
   x: 'https://x.com/marvel_14_code',
 }
 

@@ -117,20 +117,20 @@ export function Hero() {
             className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 font-sans text-base font-semibold text-navy-deep transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[var(--shadow-hover)] active:scale-[0.97] sm:w-auto"
           >
             <Calendar className="h-4 w-4 text-royal-blue" />
-            Book a Free Strategy Call
+            Book a Free Consultation
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
           <Link
             href="/work"
             className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-3.5 font-sans text-base font-semibold text-white backdrop-blur transition-all duration-250 hover:border-white/40 hover:bg-white/10 sm:w-auto"
           >
-            See our work
+            See our case studies
           </Link>
         </motion.div>
 
         {/* Micro-copy promise */}
         <p className="mt-3 font-sans text-xs text-white/50">
-          ⚡ 15-Min Call &middot; Zero Sales Pressure &middot; Free Technical Advice
+          ⚡ 15-Min Call &middot; Zero Sales Pressure &middot; Free Technical Audit
         </p>
 
         {/* AI planner nudge */}

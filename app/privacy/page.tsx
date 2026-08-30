@@ -33,7 +33,7 @@ export default function PrivacyPage() {
                 We design and build custom software — web, mobile, and SaaS — for businesses.
               </p>
               <p className="mt-4 font-sans leading-relaxed text-text-mid">
-                <strong className="text-text-dark">Contact:</strong> marvellousadepoju79@gmail.com
+                <strong className="text-text-dark">Contact:</strong> marveldevelops@gmail.com
               </p>
             </section>
 
@@ -151,8 +151,8 @@ export default function PrivacyPage() {
               </ul>
               <p className="mt-4 font-sans leading-relaxed text-text-mid">
                 To exercise these rights, contact us at{' '}
-                <a href="mailto:marvellousadepoju79@gmail.com" className="text-royal-blue hover:underline">
-                  marvellousadepoju79@gmail.com
+                <a href="mailto:marveldevelops@gmail.com" className="text-royal-blue hover:underline">
+                  marveldevelops@gmail.com
                 </a>
               </p>
             </section>
@@ -176,7 +176,7 @@ export default function PrivacyPage() {
               <ul className="mt-4 space-y-2 font-sans text-text-mid">
                 <li className="flex items-start gap-2">
                   <span className="text-gold">&#9670;</span>
-                  Email: marvellousadepoju79@gmail.com
+                  Email: marveldevelops@gmail.com
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-gold">&#9670;</span>

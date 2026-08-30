@@ -128,7 +128,7 @@ export function Contact() {
               </a>
 
               <a
-                href="mailto:marvellousadepoju79@gmail.com"
+                href="mailto:marveldevelops@gmail.com"
                 className="group flex items-start gap-4 rounded-xl p-4 transition-colors hover:bg-white/5"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-royal-blue/30">
@@ -137,7 +137,7 @@ export function Contact() {
                 <div>
                   <p className="font-sans text-sm text-text-white-muted">Send us an email</p>
                   <p className="break-all font-sans text-base font-medium text-white transition-colors group-hover:text-royal-blue-soft">
-                    marvellousadepoju79@gmail.com
+                    marveldevelops@gmail.com
                   </p>
                 </div>
               </a>
@@ -176,7 +176,7 @@ export function Contact() {
                     {formState === 'error' && (
                       <div className="mb-4 rounded-lg bg-red-50 p-4 text-sm text-red-600">
                         Something went wrong. Please{' '}
-                        <a href="mailto:marvellousadepoju79@gmail.com" className="underline">
+                        <a href="mailto:marveldevelops@gmail.com" className="underline">
                           email us directly
                         </a>
                         .

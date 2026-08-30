@@ -65,7 +65,7 @@ export default async function CaseStudyPage({
             className="mb-8 inline-flex items-center gap-2 font-sans text-sm font-semibold text-royal-blue transition-colors hover:text-royal-blue-dark"
           >
             <ArrowLeft className="h-4 w-4" />
-            All work
+            All case studies
           </Link>
 
           <div className="mb-4 flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-[0.12em] text-text-muted">
@@ -93,6 +93,24 @@ export default async function CaseStudyPage({
               priority
             />
           </div>
+
+          {/* Video walkthrough — only renders when videoUrl is set */}
+          {project.videoUrl && (
+            <div className="mb-12">
+              <h2 className="mb-4 font-display text-xl font-bold text-text-dark">
+                Watch the walkthrough
+              </h2>
+              <div className="relative aspect-video overflow-hidden rounded-[var(--radius-card)] bg-gray-light">
+                <iframe
+                  src={project.videoUrl}
+                  title={`${project.title} — Video Walkthrough`}
+                  className="absolute inset-0 h-full w-full"
+                  allowFullScreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                />
+              </div>
+            </div>
+          )}
 
           {/* Body */}
           <div className="grid gap-10 lg:grid-cols-[1fr_280px]">

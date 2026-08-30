@@ -11,6 +11,7 @@ import { SectionHeader } from '@/components/ui/SectionHeader'
 export const metadata: Metadata = {
   title: 'About — Marvel Develops',
   description: 'Marvellous Adepoju (Marvel Develops) — Software Developer & System Architect building custom web applications, mobile apps, dashboards, and management systems for businesses.',
+  keywords: 'Marvellous Adepoju, DevMarvellous, Marvel Develops founder, full stack software developer, system architect, custom web application development, n8n automation expert, Nigeria',
   alternates: {
     canonical: '/about',
   },
@@ -40,8 +41,47 @@ const focusAreas = [
 ]
 
 export default function AboutPage() {
+  const personJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    '@id': 'https://marveldevelops.com/#marvellous',
+    name: 'Marvellous Adepoju',
+    alternateName: ['Marvel Develops', 'DevMarvellous'],
+    jobTitle: 'Full-Stack Software Engineer & Founder',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Marvel Develops',
+      url: 'https://marveldevelops.com',
+    },
+    url: 'https://marveldevelops.com/about',
+    image: 'https://marveldevelops.com/founder.jpg',
+    description:
+      'Marvellous Adepoju is a full-stack software engineer, system architect, and founder of Marvel Develops building custom web applications, SaaS platforms, and automated workflows for businesses worldwide.',
+    knowsAbout: [
+      'Full-Stack Web Development',
+      'Next.js & React Applications',
+      'TypeScript',
+      'Node.js',
+      'SaaS System Architecture',
+      'n8n Workflow Automation',
+      'Google Gemini AI Integrations',
+      'Custom API Development',
+    ],
+    sameAs: [
+      'https://github.com/DevMarvellous',
+      'https://www.linkedin.com/in/marveldevelops',
+      'https://x.com/marvel_14_code',
+      'https://instagram.com/marvel_develops',
+      'https://facebook.com/marveldevelops',
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <Script src="https://platform.linkedin.com/badges/js/profile.js" strategy="lazyOnload" />
       <Navbar />
       <main className="min-h-screen bg-white">

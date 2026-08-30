@@ -35,7 +35,7 @@ export function CTABand() {
             Have a software idea or business challenge?
           </h2>
           <p className="mx-auto mb-9 max-w-xl font-sans text-lg text-white/80 leading-relaxed">
-            Book a free 15-minute strategy call. We&apos;ll listen to your needs, explain how we can build it, and give you a clear, fixed price &mdash; zero sales pressure.
+            Book a free 15-minute consultation. We&apos;ll audit your current setup, listen to your needs, and give you a clear, fixed price &mdash; zero sales pressure.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 lg:flex-row">
             <Link
@@ -45,7 +45,7 @@ export function CTABand() {
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-3.5 font-sans text-base font-semibold text-royal-blue transition-all duration-250 hover:-translate-y-0.5 hover:shadow-[var(--shadow-hover)] active:scale-[0.97]"
             >
               <Calendar className="h-4 w-4 text-royal-blue" />
-              Book Strategy Call
+              Book Free Consultation
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link

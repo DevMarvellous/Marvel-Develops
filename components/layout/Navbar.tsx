@@ -10,6 +10,7 @@ import { Menu, X, Calendar } from 'lucide-react'
 const navLinks = [
   { href: '/#services', label: 'Services' },
   { href: '/work', label: 'Work' },
+  { href: '/work', label: 'Case Studies' },
   { href: '/about', label: 'About' },
   { href: '/blog', label: 'Insights' },
   { href: '/academy', label: 'Academy' },
@@ -98,7 +99,7 @@ export function Navbar() {
             }`}
           >
             <Calendar className="h-4 w-4" />
-            Book Strategy Call
+            Book Free Consultation
           </Link>
 
           {/* Mobile Menu Button */}
@@ -167,7 +168,7 @@ export function Navbar() {
                   className="flex w-full items-center justify-center gap-2 rounded-full bg-royal-blue py-4 font-sans text-lg font-semibold text-white transition-colors hover:bg-royal-blue-dark"
                 >
                   <Calendar className="h-5 w-5" />
-                  Book Strategy Call
+                  Book Free Consultation
                 </Link>
               </div>
             </motion.div>

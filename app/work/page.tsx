@@ -7,13 +7,13 @@ import { Footer } from '@/components/layout/Footer'
 import { publishedProjects as projects } from '@/lib/portfolio'
 
 export const metadata: Metadata = {
-  title: 'Our Work — Marvel Develops',
+  title: 'Case Studies — Marvel Develops',
   description: 'Selected software engineering projects built by Marvel Develops — custom web applications, mobile apps, and SaaS platforms.',
   alternates: {
     canonical: '/work',
   },
   openGraph: {
-    title: 'Our Work & Portfolio | Marvel Develops',
+    title: 'Case Studies & Portfolio | Marvel Develops',
     description: 'Selected software engineering projects built by Marvel Develops — custom web applications, mobile apps, and SaaS platforms.',
     url: 'https://marveldevelops.com/work',
   },
@@ -27,10 +27,10 @@ export default function WorkPage() {
         <div className="mx-auto max-w-[var(--container-max)] px-[var(--container-pad-mobile)] lg:px-[var(--container-pad-desktop)]">
           <header className="mb-8 max-w-3xl lg:mb-20">
             <p className="mb-4 font-mono text-[11px] uppercase tracking-[0.12em] text-gold">
-              Our Work
+              Case Studies
             </p>
             <h1 className="mb-5 font-display text-[clamp(30px,5vw,50px)] font-bold leading-[1.08] tracking-tight text-text-dark">
-              Software we&apos;ve shipped.
+              Real problems we&apos;ve solved.
             </h1>
             <p className="font-sans text-lg leading-relaxed text-text-mid">
               A selection of products we&apos;ve designed and built end to end. Each one

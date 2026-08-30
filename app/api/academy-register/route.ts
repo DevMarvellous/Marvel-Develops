@@ -25,7 +25,7 @@ function createTransport() {
   })
 }
 
-const FROM = 'Marvel Develops Academy <marvellousadepoju79@gmail.com>'
+const FROM = 'Marvel Develops Academy <marveldevelops@gmail.com>'
 
 export async function POST(request: Request) {
   const ip = getClientIp(request)
